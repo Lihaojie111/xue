@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>518学车网先学后付---确认班型</title>
+		<link rel="stylesheet" type="text/css" href="/public/xxhf/css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/public/xxhf/css/confirm_class.css"/>
+		<script src="/public/xxhf/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/xxhf/js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/xxhf/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="title">
+					<img class="back" src="/public/xxhf/images/back.png"/>
+				<span>确认班型</span>
+			</div>
+          <form action="" method="post">
+			<div class="overtime">
+				<h1>1.您确认在<span>{$school.name}</span>办理驾驶员培训考试业务，双方约定在三个月内完成对您的驾驶技能培训。</h1>
+				<h2>2.您可以选择如下班型：</h2>
+				<table border="1">
+					<thead>
+						<tr>
+							<th>套餐</th>
+							
+							<th>总费用</th>
+							<th>选择意向</th>
+						</tr>
+					</thead>
+				
+                  <tbody>
+                    {foreach name="school_can" item="v" key="key"}
+						<tr>
+							
+							<td>{$v.miaoshu}</td>
+							<td>套餐价：{$v.price}</td>
+							<td><input class="banxing" type="radio" value="{$v.cid}" name="banxing" /></td>
+						</tr>
+                    	 <input type="hidden" name="c_id" class="" id="" value="{$id}"/>
+                   		 <input type="hidden" name="jxmc" class="" id="" value="{$name}"/>
+					{/foreach}
+					</tbody>
+				</table>
+				<div class="nextbtn">
+					<a class="jump" onclick="tijiao()">
+						下一步
+					</a>
+				</div>
+			</div>
+		</form>
+		</div>
+	</body>
+<script>
+	$(".overtime table input[name='banxing']").attr("checked","checked");
+	function tijiao(){
+	    $("form").submit();
+	}
+	$(".jump").click(function(){
+		// var inpbtn = $(".overtime table input[name='banxing']");
+		// var checks = document.getElementsByClassName("banxing");
+		// //console.log(inpbtn);
+		// for(var i = 0;i<checks.length;i++){
+		// 	// var checkbox = $(".overtime table input[name='banxing']");
+		// 	// console.log(checks[i].getAttribute("checked"));
+		// 	// if (checks[i].getAttribute("checked")) {
+		// 	// 	tijiao();
+		// 	// }else{
+		// 	// 	alert("请选择班型")
+		// 	// }
+		// 	$(".banxing").each(function(){
+		// 		if ($(this).prop("checked")) {     //选中的radio
+		// 			console.log($(this));
+		// 			tijiao();
+		// 		}else if ($(this).prop("")) {}{    //未选中radio
+		// 			alert("请选择班型")
+		// 		}
+		// 	});
+		// }
+	});
+	
+	// function tijiao(){
+	//     $("form").submit();
+	   	
+	// }
+	// $(".jump").click(function(){
+	// 	console.log($(".overtime table input[name='banxing']:checked"));
+	// })
+	
+</script>
+</html>

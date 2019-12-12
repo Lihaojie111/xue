@@ -1,0 +1,576 @@
+body{
+	background: #f5f5f5;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.mt20{
+	margin-top: .2rem;
+}
+.bgw{
+	background: #fff;
+}
+.head{
+	width: 90%;
+	padding: 0.15rem 5%;
+	background-color: #198fd0;
+	position: fixed;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	z-index: 99999;
+}
+.head .left{
+	float: left;
+}
+
+.head .left img{
+	height: 0.45rem;
+	margin: 0rem 0.15rem 0rem 0rem;
+	vertical-align: middle;
+}
+
+.head .right{
+	float: right;
+}
+
+.head .right img{
+	height: 0.45rem;
+	vertical-align: middle;
+}
+
+.title{
+	width: 5.8rem;
+	padding: 0rem .3rem;
+	height: .78rem;
+	line-height: .78rem;
+	margin: 0 auto;
+	background-color: #FFFFFF;
+	border-top: 0.01rem solid #CCCCCC;
+	border-bottom: 0.01rem solid #CCCCCC;
+	text-align: center;
+	position: fixed;
+	top: 0rem;
+	z-index: 999;
+}
+.title .back{
+	width: 0.2rem;
+	position: absolute;
+	left: 5%;
+	top: 50%;
+	transform: translate(0,-50%);
+}
+
+.title span{
+	font-size: 0.3rem;
+}
+.wrapper{
+	width: 100%;
+	height: 100%;
+	/*margin-top: 0.75rem;*/
+}
+.school_banner{
+	width: 100%;
+	height: 3.8rem;
+	margin-top: 0.75rem;
+}
+/*驾校轮播*/
+.school_banner img{
+	width: 100%;
+	height: 3.8rem;
+}
+/*驾校名称*/
+.school_name{
+	width: 5.8rem;
+	height: .8rem;
+	padding: 0 .3rem;
+}
+.school_name h1{
+	/*display: inline-block;*/
+	font-size: .26rem;
+	color: #333;
+	padding-top: .05rem;
+}
+.school_name .special{
+	width: 100%;
+	height: .22rem;
+	/*display: inline-block;*/
+}
+.school_name .special span{
+	height: .22rem;
+	margin-right: .15rem;
+	display: block;
+	float: left;
+}
+.school_name .special span img{
+	height: .22rem;
+}
+
+/*驾校服务*/
+.school_service{
+	width: 5.8rem;
+	height: 1rem;
+	padding: 0 .3rem;
+	overflow: hidden;
+}
+.school_service .left{
+	width: .76rem;
+	height: 100%;
+	font-size: .22rem;
+	color: #333;
+	padding-top: .2rem;
+	float: left;
+}
+.school_service .right{
+	width: 5rem;
+	height: 100%;
+	float: left;
+}
+.school_service .right ul{
+  	overflow: hidden;
+	padding-top: .2rem;
+}
+.school_service .right ul li{
+	float: left;
+	font-size: .22rem;
+	color: #666;
+  	margin-right:.2rem;
+}
+.school_service .right ul li img{
+	height: .22rem;
+}
+
+.total{
+	width:1.45rem;
+	height: .88rem;
+	/*height*/
+	background-color: #ffe3e3;
+	border: 0.01rem solid #ff0000;
+	border-radius: 0.15rem;
+	color: #FF0000;
+	font-size: 0.24rem;
+	font-weight: 400;
+	text-align: center;
+	position: fixed;
+	right: .3rem;
+	bottom: 1.3rem;
+	z-index: 999;
+	opacity: 0.75;
+  	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/*驾照类型*/
+.license_type{
+	width: 5.8rem;
+	height: 1.9rem;
+	height: auto;
+	padding:0 .3rem;
+	overflow: hidden;
+}
+.license_type .left{
+	width: 1.2rem;
+	height: 100%;
+	height: auto;
+	padding-top: .2rem;
+	font-size: .22rem;
+	color: #333;
+	float: left;
+}
+.license_type .right{
+	width: 4.6rem;
+	float: left;
+	height: 100%;
+	height: auto;
+	padding-top: .2rem;
+}
+.license_type .right ul li{
+	width: 1.03rem;
+	height: .4rem;
+	line-height: .4rem;
+	text-align: center;
+	font-size: .24rem;
+	color: #666;
+	border: 0.01rem solid #999;
+	float: left;
+	margin-bottom: .14rem;
+	margin-right: .13rem;
+	border-radius: .05rem;
+}
+.license_type .right ul li:nth-child(4n+4){
+	margin-right: 0rem;
+}
+/*驾照班级*/
+.license_class{
+	width: 5.8rem;
+	/*height: .87rem;*/
+	padding: 0 0.3rem;
+	overflow: hidden;
+}
+.license_class .left{
+	width: 1.26rem;
+	height: 100%;
+	font-size: .22rem;
+	color: #333;
+	padding-top: .25rem;
+  	padding-bottom: .25rem;
+	float: left;
+}
+.license_class .right{
+	padding-top: .22rem;
+  	padding-bottom: .25rem;
+	width: 4.54rem;
+  	float: right;
+}
+
+.license_class .right ul{
+	overflow: hidden;
+}
+
+.license_class .right ul li{
+	/*width: 1.03rem;*/
+  	padding: 0rem 0.15rem;
+	height: .4rem;
+	line-height: .4rem;
+	text-align: center;
+	border: 0.01rem solid #999;
+	float: left;
+	font-size: .24rem;
+	margin-right: .28rem;
+	border-radius: .05rem;
+	color: #666;
+}
+
+/*优惠券*/
+.coupon{
+	width: 5.8rem;
+	height: 1.9rem;
+	padding: 0 .3rem;
+	overflow: hidden;
+}
+.coupon h1{
+	font-size: .22rem;
+	color: #333;
+	padding-top: .2rem;
+}
+.coupon .coupon_two{
+	width: 100%;
+	height: .95rem;
+	display: flex;
+	justify-content: space-between;
+	margin-top: .2rem;
+}
+.coupon .coupon_two div{
+	width: 2.62rem;
+	height: .93rem;
+}
+.coupon .coupon_two div img{
+	width: 100%;
+	height: 100%;
+}
+/*公司简介*/
+.Company_profile{
+	width: 5.8rem;
+	padding: 0.15rem .3rem .3rem;
+}
+.Company_profile .introduce{
+	background-color: #FFFFFF;
+	overflow: hidden;
+}
+
+.Company_profile .introduce h1{
+	color: #222222;
+	font-size: 0.22rem;
+}
+
+.Company_profile .introduce img{
+	margin: 0.2rem 0rem;
+}
+
+.Company_profile .introduce .content{
+	width: 100%;
+}
+
+.Company_profile .introduce .content p{
+	width: 100%;
+	font-size: 0.19rem;
+	margin: 0.15rem 0rem;
+	color: #666;
+}
+.Company_profile .introduce .content_img{
+	width: 100%;
+	height: 2.3rem;
+	display: flex;
+	justify-content: space-between;
+}
+.Company_profile .introduce .content_img div{
+	width: 2.8rem;
+	height: 2.3rem;
+}
+.Company_profile .introduce .content_img div img{
+	width: 100%;
+	height: 100%;
+}
+/*王牌教练*/
+.King_coach{
+	width: 5.8rem;
+	height: auto;
+	padding: .3rem .3rem 0rem;
+}
+
+.King_coach h1{
+	font-size: .22rem;
+	color: #333;
+}
+.King_coach .content{
+	width: 100%;
+	margin-top:.2rem;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.King_coach .content div.item{
+	width: 2.8rem;
+	height: 3.75rem;
+}
+.King_coach .content div.item img{
+	width: 100%;
+	height: 2.8rem;
+}
+.King_coach .content div.item p{
+	font-size: .24rem;
+	color: #000;
+	margin-top: .05rem;
+}
+.King_coach .content div.item p span{
+	font-size: .2rem;
+	color: #919191;
+}
+.King_coach .content div.item p.safe img{
+	width: .20rem;
+	height:.22rem;
+}
+.King_coach .content div.item p.safe span{
+	margin-right: .19rem;
+}
+.King_coach .content div.item div.coachAndp{
+	overflow: hidden;
+	line-height: 100%;
+	margin-top: .05rem;
+}
+.King_coach .content div.item div.coachAndp div.fr{
+	color: #999
+}
+/*立即预约*/
+.Now_reservation{
+	width: 5.8rem;
+	margin: .1rem auto .2rem;
+	height: .72rem;
+	line-height: .72rem;
+	text-align: center;
+	background: #f85555;
+	font-size: .34rem;
+	color: #fff;
+}
+/*提示模板*/
+.tips{
+	width: 50vw;
+	padding: 0.25rem 5vw;
+	background-color: #222222;
+	border-radius: 0.15rem;
+	opacity: 0.9;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 99999999;
+}
+
+.tips p{
+	color: #FFFFFF;
+}
+
+#mask{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.5);
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 99999;
+	display: none;
+}
+.order{
+	width: 5.8rem;
+	height: auto;
+	padding: 0 .3rem;
+	background-color: #FFFFFF;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 9999999;
+}
+
+.order .top{
+	width: 100%;
+	padding: 0.35rem 0rem 0rem;
+	overflow: hidden;
+	height: 2.17rem;
+}
+
+.order .top .left{
+	width: 2.8rem;
+	height: 2.14rem;
+	/*border: 0.01rem solid red;*/
+	float: left;
+	text-align: center;
+}
+
+.order .top .left img{
+	width: 100%;
+	height: 100%;
+}
+
+.order .top .right{
+	width: 2.85rem;
+	height: 2.14rem;
+	padding-left: .15rem;
+	/*border: 0.01rem solid red;*/
+	float: right;
+	text-align: right;
+}
+
+.order .top .right p{
+	width: 100%;
+	/*padding: 0.15rem 0rem;*/
+	/*font-size: 0.3rem;*/
+	margin: 0.1rem 0rem;
+}
+
+.order .top .right p:nth-child(2){
+	text-align: left;
+	margin: 0.7rem 0rem 0.1rem;
+}
+
+.order .top .right p:nth-child(3){
+	color: #fe0000;
+	text-align: left;
+	margin: 0.1rem 0rem;
+}
+
+.order .top .right p img{
+	width: 0.24rem;
+	height: 0.24rem;
+}
+
+.order .items{
+	width: 100%;
+  	height:0.9rem;
+}
+
+
+.order .items .item p{
+	color: #222222;
+	font-size: 0.22rem;
+	margin: 0.05rem 0rem;
+}
+.order .items .item{
+	overflow:hidden;
+}
+.order .items .item span{
+	color: #666;
+	border: 0.01rem solid #ccc;
+	border-radius: 0.05rem;
+	font-size: 0.22rem;
+	background-color: #fff;
+	height: .48rem;
+	line-height: .48rem;
+	display: block;
+  	min-width:1.2rem;
+  	text-align:center;
+  	float:left;
+  	margin-right:.2rem;
+}
+
+.order .types{
+	width: 100%;
+	padding: 0.25rem 0rem;
+}
+
+.order .types .type{
+	text-align: center;
+}
+
+.order .types .type p{
+	color: #222222;
+	font-size: 0.3rem;
+	margin: 0.15rem 0rem;
+}
+
+.order .types .type span{
+	color: #ff0101;
+	padding: 0.02rem 0.2rem;
+	border: 0.01rem solid #FF0101;
+	border-radius: 0.05rem;
+	font-size: 0.3rem;
+	background-color: #ffe7e7;
+}
+
+.method{
+	width: 5.8rem;
+	margin-top: .15rem;
+	height: 1.1rem;
+}
+
+.method .types{
+	width: 100%;
+	padding: 0.25rem 0rem;
+
+}
+.method p{
+	color: #222222;
+	font-size: 0.3rem;
+	margin: 0.15rem 0rem;
+}
+.method span{
+	color: #666666;
+	width: 1.2rem;
+	height: .5rem;
+	float: left;
+	margin-right: .26rem;
+	line-height: .5rem;
+	border: 0.01rem solid #CCCCCC;
+	border-radius: 0.05rem;
+	font-size: 0.22rem;
+	background-color: transparent;
+	text-align: center;
+	margin-top: .2rem;
+}
+
+.method .type span:nth-child(1){
+	color: #FF0101;
+	border: 0.01rem solid #FF0101;
+  	background: rgb(255, 231, 231);
+}
+
+.yes button{
+	margin: .2rem auto;
+	width: 5.8rem;
+	height: .72rem;
+	line-height: .72rem;
+	display: block;
+	background-color: #f85555;
+	border: 0.01rem solid #F85555;
+	border-radius: 0.05rem;
+	color: #FFFFFF;
+	font-size: 0.34rem;
+}
+.selected{
+	background:red;
+  	color:red;
+}

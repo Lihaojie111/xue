@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>518学车网-金牌教练</title>
+  <link rel="stylesheet" type="text/css" href="/public/home/css/Web_app_common.css"/>
+  <link rel="stylesheet" type="text/css" href="/public/home/css/swiper.min.css"/>
+  <link rel="stylesheet" type="text/css" href="/public/home/css/Gold_school.css"/>
+  <link rel="stylesheet" type="text/css" href="/public/home/css/swiper-3.3.1.min.css"/>
+  <script src="/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/public/home/js/rem.js" type="text/javascript" charset="utf-8"></script>
+</head>
+  <style>
+    #jiege{position:fixed;bottom: 0;right: 0;width: 1rem;text-align: right;}
+  </style>
+<body>
+  <!-- 金牌驾校 -->
+  <!--<div class="Drive_school">
+    <img src="/public/home/images/return_1.png" alt="">
+    <span>金牌驾校</span>
+  </div>-->
+  
+    <!--<div class="head">
+        <div class="left">
+            <img src="/public/home/images/close.png"/>
+            <img src="/public/home/images/learn_car.png"/>
+        </div>
+        <div class="right">
+            <img src="/public/home/images/share.png"/>
+        </div>
+    </div>-->
+  <!--标题-->
+  <div class="title">
+    <div class="titleInner">
+      <a href="javascript:history.back()">
+      <img class="back" src="/public/home/images/back.png"/>
+      </a>
+      <span>学员-王牌教练</span>
+    </div>
+  </div>
+  
+    <div class="jump_tab">
+    <ul>
+      <a href="/index.php/Index/index/gold_school"><li style="width:50%">驾校</li></a>
+      <a href="/index.php/Index/index/coach"><li class="jump_act" style="width:50%">教练</li></a>
+      <!-- <a href="Student_service.html"><li>服务</li></a> -->
+    </ul>
+  </div>
+  <!-- 综合销量价格筛选 -->
+  <!--<div class="Sort">
+    <div class="items">
+      
+    </div>
+    <div class="items">
+      <span>销量</span>
+    </div>
+    <div class="items"></div>
+    <div class="items"></div>
+  </div>-->
+  <!--导航-->
+  <div class="nav">
+    <div class="navs zonghe_choose">
+      <span>综合</span>
+      <img class="zonghe_img checked" src="/public/home/images/zonghes.png"/>
+      <img class="zonghe_img2 checked" style="display: none;" src="/public/home/images/zonghe2.png"/>
+      <img class="unchecked" style="display: none;" src="/public/home/images/zonghes.png"/>
+    </div>
+    <div class="navs">
+      <span>销量</span>
+    </div>
+    <div class="navs">
+      <span>价格</span>
+      <img class="unchecked" style="display: none;" src="/public/home/images/jiage.png"/>
+      <img class="checked" src="/public/home/images/jiage2.png"/>
+    </div>
+    <div class="navs shaixuan_btn">
+      <span>筛选</span>
+      <img src="/public/home/images/shaixuanlogo.png"/>
+    </div>
+  </div>
+    
+    <!--综合排序-->
+  <ul class="order" style="display: none;" >
+    <li>
+      <div class="left">
+        <span>综合排序</span>
+      </div>
+      <div class="right">
+        <img src="/public/home/images/duihao.png"/ style="wdith:.27rem;height:.19rem;">
+      </div>
+    </li>
+    <li>
+      <div class="left">
+        <span>合格率优先</span>
+      </div>
+      <div class="right">
+        <img src="/public/home/images/duihao.png"/ style="wdith:.27rem;height:.19rem;">
+      </div>
+    </li>
+  </ul>
+    
+    <!--筛选选择-->
+    <div class="choose" style="display: none;" >
+      <div class="license">
+        <h1>驾照类型</h1>
+        <div class="items">
+          <img src="/public/home/images/qiche.png"/>
+          <div class="spans">
+            <span class="type" dataid="23">C1</span>
+            <span class="type" dataid="28">C2</span>
+          </div>
+        </div>
+        <div class="items">
+          <img src="/public/home/images/daba.png"/>
+          <div class="spans">
+            <span class="type" dataid="29">B1</span>
+            <span class="type" dataid="30">B2</span>
+          </div>
+        </div>
+        <div class="items">
+          <img src="/public/home/images/huoche.png"/>
+          <div class="spans">
+            <span class="type" dataid="31">A1</span>
+            <span class="type" dataid="32">A2</span>
+            <span class="type" dataid="33">A3</span>
+          </div>
+        </div>
+        <div class="items">
+          <img src="/public/home/images/motuoche.png"/>
+          <div class="spans">
+            <span class="type" dataid="34">D</span>
+            <span class="type" dataid="15">E</span>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="sectionTop">
+          <span>科目</span>
+        </div>
+        <div class="content">
+          {foreach name="kemu" item="vo" key="key"}
+          <div class="item kemu" name="{$vo.name}" dataid="{$vo.id}">
+            <span>{$vo.name}</span>
+          </div>
+          {/foreach}
+        </div>
+      </div>
+      <!--主攻考场-->
+      <div class="section">
+        <div class="sectionTop">
+          <span>主攻考场</span>
+        </div>
+        <div class="content">
+          {foreach name="kaochang" item="vo" key="key"}
+          <div class="item kaochang" name="{$vo.name}" dataid="{$vo.id}">
+            <span>{$vo.name}</span>
+          </div>
+          {/foreach}
+        </div>
+      </div>
+      
+      <!--车型信息-->
+      <div class="section">
+        <div class="sectionTop">
+          <span>车型信息</span>
+        </div>
+        <div class="content">
+          {foreach name="chexing" item="vo" key="key"}
+          <div class="item chexing" name="{$vo.name}" dataid="{$vo.id}">
+            <span>{$vo.name}</span>
+          </div>
+          {/foreach}
+        </div>
+      </div>
+      <div class="section">
+        <div class="sectionTop">
+          <span>服务</span>
+        </div>
+        <div class="content">
+          {foreach name="shoolservice" item="vo" key="key"}
+          <div class="item service" name="{$vo.name}" dataid="{$vo.id}">
+            <span>{$vo.name}</span>
+          </div>
+          {/foreach}
+        </div>
+      </div>
+      
+      <!--取消筛选---确认按钮-->
+      <div class="buttons">
+        <button class="cancle">取消筛选</button>
+        <button class="yes">确认</button>
+      </div>
+      
+    </div>
+    
+    <!--蒙版-->
+    <div class="mask" style="display: none;" >
+      <img src="/public/home/images/masking.png"/>
+    </div>
+
+      <!--王牌教练-->
+      <div class="swiper-container" style="margin-top:2.4rem;background:#fff;">
+        <div class="refreshtip">下拉可以刷新</div>
+        <div class="swiper-wrapper w" style="width: 90%;padding: .2rem 5% 0rem;height: auto;">
+            <div class="swiper-slide d">
+              <div class="init-loading  text-center" style="display: none;">下拉可以刷新</div>
+                <div class="swiper-container2">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide list-group" style="background: #fff;padding-bottom: .2rem;width:100%;display: flex;justify-content: space-between;flex-wrap: wrap;">
+                      {foreach name="coach_list" item="vo" key="key"}
+                      <a href="{:url('coach_detail',array('id' => $vo.cid))}">
+                      <div class="list-group-item">
+                        <img src="{$vo.img}" style="width:2.8rem;height:2.8rem">
+                        <p>
+                          教练：{$vo.name}
+                        </p>
+                        <p>
+                          所在驾校：{$vo.school_name}
+                        </p>
+                        <p class="imgs">
+                           {foreach name="vo.child" item="vo1" key="key1"}
+                           {if condition="$vo1.pic != ''"} <img src="{$vo1.pic}" style="width:.24rem;height:.24rem;margin-right:.1rem">{/if}
+                           {/foreach}
+                        </p>
+                      </div>
+                      </a>
+                      {/foreach}
+                    </div>
+                  </div>
+                  <div style="width:100%;height:.6rem;"></div>
+                </div>
+            </div>
+        </div>
+                <div class="loadtip">上拉加载更多</div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+    
+</body>
+<script src="/public/home/js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/public/home/js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  var loadFlag = true;
+  var oi = 0;
+  var page=4;
+  var mySwiper = new Swiper('.swiper-container',{
+    direction: 'vertical',
+    scrollbar: '.swiper-scrollbar',
+    slidesPerView: 'auto',
+    mousewheelControl: true,
+    freeMode: true,
+    onTouchMove: function(swiper){    //手动滑动中触发
+      var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+            var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight
+            if(mySwiper.translate < 50 && mySwiper.translate > 0) {
+        $(".init-loading").html('下拉刷新...').show();
+      }else if(mySwiper.translate > 50 ){
+        $(".init-loading").html('释放刷新...').show();
+      }
+            mySwiper.update(100)
+    },
+    onTouchEnd: function(swiper) {
+      var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+            var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+             // 上拉加载
+            if(mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+                // console.log("已经到达底部！");
+                if(loadFlag){
+                  $(".loadtip").html('正在加载...');
+                }else{
+                  $(".loadtip").html('没有更多啦！');
+                }
+                
+                setTimeout(function() {
+                    var data1=0;
+                    for(var i = 0; i <2; i++) {
+                      oi++;
+                        $.ajax({
+                            type: "POST",
+                            url: "/index.php/index/index/ajax_coach",
+                            data: {page:page},
+                            success: function (data) { //返回json结果
+                                console.log(data);//
+                                data=$.parseJSON( data );
+                                if(data.code==1){
+                                    $(".list-group").eq(mySwiper2.activeIndex).append('<a href="coach_detail/id/'+data.cid+'"><div class="list-group-item">\<img src="'+data.pic+'"/ style="width:2.8rem;height:2.8rem">\<p>\教练：'+data.name+'\</p>\<p>\所在驾校：'+data.school_name+'\</p>\<p class="imgs"><img src="/public/home/images/coach_img1.png" style="width:.24rem;height:.24rem;margin-right:.1rem"><img src="/public/home/images/coach_img2.png" style="width:.24rem;height:.24rem;margin-right:.1rem"><img src="/public/home/images/coach_img3.png" style="width:.24rem;height:.24rem"></p></div></a>');
+                                }else{
+                                    if(data1<1){
+
+                                    }
+                                    data1++;
+
+                                }
+
+                            }
+                        });
+                        page++;
+
+                    }
+                   //  $(".loadtip").html('上拉加载更多...');
+                    mySwiper.update(100)
+                  
+                }, 800);
+            }
+            
+            // 下拉刷新
+            if(mySwiper.translate >= 50) {
+                $(".init-loading").html('正在刷新...').show();
+                $(".loadtip").html('上拉加载更多');
+                loadFlag = true;
+                
+                setTimeout(function() {
+                    $(".refreshtip").show(0);
+                    $(".init-loading").html('刷新成功！');
+                    setTimeout(function(){
+                      $(".init-loading").html('').hide();
+                    },800);
+                    $(".loadtip").show(0);
+                    
+                    //刷新操作
+                    mySwiper.update(); // 重新计算高度;
+                }, 1000);
+            }else if(mySwiper.translate >= 0 && mySwiper.translate < 50){
+              $(".init-loading").html('').hide();
+                mySwiper.update();
+            }
+            return false;
+    }
+  });
+  var mySwiper2 = new Swiper('.swiper-container2',{
+    onTransitionEnd: function(swiper){
+      
+      $('.w').css('transform', 'translate3d(0px, 0px, 0px)')
+      $('.swiper-container2 .swiper-slide-active').css('height','auto').siblings('.swiper-slide').css('height','0px');
+      mySwiper.update();
+      
+      $('.tab a').eq(mySwiper2.activeIndex).addClass('active').siblings('a').removeClass('active');
+    }
+    
+  });
+</script>
+<script type="text/javascript">
+    $(window).ready(function(){
+      
+      // 导航栏切换
+      $(".nav .navs").click(function(){
+      	$(".nav .navs span").css({
+      		"color": "#222222"
+      	});
+      	$(this).children("span").css({
+      		"color": "#ff3333"
+      	});
+      	// 选中图片的显示与隐藏
+      	$(".nav .navs").children("img").hide();
+      	$(".nav .navs").children(".unchecked").show();
+      	$(this).children(".unchecked").hide();
+      	$(this).children(".checked").show();
+        $(".nav .navs:eq(3)").children("img").show();
+      });
+      
+      // 点击综合按钮时
+      $(".zonghe_choose").click(function(){
+        // 换图片        /public/home/images/zonghe2.png
+        console.log($(".zonghe_img").attr("src"));
+        $(".zonghe_img").css({
+          "display": "none"
+        });
+        $(".zonghe_img2").css({
+          "display": "inline-block"
+        });
+//        $(".zonghe_img").attr("src","/public/home/images/zonghe2.png");
+        
+        $(".order").css({
+          "display": "block"
+        });
+      });
+      
+      // 点击综合筛选列表时
+      $(".order li").click(function(){
+        //  color: #ff3333;
+        $(".order li .right img").css({
+          "display": "none"
+        });
+        $(".order li div span").css({
+          "color": "#222222"
+        });
+//        console.log($(this).children("span"));
+        $(this).children(".left").children("span").css({
+          "color": "#ff3333"
+        });
+        $(this).children(".right").children("img").css({
+          "display": "inline-block"
+        });
+        
+        $(".order").css({
+          "display": "none"
+        });
+        $(".zonghe_img").css({
+          "display": "inline-block"
+        });
+        $(".zonghe_img2").css({
+          "display": "none"
+        });
+      });
+      
+      // 点击筛选按钮
+      $(".shaixuan_btn").click(function(){
+        $(".mask").css({
+          "display": "block"
+        });
+        $(".choose").css({
+          "display": "block"
+        });
+      });
+      
+      // 点击取消筛选和确认按钮时
+      $(".cancle").click(function(){
+        $(".mask").css({
+          "display": "none"
+        });
+        $(".choose").css({
+          "display": "none"
+        });
+      });
+      $(".yes").click(function(){
+        $(".mask").css({
+          "display": "none"
+        });
+        $(".choose").css({
+          "display": "none"
+        });
+                $.StandardPost("/index.php/index/index/coach", {search:"Y" });
+      });
+      
+      // 点击筛选条件
+            // 驾照类型
+            $(".license .items .spans span").click(function(){
+              $(".license .items .spans span").css({
+                "color": "#666666",
+                "backgroundColor": "#ffffff",
+                "border": "0.01rem solid #CCCCCC"
+              });
+              $(this).css({
+                "color": "#FF0000",
+	          "backgroundColor": "#FFE7E7",
+	          "border": "0.01rem solid #FF0000"
+              });
+            });
+            // 合格率、主攻考场、车型信息、服务
+            $(".section .content .item").click(function(){
+              $(this).parent().children(".item").css({
+                "color": "#222222",
+                "backgroundColor": "#ffffff",
+                "border": "0.01rem solid #CCCCCC"
+              });
+              $(this).css({
+                "color": "#FF0000",
+	          "backgroundColor": "#FFE7E7",
+	          "border": "0.01rem solid #FF0000"
+              });
+            });
+      
+    });
+    
+    
+  </script>
+  <!--筛选点击事件-->
+    <script>
+
+        function setCookie(name,value)
+        {
+            document.cookie=name+"="+value+";path=/";
+        }
+
+        $(".type").click(function(){
+
+            setCookie('type', '_type'+$(this).attr("dataid")+'_');
+
+        });
+        $(".kemu").click(function(){
+
+            setCookie('kemu', '_kemu'+$(this).attr("dataid")+'_');
+
+        });
+        $(".kaochang").click(function(){
+
+            setCookie('kaochang', '_kaochang'+$(this).attr("dataid")+'_');
+
+        });
+        $(".chexing").click(function(){
+
+            setCookie('chexing', '_chexing'+$(this).attr("dataid")+'_');
+
+        });
+        $(".service").click(function(){
+
+            setCookie('service', '_service'+$(this).attr("dataid")+'_');
+
+        });
+
+  </script>
+    <script>
+        $.extend({
+            StandardPost:function(url,args){
+                var form = $("<form method='post'></form>"),
+                    input;
+                form.attr({"action":url});
+                $.each(args,function(key,value){
+                    input = $("<input type='hidden'>");
+                    input.attr({"name":key});
+                    input.val(value);
+                    form.append(input);
+                });
+                $(document.body).append(form);
+                form.submit();
+            }
+        });
+    </script>
+{include file="public/ji"}
+</html>

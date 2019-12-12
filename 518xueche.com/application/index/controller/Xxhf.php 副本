@@ -1,0 +1,150 @@
+<?php
+namespace app\index\controller;
+use think\Db;
+use think\Session;
+use think\Cookie;
+use app\index\logic\MyLogic;
+use think\Controller;
+use think\File;
+
+/**
+ * Created by PhpStorm.
+ * User: Biao
+ * Date: 2018/8/22
+ * Time: 11:22
+ */
+
+class Xxhf extends Controller
+{
+	public function two(){
+		if(!Session::get('user')){
+			$this->redirect('/index.php/index/index/ulogin.html');  exit;
+		}
+		$usxx=Session::get('user');
+		$post=input('post.');
+		if($post)
+		{
+			$post['uid']=$usxx['id'];
+			$post['time']=time();
+			$post['jjlxr']=$post['txt1'].'，'.$post['txt2'].'，'.$post['txt3'].'/'.$post['txta1'].'，'.$post['txta2'].'，'.$post['txta3'];
+			Db::table('che_xxhf')->strict(false)->where('id ='.$post['yid'])->update($post);
+			$hotline=Db::name('hotline')->order("line_id DESC")->find();
+            $mobile=$hotline['mobile'];
+            file_get_contents('http://120.25.105.164:8888/sms.aspx?action=send&userid=1195&account=518xueche&password=518xueche360888&mobile='.$mobile.'&content=【518学车网】尊敬的客服您好，有用户提交【先学后付】申请，请注意登录后台查看！&sendTime=&extno='); 
+			$this->redirect('/index.php/index/xxhf/three/yid/'.$post['yid']);  exit;
+			
+		}
+		$yid=input('param.yid');
+		$this->assign('yid',$yid);
+		return $this->fetch();
+	}
+
+
+	public function one(){
+		if(!Session::get('user')){
+			$this->redirect('/index.php/index/index/ulogin.html');  exit;
+		}
+
+
+		$usxx=Session::get('user');
+		$post=input('post.');
+		if($post)
+		{
+			$post['uid']=$usxx['id'];
+			$post['time']=time();
+			Db::table('che_xxhf')->strict(false)->insert($post);
+			$yid = Db::table('che_xxhf')->getLastInsID();
+			$this->redirect('/index.php/index/xxhf/two/yid/'.$yid);  exit;
+		}
+
+		return $this->fetch();
+	}
+
+	public function three(){
+
+		if(!Session::get('user')){
+			$this->redirect('/index.php/index/index/ulogin.html');  exit;
+		}
+ 
+		$yid=input('param.yid');
+		$this->assign('yid',$yid);
+		return $this->fetch();
+
+	}
+
+
+	public function do_three(){
+
+		   
+			if(!Session::get('user')){
+				$this->redirect('/index.php/index/index/ulogin.html');  exit;
+			}
+
+			$file = request()->file('filea'); 
+            $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
+			if ($info) { 
+			$sz['img1']=$info->getSaveName();
+			Db::table('che_xxhf')->strict(false)->where('id ='.$post['yid'])->update($sz);
+			} 
+
+			$file2 = request()->file('fileb'); 
+            $info2 = $file2->move(ROOT_PATH . 'public' . DS . 'uploads');
+			if ($info2) { 
+			$sz['img2']=$info2->getSaveName();
+			Db::table('che_xxhf')->strict(false)->where('id ='.$post['yid'])->update($sz);
+			} 
+   
+			echo '<script>alert("申请先学后付名额成功，请等待审核！");loaction.href="/"</script>';
+			
+
+	}
+
+
+
+	public function xieup(){
+
+    $img = isset($_POST['img'])? $_POST['img'] : '';
+
+    list($type, $data) = explode(',', $img);
+
+    if(strstr($type,'image/jpeg')!=''){
+        $ext = '.jpg';
+    }elseif(strstr($type,'image/gif')!=''){
+        $ext = '.gif';
+    }elseif(strstr($type,'image/png')!=''){
+        $ext = '.png';
+    }else{
+
+    	exit;
+    }
+
+    $photo = 'public/img/'.time().$ext;
+
+    file_put_contents($photo, base64_decode($data), true);
+    if($_POST['lx'] == 1)
+    {
+    Db::table('che_xxhf')->strict(false)->where('id ='.$_POST['yid'])->update(['img1'=>$photo]);
+    $ret = array('imgurl'=>'/'.$photo);
+    return json_encode($ret); exit;
+    }
+
+    if($_POST['lx'] == 2)
+    {
+    Db::table('che_xxhf')->strict(false)->where('id ='.$_POST['yid'])->update(['img2'=>$photo]);
+    $ret = array('imgurl'=>'/'.$photo);
+    return json_encode($ret); exit;
+    }
+
+
+
+
+}
+
+
+public function del_img(){
+
+$post=input('post.');
+var_dump(unlink('./'.$post['imgurl']['imgurl']));
+
+}
+}

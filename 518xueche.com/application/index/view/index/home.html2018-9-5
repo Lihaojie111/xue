@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <title>518学车网首页</title>
+        <link rel="stylesheet" type="text/css" href="/public/home/css/Web_app_common.css"/>
+        <link rel="stylesheet" type="text/css" href="/public/home/css/swiper.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/public/home/css/home.css"/>
+        <script src="/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/public/home/js/rem.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/public/home/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+      <style>
+        swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+            bottom: 10px;
+            right: .6rem;
+            width: 1rem;
+            height: .25rem;
+            background: rgba(255,255,255,0.6);
+            font-size: .16rem;
+            line-height: .25rem;
+            border-radius: .2rem;
+            transform: translate(50%,0);
+        }
+      </style>
+    </head>
+    <body>
+
+        
+        <div class="wrapper">
+            <!--品牌-->
+            <div class="brand">
+                <div class="left">
+                    <img class="tongcheng" src="/public/home/images/58tongcheng.png"/>
+                    <img class="shuxian" src="/public/home/images/shuxian.png"/>
+                    <img class="xueche" src="/public/home/images/518xueche.png"/>
+                </div>
+                <div class="right">
+                    <img src="/public/home/images/font.png"/>
+                </div>
+            </div>
+            
+            <!--轮播图-->
+            <div class="swipers">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        {foreach name="map_list" item="vo" key="key"}
+                        <div class="swiper-slide">
+                            <img src="{$vo.pic}"/>
+                        </div>
+                        {/foreach}
+                        
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- 如果需要导航按钮 -->
+                    <!--<div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>-->
+    
+                    <!-- 如果需要滚动条 -->
+                    <!--<div class="swiper-scrollbar"></div>-->
+                </div>
+            </div>
+            
+            <!--平台合作-->
+            <div class="identity">
+                <div class="item" style="border-top:none;border-left:none;">
+                    <a href="is_student">
+              
+                    <div class="left">
+                        <img src="/public/home/images/identy1.png"/>
+                        <p style="color: #e83530;">
+                            学员
+                        </p>
+                    </div>
+                    <div class="right">
+                        <p>
+                            先学后付
+                        </p>
+                        <p>
+                            全包保障
+                        </p>
+                        <p>
+                            不过包赔
+                        </p>
+                    </div>
+                    </a>
+                </div>
+                <div class="item" style="border-top:none;border-right:none;">
+                <a href="is_coach">
+                    <div class="left">
+                        <img src="/public/home/images/identy2.png"/>
+                        <p style="color: #1688c6;">
+                            教练
+                        </p>
+                    </div>
+                    <div class="right">
+                        <p>
+                            职业level认证
+                        </p>
+                        <p>
+                            提升职业价值
+                        </p>
+                        <p>
+                            行业专项补贴
+                        </p>
+                    </div>
+                    </a>
+                </div>
+                <div class="item"  style="border-left:none;border-bottom:none;">
+                    <a href="is_school">
+                    <div class="left">
+                        <img src="/public/home/images/identy3.png"/>
+                        <p style="color: #63b93c;">
+                            驾校
+                        </p>
+                    </div>
+                    <div class="right">
+                        <p>
+                            扩大招生规模
+                        </p>
+                        <p>
+                            增加招生竞争
+                        </p>
+                        <p>
+                            提供金融支持
+                        </p>
+                        <p>
+                            转型升级运营
+                        </p>
+                    </div>
+                    </a>
+                </div>
+                <div class="item"  style="border-right:none;border-bottom:none;">
+                   <a href="cooperate">
+                     <div class="left">
+                        <img src="/public/home/images/identy4.png"/>
+                        <p style="color: #ff9000;">
+                            合作商
+                        </p>
+                    </div>
+                    <div class="right">
+                        <p>
+                            资源共享
+                        </p>
+                        <p>
+                            业务结合，
+                        </p>
+                        <p>
+                            尽享跨界红利
+                        </p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!--金牌驾校-->
+            <div class="one">
+                <div class="one-title">
+                    <div class="left">
+                      
+                        <img src="/public/home/images/gold1.png"/>
+                        <span>金牌驾校</span>
+                    </div>
+                    <a href="gold_school">
+                        <div class="right">
+                            <span>更多</span>
+                            <img src="/public/home/images/more3.png"/>
+                        </div>
+                    </a>
+                </div>
+                <div class="one-content">
+                    {foreach name="school_list" item="vo" key="key"}
+                        <div class="item">
+                            
+                        <a href="school_detail/id/{$vo.id}"><img src="{$vo.spic}"/></a> 
+                            <p>
+                                {$vo.name}
+                            </p>
+                            <p>
+                                {$vo.address}
+                            </p>
+                        </div>
+                    {/foreach}
+                </div>
+            </div>
+            
+            <!--王牌教练-->
+            <div class="one">
+                <div class="one-title">
+                    <div class="left">
+                        <img src="/public/home/images/gold2.png"/>
+                        <span>王牌教练</span>
+                    </div>
+                    <a href="coach">
+                        <div class="right">
+                            <span>更多</span>
+                            <img src="/public/home/images/more3.png"/>
+                        </div>
+                    </a>
+                </div>
+                <div class="one-content">
+                    {foreach name="coach_list" item="vo" key="key"}
+                    <div class="item">
+                    <a href="coach_detail/id/{$vo.cid}">
+                        <img src="{$vo.img}"/> 
+
+                    </a>    
+                        <p>
+                            教练：{$vo.name}
+                        </p>
+                        <p>
+                            所在驾校：{$vo.school_name}
+                        </p>
+                    </div>
+                    {/foreach}
+                </div>
+            </div>
+            
+            <!--团体服务-->
+            <div class="one">
+                <div class="one-title">
+                    <div class="left">
+                       <img src="/public/home/images/gold3.png"/>
+                        <span>团体服务</span>
+                    </div>
+                    <div class="right">
+                        <!--<span>更多</span>
+                        <img src="/public/home/images/more3.png"/>-->
+                    </div>
+                </div>
+                <div class="img">
+                   <a href="group_service"> <img src="/public/home/images/img3.png"/></a>
+                </div>
+                <!--<div class="one-content">
+                    <div class="item">
+                        <img src="/public/home/images/img2.png"/>
+                        <p>
+                            教练：王淑娟
+                        </p>
+                        <p>
+                            所在驾校：宏泰驾校
+                        </p>
+                    </div>
+                    <div class="item">
+                        <img src="/public/home/images/img2.png"/>
+                        <p>
+                            教练：王淑娟
+                        </p>
+                        <p>
+                            所在驾校：宏泰驾校
+                        </p>
+                    </div>
+                    <div class="item">
+                        <img src="/public/home/images/img2.png"/>
+                        <p>
+                            教练：王淑娟
+                        </p>
+                        <p>
+                            所在驾校：宏泰驾校
+                        </p>
+                    </div>
+                    <div class="item">
+                        <img src="/public/home/images/img2.png"/>
+                        <p>
+                            教练：王淑娟
+                        </p>
+                        <p>
+                            所在驾校：宏泰驾校
+                        </p>
+                    </div>
+                </div>-->
+            </div>
+            
+            <!--无忧服务-->
+            <div class="one">
+                <div class="one-title">
+                    <div class="left">
+                        <img src="/public/home/images/gold4.png"/>
+                        <span>无忧服务</span>
+                    </div>
+                    <div class="right">
+                        <!--<span>更多</span>
+                        <img src="/public/home/images/more3.png"/>-->
+                    </div>
+                </div>
+                <div class="img">
+                    <img src="/public/home/images/img4.png"/>
+                </div>
+                <!--<div class="one-content">
+                    <div class="item">
+                        <img src="/public/home/images/img2.png"/>
+                        <p>
+                            教练：王淑娟
+                        </p>
+                        <p>
+                            所在驾校：宏泰驾校
+                        </p>
+                    </div>
+                    <div class="item">
+                        <img src="/public/home/images/img2.png"/>
+                        <p>
+                            教练：王淑娟
+                        </p>
+                        <p>
+                            所在驾校：宏泰驾校
+                        </p>
+                    </div>
+                    <div class="item">
+                        <img src="/public/home/images/img2.png"/>
+                        <p>
+                            教练：王淑娟
+                        </p>
+                        <p>
+                            所在驾校：宏泰驾校
+                        </p>
+                    </div>
+                    <div class="item">
+                        <img src="/public/home/images/img2.png"/>
+                        <p>
+                            教练：王淑娟
+                        </p>
+                        <p>
+                            所在驾校：宏泰驾校
+                        </p>
+                    </div>
+                </div>-->
+            </div>
+            
+        </div>
+      <div class="Fixed">
+      <div>
+        <img class="liuyan" src="/public/home/images/message.png" alt="">
+      </div>
+      <div>
+        <img class="dizhi" src="/public/home/images/door.png" alt="">
+      </div>
+      <div onclick="document.getElementById('mask_phone').style.display='block'">
+        <img src="/public/home/images/phone.png" alt="">  
+      </div>
+    </div>
+      
+    <div id="mask_message">
+      <div class="kuang">
+        <h1>留言</h1>
+        <textarea   class="liu"  placeholder="请输入您的留言！"></textarea>
+        <div class="btn">
+          <button onclick="document.getElementById('mask_message').style.display='none'">取消</button>
+         <!--  <button     onclick="document.getElementById('mask_message').style.display='none'">确认</button> -->
+        <button  class="que_liu" >确认</button>
+
+        </div>
+      </div>
+    </div>
+
+          <div id="mask_adress">
+            <div class="kuang">
+              <h1>请输入您的详细信息</h1>
+              <div class="adress_detail">
+                <label for="">姓名：</label><input name="name"  type="text" placeholder="请输入您的姓名">
+                <label for="">电话：</label><input  name="tel"  type="text" placeholder="请输入您的电话">
+                <label for="">地址：</label><input  name="address"  type="text" placeholder="请输入您的地址">
+              </div>
+              <div class="btn">
+                <button onclick="document.getElementById('mask_adress').style.display='none'">取消</button>
+                <!-- <button onclick="document.getElementById('mask_adress').style.display='none'">确认</button> -->
+                <button  class="que_info">确认</button>
+              </div>
+            </div>
+          </div>
+          <div id="mask_phone">
+            <div class="container">
+              <div class="number" id="phone_number">
+                  {$hotline.mobile}
+              </div>
+              <div class="boda">
+                <div class="cancel" onclick="document.getElementById('mask_phone').style.display='none'">取消</div>
+                <a href="tel:{$hotline.mobile}" style="color: #1296db;"><div class="confirm" onclick="document.getElementById('mask_phone').style.display='none'">呼叫</div></a>
+              </div>
+            </div>
+          </div>
+      <div >
+      
+      </div>
+    </body>
+    <script type="text/javascript">
+
+
+        var logined = {$denglu};
+        $(".liuyan").click(function(){
+            console.log(logined);
+            if (logined) {
+                document.getElementById('mask_message').style.display='block';
+            }else{
+                window.location.href = "/index.php/Index/index/ulogin";
+            }
+        });
+        
+            //留言
+            var liu = $(".liu").val();
+
+              $(".que_liu").click(function(){
+                liu = $(".liu").val();
+                console.log(liu);
+                $.ajax({
+                    type:"post",
+                    url:"/index.php/Index/userinfo/liuyan",
+                    async:true,
+                    dataType:"json",
+                    data:{liu:liu,},
+                    success:function(data){
+                        if(data  ==1){
+                           document.getElementById('mask_message').style.display='none'
+                                alert('留言成功！');
+                        }else{
+                             alert('留言失败！');
+                        }
+                    },
+                  
+                });
+            });
+
+        $(".dizhi").click(function(){
+            console.log(logined);
+            if (logined) {
+                document.getElementById('mask_adress').style.display='block';
+            }else{
+                window.location.href = "/index.php/Index/index/ulogin";
+            }
+        });
+
+         $(".que_info").click(function(){
+              var  name= $("input[name='name']").val();
+              var  tel= $("input[name='tel']").val();
+              var  address= $("input[name='address']").val();
+              
+              //names.match(/^[a-zA-Z0-9_-]{4,16}$/)
+              //tel.match(/^[1][3,4,5,7,8,9][0-9]{9}$/)
+              if (name.match(/^[a-zA-Z0-9_-]{4,16}$/) && tel.match(/^[1][3,4,5,7,8,9][0-9]{9}$/) && address) {
+              		$.ajax({
+                    type:"post",
+                    url:"/index.php/Index/userinfo/info",
+                    async:true,
+                    dataType:"json",
+                    data:{name:name,tel:tel,address:address},
+                    success:function(data){
+                        if(data == 1){
+                          //onclick="document.getElementById('mask_adress').style.display='none';
+							alert('添加成功！');
+							document.getElementById('mask_adress').style.display='none';
+                        }else{
+                             alert('添加失败！');
+                             document.getElementById('mask_adress').style.display='none';
+                        }
+                    },
+                });
+              } else{
+              		if (!name.match(/^[a-zA-Z0-9_-]{4,16}$/)) {
+              			alert("用户名必须5-16位任意数字字母下划线");
+              		}else if (!tel.match(/^[1][3,4,5,7,8,9][0-9]{9}$/)) {
+              			alert("手机号格式不正确");
+              		}else if (!address) {
+              			alert("输入您的地址");
+              		}
+              }
+              
+                
+            });
+
+        var mySwiper = new Swiper ('.swiper-container', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: true,
+            speed: 500,
+            delay: 3000,
+        
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        
+            // 如果需要前进后退按钮
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        
+            // 如果需要滚动条
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+    });
+        
+    </script>
+    
+</html>

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	    <title>518后台管理中心</title>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	    <!-- VENDOR CSS -->
+	    <link rel="stylesheet" href="/public/assets/vendor/bootstrap/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="/public/assets/vendor/font-awesome/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="/public/assets/vendor/linearicons/style.css">
+	    <!-- MAIN CSS -->
+	    <link rel="stylesheet" href="/public/assets/css/main.css">
+	    <!-- GOOGLE FONTS -->
+	    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	    <!-- ICONS -->
+	    <link rel="apple-touch-icon" sizes="76x76" href="/public/assets/img/apple-icon.png">
+	    <link rel="icon" type="image/png" sizes="96x96" href="/public/assets/img/favicon.png">
+	    <style type="text/css">
+	    	.big{
+	    		width: 80%;
+	    		height: 80%;
+	    		border: 1px solid #222222;
+	    		background-color: #222222;
+	    		position: fixed;
+	    		left: 50%;
+	    		top: 50%;
+	    		transform: translate(-50%,-50%);
+	    		text-align: center;
+	    		align-items: center;
+	    		z-index: 99999999;
+	    		opacity: 0.95;
+	    		display: none;
+	    	}
+	    	.big .imgs{
+	    		width: 35%;
+	    		position: absolute;
+	    		top: 50%;
+	    		/*right: 50%;*/
+	    		transform: translate(-50%,-50%);
+	    	}
+	    	.big .close{
+	    		width: 25px;
+	    		height: 30px;
+	    		position: absolute;
+	    		top: 10px;
+	    		right: 10px;
+	    	}
+	    	.check{
+	    		font-size: 15px;
+	    		color: #0f8fea;
+	    	}
+	    </style>
+	</head>
+	<body>
+		<!-- WRAPPER -->
+		<div id="wrapper">
+		    <!-- NAVBAR -->
+		    <nav class="navbar navbar-default navbar-fixed-top">
+		        {include file="public/header"}
+		    </nav>
+		    <!-- END NAVBAR -->
+		    <!-- LEFT SIDEBAR -->
+		    <div id="sidebar-nav" class="sidebar">
+		        <div class="sidebar-scroll">
+		            <nav>
+		                {include file="public/left"}
+		            </nav>
+		        </div>
+		    </div>
+		    <!-- END LEFT SIDEBAR -->
+		    <!-- MAIN -->
+		    <div class="main" >
+		        <!-- MAIN CONTENT -->
+		        <div class="main-content" >
+		            <div class="container-fluid">
+		                <div class="row">
+		                    <div class="col-md-6">
+		                        <!-- TABLE HOVER -->
+		                        <div class="panel" style="min-height: 500px;width:1000px">
+		                            <div class="panel-heading">
+		                                <span class="panel-title" style="margin-right: 40px;">用户驾校预约</span>
+		                            </div>
+		                            <div class="panel-body">
+		                                <table class="table table-hover">
+		                                    <thead>
+			                                    <tr>
+			                                        <th>序号</th>
+			                                        <th>申请驾校</th>
+			                                        <th>套餐ID</th>
+                                                  	<th>套餐名称</th>
+                                                   	<th>套餐价格</th>
+			                                        <th>姓名</th>
+			                                        <th>联系电话</th>
+			                                		<!--<th>身份证</th>
+			                                      	<th>地址</th> -->
+			                                       <th>银行卡号</th>
+			                                        <th>现居详细地址</th>
+			                                        <th>紧急联系人</th>
+			                                        <th>公司信息</th>
+			                                        <th>工作性质</th>
+			                                        <th>每月收入</th>
+			                                		<th>身份证证件1</th>
+			                                		<th>身份证证件2</th>
+													<!--<th>名片</th>
+			                                        <th>工牌</th>
+			                                        <th>驾校名称</th>
+			                                        <th>分期期限</th>
+			                                        <th>分期金额</th>
+			                                        <th>每期应还</th> -->
+			                                        <th>状态</th>
+			                                		<th>申请时间</th>
+			                                        <th>操作</th>
+			                                    </tr>
+		                                    </thead>
+		                                    <tbody>
+			                                    {foreach name="result" item="v" key="key"}
+			                                    <tr>
+			                                        <td>{$key+1}</td>
+			                                        <td>{$v['jxmc']}</td>
+			                                        <td>{$v['banxing']}</td>
+                                                 	 <th>{$v['taocan']}</th>
+			                                       	<th>{$v['price']}</th>  
+                                                  	<td>{$v['xm']}</td>
+			                                        <td>{$v['mobile']}</td>
+			                                      	<!--<td>{$v['sfz']}</td>
+			                                      	<td>{$v['dz']}</td> -->
+			                                      	<td>{$v['bank_name']}</td>
+			                                        <td>{$v['xxdz']}</td>
+			                                        <td>{$v['jjlxr']}</td>
+			                                        <td>{$v['gsxx']}</td>
+			                                        <td>{$v['gzxz']}</td>
+			                                        <td>{$v['mysr']}</td>
+													<td>
+														<span class="check" id="a|{$v.id}">查看</span>
+														<!--<img src="/{$v['img1']}" id="a{$v.id}" class="click" width="50px" height="50px">-->
+													</td>
+													<td>
+														<span class="check" id="b|{$v.id}">查看</span>
+														<!--<img src="/{$v['img2']}" id="b{$v.id}" class="click" width="50px" height="50px">-->
+													</td>
+			                                      <!--   <td>{$v['mp']}</td>
+			                                        <td>{$v['gp']}</td>
+			                                        <td>{$v['jxmc']}</td>
+			                                        <td>{$v['fqqx']}</td>
+			                                         <td>{$v['fqje']}</td>
+			                                        <td>{$v['myyh']}</td> -->
+			
+			                                        <td>{if condition="$v['state'] == 0"}未审核{else/}<font color='red'>审核通过</font>{/if}</td>
+			                                      	<td>{$v['time']|date='Y-m-d',###}</td>
+			                                          
+			                                            <td> 
+			                                            {if condition="$v.state == 0"}<a type="button" class="btn btn-default btn-xs" href="{:url('change',array('id' => $v.id,'state' => 1))}">审核</a>{/if}</td>
+			                                           
+			                                    </tr>
+			                                    {/foreach}
+		                                    </tbody>
+		                                </table>
+		                            </div>
+		                            <div align="center">
+		                                {$result->render()}
+		                            </div>
+		                        </div>
+		                        <!-- END TABLE HOVER -->
+		                    </div>
+		                </div>
+		
+		            </div>
+		
+		        </div>
+		        <!-- END MAIN CONTENT -->
+		    </div>
+		    <!-- END MAIN -->
+		    <div class="clearfix"></div>
+		    <div class="big">
+		    	<img class="close" src="/public/xxhf/images/close.png"/>
+		    </div>
+		    <footer>
+		        {include file="public/footer"}
+		    </footer>
+		</div>
+		<div class="modal fade bd-example-modal-sm"  id="myModal" role="dialog" data-backdrop="false"  aria-hidden="true" style="margin-top: 330px;">
+		    <div class="modal-dialog modal-sm">
+		        <div class="modal-content">
+		            <p class="text-center mb-0" style="padding-top: 8px;" id="in_text">
+		                <i class="fa fa-warning text-warning mr-1" aria-hidden="true"></i>
+		                请输入内容
+		            </p>
+		        </div>
+		    </div>
+		</div>
+		<!-- END WRAPPER -->
+		<!-- Javascript -->
+		<script src="/public/assets/vendor/jquery/jquery.min.js"></script>
+		<script src="/public/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/public/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+		<script src="/public/assets/scripts/klorofil-common.js"></script>
+		<script>
+			// 点击图片执行放大效果的图片
+			$(".click").click(function(){
+				console.log($(this).attr("src"));
+				//var img = document.createElement("img");
+				var img = '<img class = "imgs" src = "' + $(this).attr("src") + '" />';
+				//img.src = $(this).attr("src");
+				//img.classname = "imgs";
+				$(".big").show();
+				$(".big").append(img);
+			});
+			$(".close").click(function(){
+				console.log($(this));
+				$(".big").hide();
+				//$(".big").html('<img class="close" src="/public/xxhf/images/close.png"/>');
+				$(".big").children(".imgs").remove();
+			});
+			// 点击查看按钮
+			$(".check").click(function(){
+				console.log($(this).attr("id"));
+				var getId = $(this).attr("id");
+				$.ajax({
+					type:"post",
+					url:"{:url('view_img')}",
+					async:true,
+					data:{geturl:getId},
+					success:function(data){
+						console.log(data);
+						console.log(typeof(data));
+						var datas = JSON.parse(data);
+						if (datas.imgurl) {
+							var img = '<img class = "imgs" src = "/' + datas.imgurl + '" />';
+							console.log(img);
+							//img.src = $(this).attr("src");
+							//img.classname = "imgs";
+							$(".big").show();
+							$(".big").append(img);
+						} else{
+							alert("用户未上传图片");
+						}
+					},
+					error:function(err){
+						console.log(err);
+					}
+				});
+			});
+		    function isMobile() {
+		        var userAgentInfo = navigator.userAgent;
+		        var mobileAgents = [ "Android", "iPhone", "SymbianOS", "Windows Phone", "iPad","iPod"];
+		        var mobile_flag = false;
+		        //根据userAgent判断是否是手机
+		        for (var v = 0; v < mobileAgents.length; v++) {
+		            if (userAgentInfo.indexOf(mobileAgents[v]) > 0) {
+		                mobile_flag = true;
+		                break;
+		            }
+		        }
+		        var screen_width = window.screen.width;
+		        var screen_height = window.screen.height;
+		        //根据屏幕分辨率判断是否是手机
+		        if(screen_width < 500 && screen_height < 800){
+		            mobile_flag = true;
+		        }
+		        return mobile_flag;
+		    }
+		    var mobile_flag = isMobile();
+		    if(!mobile_flag){
+		        var width=$(window).width() - 310;
+		        $('.panel').width(width);
+		    }else{
+		        var width=$(window).width();
+		        $('.panel').width(width);
+		    }
+		    $('.search').click(function () {
+		        var apply_name=$("input[name='apply_name']").val();
+		        if(apply_name==""){
+		            showdirlog("请输入申请者姓名");
+		        }else{
+		            location.href="/index.php/Index/index/stock?name="+apply_name;
+		        }
+		    });
+		    function showdirlog(str) {
+		        $('#in_text').html(str);
+		        $('#myModal').modal('show');
+		        setTimeout(function(){
+		            $("#myModal").modal("hide")
+		        },1200);
+		    }
+		    function buy_goods(goods_id) {
+		        $('#goods_id').val(goods_id);
+		    }
+		</script>
+	</body>
+</html>

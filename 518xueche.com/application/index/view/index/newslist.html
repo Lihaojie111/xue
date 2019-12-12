@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>518学车网-新闻资讯中心</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="/public/home/css/Web_app_common.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/home/css/Security_service.css">
+     <!-- <link rel="stylesheet" type="text/css" href="/public/home/css/newslist.css"> -->
+    <script src="/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/public/home/js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script> -->
+    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+    <style type="text/css">
+	:root {
+	    --bg: #fdfdfd;
+	    --highlight1: #ED4264;
+	    --highlight2: #FFEDBC;
+	    --color: #1a1e24;
+	    --font-number: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+	    --font-head: "Space Mono", Consolas, Menlo, Monaco, "Courier New", monospace;
+	    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	}
+	.list {
+	    list-style: none;
+	    /*width: 600px;*/
+		/*max-width: 90%;*/
+	    width: 6rem;
+	    margin:0 auto;
+	}
+	.item {
+	    display: block;
+	    clear: both;
+	    counter-increment: list;
+	    padding-bottom:0.2rem;
+	    font-size: 0.2rem;
+	    line-height: 0.5rem;
+	    position: relative;
+	}
+
+	.item:before {
+	    font: bold 0.5rem/1 var(--font-number);
+	    content: counter(list);
+	    width: 0.75rem;
+	    height: 0.75rem;
+	    float: left;
+	    margin: 0 0.3rem 0.1rem 0;
+	    color: var(--bg);
+	    background: var(--highlight1) -webkit-linear-gradient(top left, var(--highlight1) 25%, var(--highlight2));
+	    background: var(--highlight1) linear-gradient(to bottom right, var(--highlight1) 25%, var(--highlight2));
+	    text-shadow: 0 0 2px var(--highlight1);
+	    border-radius: 50%;
+	    display: -webkit-inline-box;
+	    display: -ms-inline-flexbox;
+	    display: inline-flex;
+	    -webkit-box-align: center;
+	        -ms-flex-align: center;
+	            align-items: center;
+	    -webkit-box-pack: center;
+	        -ms-flex-pack: center;
+	            justify-content: center;
+	    -webkit-shape-outside: ellipse();
+	            shape-outside: ellipse();
+	    z-index: 1;
+	}
+
+	.item:after {
+	    width: 0.4rem;
+	    height: 0.4rem;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    content: "";
+	    background: var(--highlight1);
+	    z-index: -1;
+	    border-top-left-radius: 3px;
+	}
+
+	.headline {
+	    padding: 0rem 0 0 0;
+	    margin: 0 0 0.1rem 0;
+	    font: normal 0.3rem var(--font-head);
+	}
+    </style>
+</head>
+
+<body>
+	 <div class="title" style="top:0">
+        <a href="javascript:history.back(-1)">  
+            <img class="back" src="/public/home/images/back.png"/>
+            <span>新闻资讯中心</span>
+        </a>
+    </div>
+     <div class="wrapper" style="margin-top: 0.95rem; border-top: 1px solid transparent;">
+      	<ol class="list">
+			{foreach name="news" item="v" key="key"}
+	            <li class="item">
+					<a href="/index.php/index/index/newsdetail/id/{$v.id}">
+					<h2 class="headline">{$v.title}</h2>
+					<span>{$v.content|strip_tags|mb_substr=0,29,'utf-8'}...</span>
+					</a> 
+				</li>
+			{/foreach}	
+		</ol>
+    </div>
+</body>
+</html>

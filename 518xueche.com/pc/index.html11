@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>518学车网</title>
+	<link rel="stylesheet" type="text/css" href="public/css/common.css">
+	<link rel="stylesheet" type="text/css" href="public/css/index.css">
+	<link rel="stylesheet" type="text/css" href="public/css/swiper.min.css">
+	<script type="text/javascript" src="public/js/jQuery.min.js"></script>
+	<script src="public/js/swiper.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<!-- 头部 -->
+		<header>
+			<div class="wapper">
+				<img src="public/images/phone.png" alt="">
+				<span class="welcome">欢迎来到518学车网！</span>
+				<img src="public/images/code.png" alt="" class="code">
+				<img src="public/images/sanjiao.png" alt="" class="sanjiao">
+				<button class="register fr">注册</button>
+				<button class="login fr">登录</button>
+			</div>
+		</header>
+		
+		<!-- logo -->
+		<div class="logo wapper">
+			<img src="public/images/58-1.png" alt="">
+			<img src="public/images/xian.jpg" alt="" class="xian">
+			<img src="public/images/58-2.png"" alt="">
+			<img src="public/images/drive.png" alt="">
+			<div class="hourservice fr">
+				<img src="public/images/phone1.png" alt="">
+				<p style="font-size: 14px;color: #333;margin-top: 35px;">24小时服务电话</p>
+				<p style="font-size: 26px;color:#e83530;font-weight: bold;position: absolute;top:46px;">400-000-0000</p>
+			</div>
+		</div>
+
+		<!-- 轮播图 -->
+		<div class="swipers">
+			<div class="swiper-container">
+	    			<div class="swiper-wrapper">
+	        			<div class="swiper-slide">
+	        				<img src="public/images/banner.png"/ style="width: 100%;height: 100%;">
+	        			</div>
+	        			<div class="swiper-slide">
+	        				<img src="public/images/banner.png"/ style="width: 100%;height: 100%;">
+	        			</div>
+	        			<div class="swiper-slide">
+	        				<img src="public/images/banner.png"/ style="width: 100%;height: 100%;">
+	        			</div>
+	    			</div>
+	    			<!-- 如果需要分页器 -->
+	    			<div class="swiper-pagination"></div>
+	
+	    			<!-- 如果需要导航按钮 -->
+	    			<div class="swiper-button-prev"></div>
+	    			<div class="swiper-button-next"></div>
+	
+	    			<!-- 如果需要滚动条 -->
+	    			<!--<div class="swiper-scrollbar"></div>-->
+			</div>
+		</div>
+
+		<!-- 四项服务 -->
+		<div class="four_service wapper">
+			<div class="item">
+				<img src="public/images/item1.png" alt="">
+				<p style="margin-top: 28px;">先学后付</p>
+				<p>全包保障</p>
+				<p>不过包赔</p>
+			</div>
+			<div class="item">
+				<img src="public/images/item3.png" alt="">
+				<p style="margin-top: 28px;">职业level认证</p>
+				<p>提升职业价值</p>
+				<p>行业专项补贴</p>
+			</div>
+			<div class="item">
+				<img src="public/images/item2.png" alt="">
+				<p style="margin-top: 6px;">扩大招生规模</p>
+				<p>增加招生竞争力</p>
+				<p>提供金融支持</p>
+				<p>转型升级运营支持</p>
+			</div>
+			<div class="item">
+				<img src="public/images/item4.png" alt="">
+				<p style="margin-top: 28px;">资源共享</p>
+				<p>业务结合</p>
+				<p>尽享跨界红利</p>
+			</div>
+		</div>
+		
+		<!-- 金牌驾校 -->
+		<div class="Gold_driving wapper">
+			<div class="Gold_header">
+				<p>金牌驾校</p>
+			</div>
+			<div class="Gold_container">
+				<div class="item">
+					<img src="public/images/car.png" alt="" class="car">
+					<p class="drive_name">宏泰驾校</p>
+					<p class="drive_adress">郑州市京广路南三环</p>
+					<p class="drive_star">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+					</p>
+				</div>
+				<div class="item">
+					<img src="public/images/car.png" alt="" class="car">
+					<p class="drive_name">宏泰驾校</p>
+					<p class="drive_adress">郑州市京广路南三环</p>
+					<p class="drive_star">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+					</p>
+				</div>
+				<div class="item">
+					<img src="public/images/car.png" alt="" class="car">
+					<p class="drive_name">宏泰驾校</p>
+					<p class="drive_adress">郑州市京广路南三环</p>
+					<p class="drive_star">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+					</p>
+				</div>
+				<div class="item">
+					<img src="public/images/car.png" alt="" class="car">
+					<p class="drive_name">宏泰驾校</p>
+					<p class="drive_adress">郑州市京广路南三环</p>
+					<p class="drive_star">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 王牌教练 -->
+		<div class="Gold_driving wapper">
+			<div class="Gold_header">
+				<p>金牌驾校</p>
+			</div>
+			<div class="Gold_container">
+				<div class="item">
+					<img src="public/images/coach.png" alt="" class="car">
+					<p class="drive_name">教练：王淑娟</p>
+					<p class="drive_adress">所在驾校：宏泰驾校</p>
+					<p class="drive_star">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+					</p>
+				</div>
+				<div class="item">
+					<img src="public/images/coach.png" alt="" class="car">
+					<p class="drive_name">教练：王淑娟</p>
+					<p class="drive_adress">所在驾校：宏泰驾校</p>
+					<p class="drive_star">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+					</p>
+				</div>
+				<div class="item">
+					<img src="public/images/coach.png" alt="" class="car">
+					<p class="drive_name">教练：王淑娟</p>
+					<p class="drive_adress">所在驾校：宏泰驾校</p>
+					<p class="drive_star">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+					</p>
+				</div>
+				<div class="item">
+					<img src="public/images/coach.png" alt="" class="car">
+					<p class="drive_name">教练：王淑娟</p>
+					<p class="drive_adress">所在驾校：宏泰驾校</p>
+					<p class="drive_star">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+						<img src="public/images/star.png" alt="">
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="four_feature wapper">
+			<div class="item">
+				<img src="public/images/feature1.png" alt="">
+				<p class="fuwu">一对一服务</p>
+				<p class="yiduiyi">驾校解读细致专业，资源优化配置，合理利用驾校资源培训效率更高</p>
+			</div>
+			<div class="item">
+				<img src="public/images/feature2.png" alt="">
+				<p class="fuwu">60天拿证</p>
+				<p class="yiduiyi">特色班型设置，合理安排学习时间，科目快速约考</p>
+			</div>
+			<div class="item">
+				<img src="public/images/feature3.png" alt="">
+				<p class="fuwu">评价排名</p>
+				<p class="yiduiyi">客观评价驾校及教练，最优服务排行榜，更有效的监督驾校及教练的服务</p>
+			</div>
+			<div class="item">
+				<img src="public/images/feature4.png" alt="">
+				<p class="fuwu">售后服务</p>
+				<p class="yiduiyi">及时解决客户问题，帮您维护权益</p>
+			</div>
+		</div>
+		<footer></footer>
+	</div>
+</body>
+<script type="text/javascript">
+var mySwiper = new Swiper ('.swiper-container', {
+    	direction: 'horizontal',
+    	loop: true,
+    	autoplay: true,
+    	delay: 1000,
+    	// 如果需要分页器
+    	pagination: {
+      		el: '.swiper-pagination',
+    	},
+//  	// 如果需要前进后退按钮
+	 	navigation: {
+	   	nextEl: '.swiper-button-next',
+	   	prevEl: '.swiper-button-prev',
+	 	},
+    	// 如果需要滚动
+    	scrollbar: {
+      		el: '.swiper-scrollbar',
+    	},
+});
+</script>
+</html>

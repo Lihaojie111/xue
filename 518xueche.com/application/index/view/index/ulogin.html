@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>518学车网登录</title>
+		<link rel="stylesheet" type="text/css" href="/public/home/css/Web_app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="/public/home/css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/public/home/css/login.css"/>
+		<script src="/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/home/js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/home/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+    <style>
+      #jiege{position:fixed;bottom: 0;right: 0;width: 1rem;text-align: right;}
+        .identity{
+             background-color:#fff;
+        }
+        .chose{
+              background-color:#ffe7e7;
+        }
+    </style>
+	<body>
+		<!--顶部-->
+		<!--<div class="head">
+			<div class="left">
+				<img src="/public/home/images/close.png"/>
+				<img src="/public/home/images/learn_car.png"/>
+			</div>
+			<div class="right">
+				<img src="/public/home/images/share.png"/>
+			</div>
+		</div>-->
+		
+		<!--标题-->
+		<div class="title">
+			<div class="titleInner">
+              <a href="javascript:history.back(-1)">
+				<img class="back" src="/public/home/images/back.png"/>
+                </a>
+				<span class="login">登录</span>
+				<!--<span class="register" style="display: none;">注册</span>-->
+			</div>
+		</div>
+		
+		<div class="wrapper">
+			<!--三个身份学员、教练、驾校-->
+			<div class="identities">
+	                <div class="identity {if condition="$state == 0"}chose{/if} ">
+                    <span>学员</span>
+                </div>
+                <div class="identity {if condition="$state == 1"}chose{/if} ">
+                    <span>教练</span>
+                </div>
+                <div class="identity {if condition="$state == 2"}chose{/if}">
+                    <span>驾校</span>
+                </div>
+			</div>
+			
+			<!--提交信息-->
+			<div class="form">
+				<form action="" method="post">
+					<ul>
+
+						<li>
+							<img src="/public/home/images/phone-number.png"/ style="width:.27rem;height:.39rem;margin-left:.17rem;">
+							<input type="text" name="phone" id="phonenumber" value="" placeholder="手机号码"/>
+						</li>
+						<li>
+                            <img src="/public/home/images/password.png"/ style="width:.35rem;height:.35rem;margin-left:.17rem;">
+                            <input type="password" name="password" id="passward" value="" placeholder="密码"  onkeyup="value=value.replace()"/>
+                        </li>
+					<!-- 	<li class="authCode">
+							<img src="/public/home/images/yanzhengma.png"/ style="width:.36rem;height:.36rem;margin-left:.17rem;">
+							<input type="text" name="code" id="" value="" placeholder="验证码"/>
+							<span class="count" style="color: #fc0101;">获取验证码</span>
+						</li> -->
+					</ul>
+					
+					<div class="enter" style="display: none;">
+						<img src="/public/home/images/warn.png"/>
+						<span>账号已注册，是否</span>
+						<span class="login_now" style="color: #990000;"><a style="color: #990000;" href="###">立即登录</a></span>
+					</div>
+					
+					<input type="hidden" name="state"   value="0">
+					<input type="submit" value="登录"/>
+					<a class="loginIn" href="{:url('register',array('state'=>$state))}" style="margin-right:3.4rem;margin-left:0.1rem;color:#fc0101;font-size: 0.25rem;">
+						立即注册
+					</a>
+					<a class="forgetward" href="/index.php/Index/Reset/reset" style="color:#fc0101;font-size: 0.25rem;">
+						忘记密码
+					</a>
+				</form>
+			
+			</div>
+			
+		</div>
+	</body>
+	{include file="public/ji"}
+	<script type="text/javascript">
+		$(window).ready(function(){
+			            var indexs= 0 ;
+            $(".identity").click(function(){
+                // console.log($(this));
+                // $(".identity").css({
+                //     "backgroundColor": "#ffffff"
+                // });
+                // $(this).css({
+                //     "backgroundColor": "#ffe7e7"
+                // });
+                // indexs = $(this).index();
+                $(this).addClass("chose").siblings().removeClass("chose")
+                indexs=$(this).index()
+                 $("input[name='state']").val(indexs);
+                
+            });
+			
+			$(".count").click(function(){
+            	var times = 60;
+            	console.log($(this));
+            	$(".count").html("60秒");
+            	countTime(times);
+            	// ajax 请求后台数据
+            	$.ajax({
+            		type:"post",
+            		url:"{:url('sms/ajaxsms')}",
+            		async:true,
+            		data:{mobile:$("#phonenumber").val(),lx:2},
+            		success:function(data){
+            			alert(data);
+            		},
+            		error:function(err){
+            			console.log(err);
+            		}
+            	});
+            });
+            
+            function countTime(times){
+            	$(".count").unbind("click");
+            	clearInterval(timess);
+            	times = 59;
+            	var timess = setInterval(function(){
+            		$(".count").html(times + "秒");
+            		if (times > 0) {
+            			times--;
+            		}else if (times == 0) {
+            			clearInterval(timess);
+            			$(".count").html("获取验证码");
+            			
+            			$(".count").click(function(){
+			            	var times = 60;
+			            	console.log($(this));
+			            	countTime(times);
+			            	$(".count").html("60秒");
+			            	
+			            	// ajax 请求后台数据
+			            	$.ajax({
+			            		type:"post",
+			            		url:"{:url('sms/ajaxsms')}",
+			            		async:true,
+			            		data:{mobile:$("#phonenumber").val(),lx:2},
+			            		success:function(data){
+			            			alert(data);
+			            		},
+			            		error:function(err){
+			            			console.log(err);
+			            		}
+			            	});
+			            });
+            			
+            		}
+            	},1000);
+            }
+			
+			// 点击立即注册
+			$(".loginIn").click(function(){
+//				$(".login").hide();
+//				$(".register").show();
+//				$(".enter").show();
+			});
+			
+			// 点击立即登录
+			$(".login_now").click(function(){
+				$(".login").show();
+				$(".register").hide();
+				$(".enter").hide();
+			});
+		});
+		
+		
+		
+	</script>
+</html>

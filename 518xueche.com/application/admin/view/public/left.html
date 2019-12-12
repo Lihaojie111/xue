@@ -1,0 +1,555 @@
+{switch $user_info['type']}
+    {case 1}
+            <ul class="nav">
+                <li>
+                    <a href="/index.php/admin/index/index" {if condition="request()->action() eq  'index' "} class="active" {/if}>
+                        <i class="lnr lnr-home"></i>
+                        <span>主页</span>
+                    </a>
+                </li>
+                 <li>
+                   
+                    <a href="#subPages0" data-toggle="collapse" {if condition="request()->action() eq  'map' OR  request()->action() eq  'hotline'   OR  request()->action() eq  'news_list' OR  request()->action() eq  'map' OR  request()->action() eq  'exit_news'"} class="active" {else/} class="collapsed" {/if}>
+                    <i class="lnr lnr-cog"></i>
+                    <span>系统管理</span>
+                    <i class="icon-submenu lnr lnr-chevron-left"></i>
+                    </a>
+                    <div id="subPages0" {if condition="request()->action() eq  'map' OR  request()->action() eq  'hotline' OR  request()->action() eq  'news_list' OR  request()->action() eq  'map'  OR  request()->action() eq  'exit_news' "} class="collapse in" {else/}class="collapse" {/if} >
+                    <ul class="nav">
+                     <li>
+                            <a href="/index.php/admin/index/order" {if condition="request()->action() eq  'map'  "} class="active" {/if}>订单列表</a>
+                        </li>
+                        <li>
+                            <a href="/index.php/admin/system/map" {if condition="request()->action() eq  'map'  "} class="active" {/if}>首页轮播图</a>
+                        </li>
+                        <li>
+                            <a href="/index.php/admin/system/hotline" {if condition="request()->action() eq  'hotline'  "} class="active" {/if}>客服电话</a>
+                        </li>
+                            <li>
+                            <a href="/index.php/admin/news/news_list" {if condition="request()->action() eq  'news_list'  "} class="active" {/if}>消息系统</a>
+                        </li>
+                          <li>
+                            <a href="/index.php/admin/news/xxhf" {if condition="request()->action() eq  'xxhf'  "} class="active" {/if}>先学后付</a>
+                        </li>
+                    </ul>
+                    </div>
+
+                </li>
+              <li>
+                   
+                    <a href="#subPages2" data-toggle="collapse" {if condition="request()->action() eq  'list_coach' OR request()->action() eq 'add_coach'  OR request()->action() eq 'coach_show'    OR request()->action() eq 'add_cpic' OR request()->action() eq 'coach_edit'"} class="active" {else/} class="collapsed" {/if}>
+                    <i class="fa fa-database"></i>
+                    <span>教练管理</span>
+                    <i class="icon-submenu lnr lnr-chevron-left"></i>
+                    </a>
+                    <div id="subPages2" {if condition="request()->action() eq  'add_coach' OR request()->action() eq 'list_coach' OR request()->action() eq 'coach_edit'   OR request()->action() eq 'coach_show'   OR request()->action() eq 'add_cpic'  "} class="collapse in" {else/}class="collapse" {/if} >
+                    <ul class="nav">
+                        <li>
+                            <a href="/index.php/admin/coach/add_coach" {if condition="request()->action() eq  'add_coach'  "} class="active" {/if}>添加教练</a>
+                        </li>
+                        <li>
+                            <a href="/index.php/admin/coach/list_coach" {if condition="request()->action() eq  'list_coach' "} class="active" {/if}>教练列表</a>
+                        </li>
+                    </ul>
+                    </div>
+
+                </li>
+                <li>
+                    <a href="#subPages" data-toggle="collapse" {if condition="request()->action() eq   'user_info'      OR request()->action() eq 'dist_dealer'    OR request()->action() eq 'city_dealer'        OR request()->action() eq 'cmima'         OR request()->action() eq 'dmima'  OR request()->action() eq 'dedit'     "} class="active" {else/} class="collapsed" {/if}>
+                        <i class="lnr lnr-user"></i>
+                        <span>用户管理</span>
+                        <i class="icon-submenu lnr lnr-chevron-left"></i>
+                    </a>
+                    <div id="subPages" {if condition="request()->action() eq  'city_dealer' OR request()->action() eq 'user_info' OR request()->action() eq 'cmima' OR request()->action() eq 'city_dealer'  OR request()->action() eq 'dedit'    OR request()->action() eq 'dmima'  OR request()->action() eq 'depot_manager' OR request()->action() eq 'edit_manager' OR request()->action() eq 'add_manager' OR request()->action() eq 'add_users'"} class="collapse in" {else/}class="collapse" {/if} >
+                        <ul class="nav">
+                           <li>
+                                <a href="/index.php/admin/index/user_info" {if condition="request()->action() eq  'user_info'  "} class="active" {/if}>用户列表</a>
+                            </li>
+
+                         <!--    <li>
+                                <a href="/index.php/admin/index/city_dealer" {if condition="request()->action() eq  'city_dealer'  "} class="active" {/if}>管理员列表</a>
+                            </li> -->
+                          
+                        </ul>
+                    </div>
+                </li>
+      
+
+
+                    <li>
+                    <a href="#subPages1" data-toggle="collapse" {if condition=" request()->action() eq 'scoach'   OR request()->action() eq 'indexs'    OR request()->action() eq 'add_school'    OR request()->action() eq 'add_spic'   OR request()->action() eq 'school_show'   "} class="active" {else/} class="collapsed" {/if}>
+                        <i class="fa fa-random"></i>
+                        <span>驾校管理</span>
+                        <i class="icon-submenu lnr lnr-chevron-left"></i>
+                       <!--  <i class="icon-submenu lnr lnr-chevron-left"></i> -->
+                    </a>
+                    <div id="subPages1" {if condition="request()->action() eq  'indexs' OR request()->action() eq 'send_list'    OR request()->action() eq 'school_show'   OR request()->action() eq 'add_school'  OR request()->action() eq 'add_spic'  OR request()->action() eq 'charge'"} class="collapse in" {else/}class="collapse" {/if} >
+                        <ul class="nav">
+                           
+                           
+                             <li>
+                                <a href="/index.php/admin/school/indexs" {if condition="request()->action() eq  'indexs' "} class="active" {/if}>驾校列表</a>
+                            </li>
+                            
+                      </ul>
+                    </div>
+                </li>
+
+
+                 <li>
+                    <a href="#subPages3" data-toggle="collapse" {if condition="request()->action() eq  'stype' OR request()->action() eq 'send_list'   OR request()->action() eq 'service'   OR request()->action() eq 'kemu'   OR request()->action() eq 'time' OR request()->action() eq 'kaochang' OR request()->action() eq 'sclass'  OR request()->action() eq 'add_sclass'   OR request()->action() eq 'add_stype'  OR request()->action() eq 'chexing' OR request()->action() eq 'add_service'  OR request()->action() eq 'add_time'  OR request()->action() eq 'add_chexing' OR request()->action() eq 'add_kaochang'  OR request()->action() eq 'add_kemu' "} class="active" {else/} class="collapsed" {/if}>
+                    <i class="lnr lnr-code"></i>
+                      <!--   <i class="fa fa-random"></i> -->
+                        <span>类型管理</span>
+                        <i class="icon-submenu lnr lnr-chevron-left"></i>
+                      
+                    </a>
+                    <div id="subPages3" {if condition="request()->action() eq  'stype' OR request()->action() eq 'sclass'    OR request()->action() eq 'service'   OR request()->action() eq 'kemu'  OR request()->action() eq 'kaochang' OR request()->action() eq 'chexing' OR request()->action() eq 'add_stype'  OR request()->action() eq 'add_sclass' OR request()->action() eq 'add_service' OR request()->action() eq 'time'  OR request()->action() eq 'add_time' OR request()->action() eq 'add_chexing' OR request()->action() eq 'add_kaochang'   OR request()->action() eq 'add_kemu'"} class="collapse in" {else/}class="collapse" {/if} >
+                        <ul class="nav">
+                            <li>
+                                <a href="/index.php/admin/stype/stype" {if condition="request()->action() eq  'stype'  "} class="active" {/if}>驾照类型</a>
+                            </li>
+                            <li>
+                                <a href="/index.php/admin/stype/sclass" {if condition="request()->action() eq  'sclass' "} class="active" {/if}>班型类型</a>
+                            </li>
+                             <li>
+                                <a href="/index.php/admin/stype/service" {if condition="request()->action() eq  'service' "} class="active" {/if}>服务类型</a>
+                            </li>
+                              <li>
+                                <a href="/index.php/admin/stype/kemu" {if condition="request()->action() eq  'kemu' "} class="active" {/if}>科目类型</a>
+                            </li>
+                            <li>
+                                <a href="/index.php/admin/stype/kaochang" {if condition="request()->action() eq  'kaochang' "} class="active" {/if}>考场类型</a>
+                            </li>
+
+                             <li>
+                                <a href="/index.php/admin/stype/chexing" {if condition="request()->action() eq  'chexing' "} class="active" {/if}>车辆类型</a>
+                            </li>
+                            <li>
+                                <a href="/index.php/admin/stype/time" {if condition="request()->action() eq  'time' "} class="active" {/if}>班型时间</a>
+                            </li>
+                          
+                      </ul>
+                    </div>
+                </li>
+
+
+                   <li>
+                    <a href="#subPages4" data-toggle="collapse" {if condition="request()->action() eq  'cindex' OR request()->action() eq 'index2'  OR request()->action() eq 'exit_can'  OR request()->action() eq 'setmeal'  OR request()->action() eq 'exit_can2'  "} class="active" {else/} class="collapsed" {/if}>
+                    <i class="lnr lnr-map"></i>
+                
+                        <span>套餐管理</span>
+                        <i class="icon-submenu lnr lnr-chevron-left lnr lnr-map"></i>
+                      
+                    </a>
+                    <div id="subPages4" {if condition="request()->action() eq  'cindex' OR request()->action() eq 'index2'    OR request()->action() eq 'setmeal' OR request()->action() eq 'exit_can'  OR request()->action() eq 'exit_can2'  "} class="collapse in" {else/}class="collapse" {/if} >
+                        <ul class="nav">
+                            <li>
+                                <a href="/index.php/admin/setmeal/cindex" {if condition="request()->action() eq  'cindex'  "} class="active" {/if}>教练套餐管理</a>
+                            </li>
+                             <li>
+                                <a href="/index.php/admin/setmeal/index2" {if condition="request()->action() eq  'index2'  "} class="active" {/if}>驾校套餐管理</a>
+                            </li>
+
+                      </ul>
+                    </div>
+                </li>
+                 <li>
+                    <a href="#subPages5" data-toggle="collapse" {if condition="request()->action() eq  'liuyan' OR request()->action() eq 'info'   OR request()->action() eq 'setmeal'  "} class="active" {else/} class="collapsed" {/if}>
+               
+                      <i class="lnr lnr-alarm"></i>
+                        <span>消息管理</span>
+                        <i class="icon-submenu lnr lnr-chevron-left lnr lnr-map"></i>
+                      
+                    </a>
+                    <div id="subPages5" {if condition="request()->action() eq  'setmeal' OR request()->action() eq 'liuyan'    OR request()->action() eq 'info' "} class="collapse in" {else/}class="collapse" {/if} >
+                        <ul class="nav">
+                            <li>
+                                <a href="/index.php/admin/userinfo/liuyan" {if condition="request()->action() eq  'liuyan'  "} class="active" {/if}>用户留言</a>
+                            </li>
+                             <li>
+                                <a href="/index.php/admin/userinfo/info" {if condition="request()->action() eq  'info'  "} class="active" {/if}>用户详情信息</a>
+                            </li>
+
+                      </ul>
+                    </div>
+                </li>
+
+
+                    <li>
+                    <a href="#subPages6" data-toggle="collapse" {if condition=" request()->action() eq 'customer_service' "} class="active" {else/} class="collapsed" {/if}>
+                        <i class="glyphicon glyphicon-phone-alt"></i>
+                        <span>客服管理</span>
+                        <i class="icon-submenu lnr lnr-chevron-left"></i>
+                       <!--  <i class="icon-submenu lnr lnr-chevron-left"></i> -->
+                    </a>
+                    <div id="subPages6" {if condition=" request()->action() eq 'customer_service'  "} class="collapse in" {else/}class="collapse" {/if} >
+                        <ul class="nav">
+                           
+                           
+                             <li>
+                                <a href="/index.php/admin/customer/customer_service" {if condition="request()->action() eq  'customer_service' "} class="active" {/if}>客服列表</a>
+                            </li>
+                            
+                      </ul>
+                    </div>
+                </li>
+
+
+                 <li>
+                    <a href="#subPages7" data-toggle="collapse" {if condition=" request()->action() eq 'collection'"} class="active" {else/} class="collapsed" {/if}>
+                        <i class="glyphicon glyphicon-floppy-open"></i>
+                        <span>BD采集</span>
+                        <i class="icon-submenu lnr lnr-chevron-left"></i>
+                     
+                    </a>
+                    <div id="subPages7" {if condition="request()->action() eq  'collection' "} class="collapse in" {else/}class="collapse" {/if} >
+                        <ul class="nav">
+                           
+                           
+                             <li>
+                                <a href="/index.php/admin/collection/collection" {if condition="request()->action() eq  'collection' "} class="active" {/if}>BD采集列表</a>
+                            </li>
+                            
+                      </ul>
+                    </div>
+                </li>
+
+        <li>
+                    <a href="#subPages8" data-toggle="collapse" {if condition=" request()->action() eq 'browse'    "} class="active" {else/} class="collapsed" {/if}>
+                        <i class="lnr lnr-magic-wand"></i>
+                        <span>客户浏览</span>
+                        <i class="icon-submenu lnr lnr-chevron-left"></i>
+                     
+                    </a>
+                    <div id="subPages8" {if condition="request()->action() eq 'browse' "} class="collapse in" {else/}class="collapse" {/if} >
+                        <ul class="nav">
+                           
+                           
+                             <li>
+                                <a href="http://new.cnzz.com/v1/login.php?siteid=1274756566" {if condition="request()->action() eq  'browse' "} class="active" {/if}>客户浏览明细</a>
+                            </li>
+                            
+                      </ul>
+                    </div>
+                </li>
+					 
+          		<li>
+                    <a href="#subPages9" data-toggle="collapse" {if condition=" request()->action() eq 'bespeak_school'   OR request()->action() eq 'bespeak_coach'  OR request()->action() eq 'teamservice'  OR request()->action() eq 'bespeak_banxing'"} class="active" {else/} class="collapsed" {/if}>
+                        <i class="lnr lnr-inbox"></i>
+                        <span>预约管理</span>
+                        <i class="icon-submenu lnr lnr-chevron-left"></i>
+                 
+                    </a>
+                    <div id="subPages9" {if condition="request()->action() eq  'bespeak_coach' OR request()->action() eq 'bespeak_school' OR request()->action() eq 'teamservice' OR request()->action() eq 'bespeak_banxing' "} class="collapse in" {else/}class="collapse" {/if} >
+                        <ul class="nav">
+                            <li>
+                                <a href="/index.php/Admin/bespeak/teamservice" {if condition="request()->action() eq  'teamservice' "} class="active" {/if}>团队预约</a>
+                            </li>
+                           
+                             <li>
+                                <a href="/index.php/Admin/bespeak/bespeak_school" {if condition="request()->action() eq  'bespeak_school' "} class="active" {/if}>驾校预约</a>
+                            </li>
+                            <li>
+                                <a href="/index.php/Admin/bespeak/bespeak_coach" {if condition="request()->action() eq  'bespeak_coach' "} class="active" {/if}>教练预约</a>
+                            </li>
+                            <li>
+                                <a href="/index.php/Admin/bespeak/bespeak_banxing" {if condition="request()->action() eq  'bespeak_banxing' "} class="active" {/if}>班型预约</a>
+                            </li>
+                          	<li>
+                                <a href="/index.php/Admin/Insure/insure" {if condition="request()->action() eq  'insure' "} class="active" {/if}>投保预约</a>
+                            </li>
+                          	<li>
+                                <a href="/index.php/Admin/Insure/lipei" {if condition="request()->action() eq  'lipei' "} class="active" {/if}>在线理赔</a>
+                            </li>
+                      </ul>
+                    </div>
+                </li>
+				<!--<li>
+                    <a href="#subPages9" data-toggle="collapse" {if condition=" request()->action() eq 'b'   OR request()->action() eq 'insure'"} class="active" {else/} class="collapsed" {/if}>
+                        <i class="lnr lnr-inbox"></i>
+                        <span>预约投保管理</span>
+                        <i class="icon-submenu lnr lnr-chevron-left"></i>
+                 
+                    </a>
+                    <div id="subPages9" {if condition="request()->action() eq  'bespeak_coach' OR request()->action() eq 'insure' "} class="collapse in" {else/}class="collapse" {/if} >
+                        <ul class="nav">
+                            <li>
+                                <a href="/index.php/Admin/Insure/insure" {if condition="request()->action() eq  'insure' "} class="active" {/if}>投保列表</a>
+                            </li>
+                           
+                             
+                      </ul>
+                    </div>
+                </li>-->
+            </ul>
+    {/case}
+  {case 2}
+        <ul class="nav">
+                <li>
+                    <a href="/index.php/admin/cityagent/index" {if condition="request()->action() eq  'index' "} class="active" {/if}>
+                        <i class="lnr lnr-home"></i>
+                        <span>主页</span>
+                    </a>
+                </li>
+    
+                    <li>
+                    <a href="#subPages6" data-toggle="collapse" {if condition=" request()->action() eq 'stock'    "} class="active" {else/} class="collapsed" {/if}>
+                        <i class="glyphicon glyphicon-phone-alt"></i>
+                        <span>客服管理</span>
+                        <i class="icon-submenu lnr lnr-chevron-left"></i>
+                       <!--  <i class="icon-submenu lnr lnr-chevron-left"></i> -->
+                    </a>
+                    <div id="subPages6" {if condition="request()->action() eq  'indexs' OR request()->action() eq 'stock'  "} class="collapse in" {else/}class="collapse" {/if} >
+                        <ul class="nav">
+                           
+                           
+                             <li>
+                                <a href="/index.php/Admin/cityagent/stock" {if condition="request()->action() eq  'stock' "} class="active" {/if}>客服列表</a>
+                            </li>
+                            
+                      </ul>
+                    </div>
+                </li>
+			
+
+            </ul>
+
+
+  {/case}
+  {case 3}
+      <ul class="nav">
+                <li>
+                    <a href="/index.php/admin/index/index" {if condition="request()->action() eq  'index' "} class="active" {/if}>
+                        <i class="lnr lnr-home"></i>
+                        <span>主页</span>
+                    </a>
+                </li>
+              
+              <li>
+                   
+                    <a href="#subPages2" data-toggle="collapse" {if condition="request()->action() eq  'list_coach' OR request()->action() eq 'add_coach'  OR request()->action() eq 'coach_show'    OR request()->action() eq 'add_cpic' OR request()->action() eq 'coach_edit'"} class="active" {else/} class="collapsed" {/if}>
+                    <i class="fa fa-database"></i>
+                    <span>教练管理</span>
+                    <i class="icon-submenu lnr lnr-chevron-left"></i>
+                    </a>
+                    <div id="subPages2" {if condition="request()->action() eq  'add_coach' OR request()->action() eq 'list_coach' OR request()->action() eq 'coach_edit'   OR request()->action() eq 'coach_show'   OR request()->action() eq 'add_cpic'  "} class="collapse in" {else/}class="collapse" {/if} >
+                    <ul class="nav">
+                        <li>
+                            <a href="/index.php/admin/distagent/add_coach" {if condition="request()->action() eq  'add_coach'  "} class="active" {/if}>添加教练</a>
+                        </li>
+                        <li>
+                            <a href="/index.php/admin/distagent/list_coach" {if condition="request()->action() eq  'list_coach' "} class="active" {/if}>教练列表</a>
+                        </li>
+                    </ul>
+                    </div>
+
+                </li>
+             
+
+
+                    <li>
+                    <a href="#subPages1" data-toggle="collapse" {if condition=" request()->action() eq 'scoach'   OR request()->action() eq 'indexs'    OR request()->action() eq 'add_school'    OR request()->action() eq 'add_spic'   OR request()->action() eq 'school_show'   "} class="active" {else/} class="collapsed" {/if}>
+                        <i class="fa fa-random"></i>
+                        <span>驾校管理</span>
+                        <i class="icon-submenu lnr lnr-chevron-left"></i>
+                       <!--  <i class="icon-submenu lnr lnr-chevron-left"></i> -->
+                    </a>
+                    <div id="subPages1" {if condition="request()->action() eq  'indexs' OR request()->action() eq 'send_list'    OR request()->action() eq 'school_show'   OR request()->action() eq 'add_school'  OR request()->action() eq 'add_spic'  OR request()->action() eq 'charge'"} class="collapse in" {else/}class="collapse" {/if} >
+                        <ul class="nav">
+                           
+                           
+                             <li>
+                                <a href="/index.php/admin/distagent/indexs" {if condition="request()->action() eq  'indexs' "} class="active" {/if}>驾校列表</a>
+                            </li>
+                            
+                      </ul>
+                    </div>
+                </li>
+
+
+
+
+                
+                 
+
+                 
+
+
+            </ul>
+
+
+
+
+
+  {/case}
+
+
+
+ {case 4}
+      <ul class="nav">
+                <li>
+                    <a href="/index.php/admin/index/index" {if condition="request()->action() eq  'index' "} class="active" {/if}>
+                        <i class="lnr lnr-home"></i>
+                        <span>主页</span>
+                    </a>
+                </li>
+              
+              <li>
+                   
+                    <a href="#subPages2" data-toggle="collapse" {if condition="request()->action() eq  'coach_edit' OR request()->action() eq 'add_coach'  OR request()->action() eq 'coach_show'    OR request()->action() eq 'add_cpic' OR request()->action() eq 'coach_edit'"} class="active" {else/} class="collapsed" {/if}>
+                    <i class="fa fa-database"></i>
+                    <span>管理中心</span>
+                    <i class="icon-submenu lnr lnr-chevron-left"></i>
+                    </a>
+                    <div id="subPages2" {if condition="request()->action() eq  'add_coach' OR request()->action() eq 'list_coach' OR request()->action() eq 'coach_edit'   OR request()->action() eq 'coach_show'   OR request()->action() eq 'add_cpic'  "} class="collapse in" {else/}class="collapse" {/if} >
+                    <ul class="nav">
+                        <li>
+                            <a href="/index.php/Admin/index/coach_edit_url" {if condition="request()->action() eq  'coach_edit_url'  "} class="active" {/if}>我的信息</a>
+                        </li>
+                        <li>
+                            <a href="/index.php/admin/setmeal/cindex" {if condition="request()->action() eq  'cindex' "} class="active" {/if}>我的套餐</a>
+                        </li>
+                    </ul>
+                    </div>
+
+                </li>
+
+                 <li>
+                    <a href="#subPages3" data-toggle="collapse" {if condition="request()->action() eq  'stype' OR request()->action() eq 'send_list'   OR request()->action() eq 'service'   OR request()->action() eq 'kemu'   OR request()->action() eq 'time' OR request()->action() eq 'kaochang' OR request()->action() eq 'sclass'  OR request()->action() eq 'add_sclass'   OR request()->action() eq 'add_stype'  OR request()->action() eq 'chexing' OR request()->action() eq 'add_service'  OR request()->action() eq 'add_time'  OR request()->action() eq 'add_chexing' OR request()->action() eq 'add_kaochang'  OR request()->action() eq 'add_kemu' "} class="active" {else/} class="collapsed" {/if}>
+                    <i class="lnr lnr-code"></i>
+                      <!--   <i class="fa fa-random"></i> -->
+                        <span>类型管理</span>
+                        <i class="icon-submenu lnr lnr-chevron-left"></i>
+                      
+                    </a>
+                    <div id="subPages3" {if condition="request()->action() eq  'stype' OR request()->action() eq 'sclass'    OR request()->action() eq 'service'   OR request()->action() eq 'kemu'  OR request()->action() eq 'kaochang' OR request()->action() eq 'chexing' OR request()->action() eq 'add_stype'  OR request()->action() eq 'add_sclass' OR request()->action() eq 'add_service' OR request()->action() eq 'time'  OR request()->action() eq 'add_time' OR request()->action() eq 'add_chexing' OR request()->action() eq 'add_kaochang'   OR request()->action() eq 'add_kemu'"} class="collapse in" {else/}class="collapse" {/if} >
+                        <ul class="nav">
+                            <li>
+                                <a href="/index.php/admin/stype/stype" {if condition="request()->action() eq  'stype'  "} class="active" {/if}>驾照类型</a>
+                            </li>
+                            <li>
+                                <a href="/index.php/admin/stype/sclass" {if condition="request()->action() eq  'sclass' "} class="active" {/if}>班型类型</a>
+                            </li>
+                             <li>
+                                <a href="/index.php/admin/stype/service" {if condition="request()->action() eq  'service' "} class="active" {/if}>服务类型</a>
+                            </li>
+                              <li>
+                                <a href="/index.php/admin/stype/kemu" {if condition="request()->action() eq  'kemu' "} class="active" {/if}>科目类型</a>
+                            </li>
+                            <li>
+                                <a href="/index.php/admin/stype/kaochang" {if condition="request()->action() eq  'kaochang' "} class="active" {/if}>考场类型</a>
+                            </li>
+
+                             <li>
+                                <a href="/index.php/admin/stype/chexing" {if condition="request()->action() eq  'chexing' "} class="active" {/if}>车辆类型</a>
+                            </li>
+                            <li>
+                                <a href="/index.php/admin/stype/time" {if condition="request()->action() eq  'time' "} class="active" {/if}>班型时间</a>
+                            </li>
+                      </ul>
+                    </div>
+                </li>
+
+            </ul>
+
+
+
+
+
+  {/case}
+{case 5}
+      <ul class="nav">
+                <li>
+                    <a href="/index.php/Admin/infoschool/index" {if condition="request()->action() eq  'index' "} class="active" {/if}>
+                        <i class="lnr lnr-home"></i>
+                        <span>主页</span>
+                    </a>
+                </li>
+              
+              <li>
+                   
+                    <a href="#subPages2" data-toggle="collapse" {if condition="request()->action() eq  'coach_edit' OR request()->action() eq 'school_edit_url'  OR request()->action() eq 'coach_show'    OR request()->action() eq 'add_cpic' OR request()->action() eq 'coach_edit'"} class="active" {else/} class="collapsed" {/if}>
+                    <i class="fa fa-database"></i>
+                    <span>管理中心</span>
+                    <i class="icon-submenu lnr lnr-chevron-left"></i>
+                    </a>
+                    <div id="subPages2" {if condition="request()->action() eq  'add_coach' OR request()->action() eq 'school_edit_url' OR request()->action() eq 'coach_edit'   OR request()->action() eq 'coach_show'   OR request()->action() eq 'add_cpic'  "} class="collapse in" {else/}class="collapse" {/if} >
+                    <ul class="nav">
+                        <li>
+                            <a href="/index.php/Admin/infoschool/school_edit_url" {if condition="request()->action() eq  'school_edit_url'  "} class="active" {/if}>我的信息</a>
+                        </li>
+                        <li>
+                            <a href="/index.php/admin/infoschool/sindex" {if condition="request()->action() eq  'sindex' "} class="active" {/if}>我的套餐</a>
+                        </li>
+                    </ul>
+                    </div>
+
+                </li>
+
+                 <li>
+                    <a href="#subPages3" data-toggle="collapse" {if condition="request()->action() eq  'stype' OR request()->action() eq 'send_list'   OR request()->action() eq 'service'   OR request()->action() eq 'kemu'   OR request()->action() eq 'time' OR request()->action() eq 'kaochang' OR request()->action() eq 'sclass'  OR request()->action() eq 'add_sclass'   OR request()->action() eq 'add_stype'  OR request()->action() eq 'chexing' OR request()->action() eq 'add_service'  OR request()->action() eq 'add_time'  OR request()->action() eq 'add_chexing' OR request()->action() eq 'add_kaochang'  OR request()->action() eq 'add_kemu' "} class="active" {else/} class="collapsed" {/if}>
+                    <i class="lnr lnr-code"></i>
+                      <!--   <i class="fa fa-random"></i> -->
+                        <span>类型管理</span>
+                        <i class="icon-submenu lnr lnr-chevron-left"></i>
+                      
+                    </a>
+                    <div id="subPages3" {if condition="request()->action() eq  'stype' OR request()->action() eq 'sclass'    OR request()->action() eq 'service'   OR request()->action() eq 'kemu'  OR request()->action() eq 'kaochang' OR request()->action() eq 'chexing' OR request()->action() eq 'add_stype'  OR request()->action() eq 'add_sclass' OR request()->action() eq 'add_service' OR request()->action() eq 'time'  OR request()->action() eq 'add_time' OR request()->action() eq 'add_chexing' OR request()->action() eq 'add_kaochang'   OR request()->action() eq 'add_kemu'"} class="collapse in" {else/}class="collapse" {/if} >
+                        <ul class="nav">
+                            <li>
+                                <a href="/index.php/admin/stype/stype" {if condition="request()->action() eq  'stype'  "} class="active" {/if}>驾照类型</a>
+                            </li>
+                            <li>
+                                <a href="/index.php/admin/stype/sclass" {if condition="request()->action() eq  'sclass' "} class="active" {/if}>班型类型</a>
+                            </li>
+                             <li>
+                                <a href="/index.php/admin/stype/service" {if condition="request()->action() eq  'service' "} class="active" {/if}>服务类型</a>
+                            </li>
+                              <li>
+                                <a href="/index.php/admin/stype/kemu" {if condition="request()->action() eq  'kemu' "} class="active" {/if}>科目类型</a>
+                            </li>
+                            <li>
+                                <a href="/index.php/admin/stype/kaochang" {if condition="request()->action() eq  'kaochang' "} class="active" {/if}>考场类型</a>
+                            </li>
+
+                             <li>
+                                <a href="/index.php/admin/stype/chexing" {if condition="request()->action() eq  'chexing' "} class="active" {/if}>车辆类型</a>
+                            </li>
+                            <li>
+                                <a href="/index.php/admin/stype/time" {if condition="request()->action() eq  'time' "} class="active" {/if}>班型时间</a>
+                            </li>
+                      </ul>
+                    </div>
+                </li>
+
+            </ul>
+
+
+
+
+
+  {/case}
+{/switch}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

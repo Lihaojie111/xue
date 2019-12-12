@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>518学车网-在线理赔</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="/public/home/css/Web_app_common.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/home/css/yuyue_safe.css">
+    <script src="/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/public/home/js/rem.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="/public/home/css/selectFilter.css" />
+    <link rel="stylesheet" href="/public/home/css/jquery-labelauty.css">
+    <style>
+      .filter-list li.filter-selected {
+        background-color: #50A9C7;
+        padding: 0 .3rem;
+          	height:.72rem;
+          	line-height:.72rem;
+      }
+      .filter-list{
+      	left:-.8rem;
+      }
+      .filter-text{
+      	padding-left:.1rem;
+        color:#666;
+      }
+      .icon-filter-arrow{
+      	top:16px;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="whole">
+        <!--标题-->
+        <div class="title" style="top:0">
+            <a href="javascript:history.back(-1)">  
+                <img class="back" src="/public/home/images/back.png"/>
+                <span>在线理赔</span>
+            </a>
+        </div>
+      
+        <div class="Online_B">
+          <p>在线办理</p>
+        </div>
+
+        <div class="Online_Img">
+            <img src="/public/home/images/lipeisafe.jpg" alt="">
+        </div>
+
+        <div class="toast">
+            <p><span class="fl">敬告：</span><span class="fl" style="width: 4.8rem;height: .75rem;">提交理赔后，平台会按照你指定的付款方式支付费用。</span></p>
+        </div>
+
+        <div class="Typeof">
+            <p>理赔资料</p>
+        </div>
+        <form action="" method="post">
+        <div class="Lipei_info">
+            <ul>
+                <li><input type="text" name="name" placeholder="请输入被保人真实姓名"></li>
+                <li><input type="text" name="number" placeholder="请输入被保人身份证号后四位即可"></li>
+                <li><input type="text" name="kemu" placeholder="请输入被保人理赔科目（科一/科二/科三）"></li>
+                <li style="margin-bottom: .2rem;"><input type="text" name="pwd" placeholder="请输入您的122登录密码，验证考试成绩"></li>
+            </ul>
+        </div>
+       
+          
+            <div class="Typeof">
+                <p>已在车管所缴费</p>
+            </div>
+            <h3></h3>
+            <div class="Pay_method">
+                <ul>
+                    <li>
+                        <input type="text" name="wx" placeholder="微信收款（请留下您的微信账号）">
+                    </li>
+                    <li>
+                        <input type="text" name="zfb" placeholder="支付宝收款（请留下您的支付宝账号）">
+                    </li>
+                   <!--  <li>
+                        <span  class="Shenhe" >提交审核</span>
+                    </li> -->
+                </ul>
+            </div>
+            <h3></h3>
+            <div class="Typeof">
+                <p>未在车管所缴费</p>
+            </div>
+            <div class="Pay_method">
+                <ul>
+                    <li>
+                      <div class="item_select">
+                          <div class="filter-box">
+                              <div class="filter-text">
+                                  <input class="filter-title" type="text" readonly placeholder="pleace select" />
+                                  <i class="icon icon-filter-arrow"></i>
+                              </div>
+                              <select name="filter">
+                                  <option value="" selected name="jifei">个人自主缴费</option>
+                                  <option value="" name="jifei">平台代理缴费</option>
+                              </select>
+                          </div>
+                      </div>
+                    </li>
+                    <li>
+                        <span  class="Shenhe" >提交审核</span>
+                    </li>
+                </ul>
+            </div>
+        </form>
+        <!-- 被保人资料 -->
+        <div class="Save_text">
+            <ul>
+                <li>
+                    <div class="wenzi" style="font-size: .2rem;color: #999">
+                        <p>温馨提示：1、在保险有效期内，请不要修改约考密码，以免影响您的理赔。2、平台在收到您的提交资料后3个工作日内，会与您取得联系，请保持手机畅通，不便之处，敬请谅解。</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- <div class="Footer_t">
+            <p>
+                <span class="fl">版权所有：XXXX</span>
+                <span class="fr">技术支持：XXXX</span>
+            </p>
+        </div> -->
+    </div>
+</body>
+<script src="/public/home/js/selectFilter.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="/public/home/js/jquery-labelauty.js"></script>
+<script type="text/javascript">
+    //本小插件支持移动端哦
+
+    //这里是初始化
+    $('.filter-box').selectFilter({
+      callBack : function (val){
+        //返回选择的值
+        console.log(val+'-是返回的值')
+      }
+    });
+  </script>
+<script type="text/javascript">
+$(function(){
+    $(':input').labelauty();
+});
+$('.Shenhe').click(function(){
+     var logined = {$denglu};
+     if(logined){
+        var  name= $("input[name='name']").val();
+        var  number= $("input[name='number']").val();
+        var  kemu= $("input[name='kemu']").val();
+        var  pwd= $("input[name='pwd']").val();
+
+
+        // if (name.test(/^[a-zA-Z0-9_-]{4,16}$/)) {}
+
+        if ((/^[(\u4E00-\u9FA5) || /]{1,}$/).test(name) && /^\d{4}$/.test(number) && (/^[(\u4E00-\u9FA5) || /]{1,}$/).test(kemu) && (/^[(\d)||/]*$/).test(pwd)) {
+
+                var jifei=$('input:radio[name="jifei"]:checked').val();
+                if(jifei==null){
+                alert("如果您是未缴费用户，请选择缴费方式！");
+                return false;
+                }
+
+            $('form').submit();
+            console.log("正则匹配成功")
+            }else{
+                if (!name || !number || !kemu || !pwd) {
+                    alert("有空的框");
+                    return false;
+                }
+                console.log("正则匹配失败");
+                // alert("正则匹配失败,无法提交。");
+                if(!(/^[(\u4E00-\u9FA5) || /]{1,}$/).test(name)){
+                    alert("请输入正确的姓名");
+                    return false;
+                }
+                if(!/^\d{4}$/.test(number)){
+                    alert("请输入正确的身份证后四位数字");
+                    return false;
+                }
+                if(!(/^[(\u4E00-\u9FA5) || /]{1,}$/).test(kemu)){
+                    alert("请输入正确的被保人理赔科目");
+                    return false;
+                }
+                if(!(/^[(\d)||/]*$/).test(pwd)){
+                    alert("请输入正确的约考密码");
+                    return false;
+                }
+            }
+      }else{
+            window.location.href = "/index.php/Index/index/ulogin";
+    }
+})
+</script>
+</script>
+</html>

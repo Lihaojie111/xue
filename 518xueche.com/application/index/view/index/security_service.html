@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>518学车网-保障服务</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="/public/home/css/Web_app_common.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/home/css/Security_service.css">
+    <script src="/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/public/home/js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+    <style>
+        #jiege{position:fixed;bottom: 0;right: 0;width: 1rem;text-align: right;}
+        ul {
+            list-style:none;
+            width:100%;
+            padding:0 ;
+            margin:auto;
+        }
+        ul li {
+          margin-bottom: 0.1rem;
+          border-bottom: 1px solid #fff; 
+        }
+        ul li .item {
+            height:0px;
+            transition:height 1s;
+            overflow:hidden;
+            margin:0;
+            /*background:#43688a*/
+            background:transparent;
+        }
+        ul li p {
+            display:block;
+            padding:0.1rem 0.3rem;
+            text-align:left;
+            color:#333;
+            font-size: 0.16rem;
+            line-height: 0.3rem;
+          /*  text-indent: 0.3rem;*/
+           /* min-height:40px;*/
+           height: auto;
+        }
+        ul li p img{
+            display:block;
+            text-align:center;
+            width: 100%;
+            height: auto;
+        }
+        /*ul li p:hover {
+            color:red
+        }*/
+        ul li span {
+           /*  background:#0b7bb9; */
+            width: 5rem;
+            height: 1rem;
+            font-size: 0.3rem;
+            line-height: 1rem;
+            text-indent:0.2rem;
+            display:block;
+            /*padding-right: 0.2rem;*/
+            text-align:right;
+           /*  padding:8px 0; */
+            position:relative;
+            background: url('/public/home/images/bao1.png') no-repeat center left;
+            background-size: contain;
+            color:#0b7bb9 ;
+            text-align: center;
+            margin: 0 auto;
+            border-radius: 0.1rem;
+        }
+      ul li span img{
+      		position:absolute;
+        	width:.36rem;
+        	height:.36rem;
+        	right:.3rem;
+        	top:50%;
+        	margin-top:-.18rem;
+      } 
+        .zongdun{
+        	padding-top: 0.2rem;
+        	width: 6.4rem;
+        	text-align: center;
+        }
+        .zongdun img{
+        	width: 4rem;
+        	height:auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!--标题-->
+    <div class="title" style="top:0">
+        <a href="javascript:history.back(-1)">  
+            <img class="back" src="/public/home/images/back.png"/>
+            <span>保障服务</span>
+        </a>
+    </div>
+
+    <div class="wrapper" style="margin-top: 0.75rem;">
+    	<div class="zongdun">
+    		<img src="/public/home/images/dun.png" alt="">
+    	</div>
+      
+        <ul class="menu-side" id="xiala">
+            <li>
+                <span class="nav-label" style="background-image: url('/public/home/images/bao2.png')">先学后付<img src="/public/home/images/bottomsan.png" alt="" / class="Imgcross"></span>
+                <div class="item">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;518学车网与合作驾校单位为保障学员的切身利益，建设诚信驾培市场，推出了先学车再付款的服务模式，彻底解决了学员学车过程中的后顾之忧，并为学员缓解学费压力。<br>&nbsp;&nbsp;&nbsp;&nbsp;学员学车过程中，如对驾校有任何疑问，均可向518学车网反馈，我们将竭诚为您服务。<br>
+                    <img src="/public/home/images/xianxuewuyou.png" alt=""><br>
+                    <a href="/index.php/index/xxhf/one" class="Applicate" style="background: #D52456;">提交申请</a>
+                    </p> 
+                </div>
+            </li>
+            <li>
+                <span class="nav-label" style="background-image: url('/public/home/images/bao3.png')">考试无忧<img src="/public/home/images/bottomsan.png" alt="" / class="Imgcross"></span>
+                <div class="item">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;518学车网联合量子保及众多合作驾校，为即将报名和正在准备进行考试的学员提供了考试不过，包补考费和重考学费的服务。<br>&nbsp;&nbsp;&nbsp;&nbsp;办理此项业务，学员因正常参加考试没有通过而产生的补考费和超出考试次数产生的重考报名费，均由518学车网报销，让您安心学车，轻松应考。<br>
+                    <img src="/public/home/images/service2.png" alt=""><br>
+                    <a href="/index.php/index/index/online_lipei" class="Yuyue" style="background: #1BA160">预约投保</a>
+                    <a href="/index.php/index/index/yuyue_safe" class="Toubao" style="background: #E2AA25">在线理赔</a>
+                    </p> 
+                </div>
+            </li>
+            <li>
+                <span class="nav-label" style="background-image: url('/public/home/images/bao1.png')">一次性收费<img src="/public/home/images/bottomsan.png" alt="" / class="Imgcross"></span>
+              	<div class="item">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;518学车网为您甄选有担当、能负责、口碑好的优质金牌驾校。<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;为保障您的学车权益，我们的合作驾校均保证公示收费项目，由校长亲自签发承诺书，严格执行一次性收费，杜绝价格陷阱，让您明明白白学车，确保您的学车之路一路畅通！<br>
+                     <img src="/public/home/images/service.png" alt="">
+                    </p> 
+                </div>
+            </li>
+            <li>
+                <span class="nav-label" style="background-image: url('/public/home/images/bao5.png')">全新车辆，全程空调<img src="/public/home/images/bottomsan.png" alt="" / class="Imgcross"></span>
+                <div class="item">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;518学车网中的金牌驾校，均为您实地认证，学员选择驾校时，可选择驾校提供的全新车辆，全程空调训练，全新车辆保证了学员学习驾驶技能中的舒适性，并且驾校在安排学院考试时，也为学员提供全新车辆进行考试，有效减少学员在考试过程中由于车辆车况引发的种种问题，大幅提高学员通过率。<br>
+                    <img src="/public/home/images/service4.jpg" alt="">
+                    </p> 
+                </div>
+            </li>
+            <li>
+                <span class="nav-label" style="background-image: url('/public/home/images/bao4.png')">全程模拟<img src="/public/home/images/bottomsan.png" alt="" / class="Imgcross"></span>
+                <div class="item">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;518学车网为金牌驾校提供全真模拟考试设备支持。<br>&nbsp;&nbsp;&nbsp;&nbsp;该设备以国家标准和考场真实评判定制，通过GNSS和RTK技术多卫星多差分定位。确保评判精度不超过±5毫米，并配备车辆实时位置显示，考场语音智能纠错/回放。减小了理解驾考规则的难度，增加了学习效率和考场适应性，为顺利通过考试提供了极大保证！<br>
+                    <img src="/public/home/images/quanchengmoni.jpg" alt="">
+                    </p> 
+                </div>
+            </li>
+            <li>
+                <span class="nav-label" style="background-image: url('/public/home/images/bao6.png')">不过包赔<img src="/public/home/images/bottomsan.png" alt="" / class="Imgcross"></span>
+                <div class="item">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;518学车网甄选的超一流金牌驾校/王牌教练，为您提供了强力保障，学员跟随提供了该项保障的驾校/教练学习，除免去补考和重学费用外，同时为您保证未能通过考试将给予额外现金赔付，让您真切的体验到金牌驾校的实力和王牌教练的魅力！
+                    <br>
+                    <img src="/public/home/images/protect_img3.png" alt="">
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+<script>
+$(".nav-label").click(function() {
+    $(".item").css({
+        height: '0px'
+    });
+    var obj = $(this).siblings("div");
+    if (obj.height() == 0) {
+        var arr = obj.children("p");
+        var height = arr.height() * arr.length;
+        obj.css({
+            height: height + 'px'
+        });
+    }
+})
+$(".menu-side .nav-label:eq(0)").click(function(){
+   if ($(".menu-side .nav-label:eq(0) .Imgcross").attr("src") == "/public/home/images/bottomsan.png") {
+        $(".menu-side .nav-label:eq(0) .Imgcross").attr("src","/public/home/images/topsan.png");
+   }else{
+   		$(".menu-side .nav-label:eq(0) .Imgcross").attr("src","/public/home/images/bottomsan.png");
+  }
+  console.log("第一");
+});
+$(".menu-side .nav-label:eq(1)").click(function(){
+   if ($(".menu-side .nav-label:eq(1) .Imgcross").attr("src") == "/public/home/images/bottomsan.png") {
+        $(".menu-side .nav-label:eq(1) .Imgcross").attr("src","/public/home/images/topsan.png");
+   }else{
+   		$(".menu-side .nav-label:eq(1) .Imgcross").attr("src","/public/home/images/bottomsan.png");
+  }
+  console.log("第二");
+});
+$(".menu-side .nav-label:eq(2)").click(function(){
+   if ($(".menu-side .nav-label:eq(2) .Imgcross").attr("src") == "/public/home/images/bottomsan.png") {
+        $(".menu-side .nav-label:eq(2) .Imgcross").attr("src","/public/home/images/topsan.png");
+   }else{
+   		$(".menu-side .nav-label:eq(2) .Imgcross").attr("src","/public/home/images/bottomsan.png");
+  }
+  console.log("第三");
+});
+$(".menu-side .nav-label:eq(3)").click(function(){
+   if ($(".menu-side .nav-label:eq(3) .Imgcross").attr("src") == "/public/home/images/bottomsan.png") {
+        $(".menu-side .nav-label:eq(3) .Imgcross").attr("src","/public/home/images/topsan.png");
+   }else{
+   		$(".menu-side .nav-label:eq(3) .Imgcross").attr("src","/public/home/images/bottomsan.png");
+  }
+  console.log("第四");
+});
+$(".menu-side .nav-label:eq(4)").click(function(){
+   if ($(".menu-side .nav-label:eq(4) .Imgcross").attr("src") == "/public/home/images/bottomsan.png") {
+        $(".menu-side .nav-label:eq(4) .Imgcross").attr("src","/public/home/images/topsan.png");
+   }else{
+   		$(".menu-side .nav-label:eq(4) .Imgcross").attr("src","/public/home/images/bottomsan.png");
+  }
+  console.log("第五");
+});
+$(".menu-side .nav-label:eq(5)").click(function(){
+   if ($(".menu-side .nav-label:eq(5) .Imgcross").attr("src") == "/public/home/images/bottomsan.png") {
+        $(".menu-side .nav-label:eq(5) .Imgcross").attr("src","/public/home/images/topsan.png");
+   }else{
+   		$(".menu-side .nav-label:eq(5) .Imgcross").attr("src","/public/home/images/bottomsan.png");
+  }
+  console.log("第六");
+});
+</script>
+</body>
+{include file="public/ji"}
+</html>

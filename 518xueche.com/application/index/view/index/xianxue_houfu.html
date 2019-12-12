@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>518学车网-保障服务</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="/public/home/css/Web_app_common.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/home/css/Security_service.css">
+    <script src="/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/public/home/js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+    <style>
+        #jiege{position:fixed;bottom: 0;right: 0;width: 1rem;text-align: right;}
+        ul {
+            list-style:none;
+            width:100%;
+            padding:0 ;
+            margin:auto;
+        }
+        ul li {
+          margin-bottom: 0.1rem;
+          border-bottom: 1px solid #fff; 
+        }
+        ul li .item {
+            height:0px;
+            transition:height 1s;
+            overflow:hidden;
+            margin:0;
+            /*background:#43688a*/
+            background:transparent;
+        }
+        ul li p {
+            display:block;
+            padding:0.1rem 0.3rem;
+            text-align:left;
+            color:#333;
+            font-size: 0.16rem;
+            line-height: 0.3rem;
+          /*  text-indent: 0.3rem;*/
+           /* min-height:40px;*/
+           height: auto;
+        }
+        ul li p img{
+            display:block;
+            text-align:center;
+            width: 100%;
+            height: auto;
+        }
+        /*ul li p:hover {
+            color:red
+        }*/
+        ul li span {
+           /*  background:#0b7bb9; */
+            width: 5rem;
+            height: 1rem;
+            font-size: 0.3rem;
+            line-height: 1rem;
+            text-indent:0.2rem;
+            display:block;
+            /*padding-right: 0.2rem;*/
+            text-align:right;
+           /*  padding:8px 0; */
+            position:relative;
+            background: url('/public/home/images/bao1.png') no-repeat center left;
+            background-size: contain;
+            color:#0b7bb9 ;
+            text-align: center;
+            margin: 0 auto;
+            border-radius: 0.1rem;
+        }
+      ul li span img{
+      		position:absolute;
+        	width:.36rem;
+        	height:.36rem;
+        	right:.3rem;
+        	top:50%;
+        	margin-top:-.18rem;
+      } 
+        .zongdun{
+        	padding-top: 0.2rem;
+        	width: 6.4rem;
+        	text-align: center;
+        }
+        .zongdun img{
+        	width: 4rem;
+        	height:auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!--标题-->
+    <div class="title" style="top:0">
+        <a href="javascript:history.back(-1)">  
+            <img class="back" src="/public/home/images/back.png"/>
+            <span>先学后付</span>
+        </a>
+    </div>
+
+    <div class="wrapper" style="margin-top: 0.75rem;padding-top:.4rem;padding-bottom:.4rem;">
+<!--     	<div class="zongdun">
+    		<img src="/public/home/images/dun.png" alt="">
+    	</div> -->
+      
+        <ul class="menu-side" id="xiala" style="padding-bottom: 0.4rem">
+            <li>
+                <span class="nav-label" style="background-image: url('/public/home/images/bao2.png');display: block;">先学后付<img src="/public/home/images/topsan.png" alt="" / class="Imgcross"></span>
+                <div class="item" style="height: 550px;">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;518学车网与合作驾校单位为保障学员的切身利益，建设诚信驾培市场，推出了先学车再付款的服务模式，彻底解决了学员学车过程中的后顾之忧，并为学员缓解学费压力。<br>&nbsp;&nbsp;&nbsp;&nbsp;学员学车过程中，如对驾校有任何疑问，均可向518学车网反馈，我们将竭诚为您服务。<br>
+                    <img src="/public/home/images/xianxuewuyou.png" alt="" style="margin-top: .2rem;"><br>
+                    <a href="/index.php/index/xxhf/one"   class="Applicate" style="background: #D52456;">提交申请</a>
+                    </p> 
+                </div>
+            </li>
+        </ul>
+    </div>
+<script>
+$(".nav-label").click(function() {
+    $(".item").css({
+        height: '0px'
+    });
+    var obj = $(this).siblings("div");
+    if (obj.height() == 0) {
+        var arr = obj.children("p");
+        var height = arr.height() * arr.length;
+        obj.css({
+            height: height + 'px'
+        });
+    }
+})
+$(".menu-side .nav-label:eq(0)").click(function(){
+   if ($(".menu-side .nav-label:eq(0) .Imgcross").attr("src") == "/public/home/images/topsan.png") {
+        $(".menu-side .nav-label:eq(0) .Imgcross").attr("src","/public/home/images/bottomsan.png");
+   }else{
+   		$(".menu-side .nav-label:eq(0) .Imgcross").attr("src","/public/home/images/topsan.png");
+  }
+  console.log("第一");
+});
+$(".menu-side .nav-label:eq(1)").click(function(){
+   if ($(".menu-side .nav-label:eq(1) .Imgcross").attr("src") == "/public/home/images/bottomsan.png") {
+        $(".menu-side .nav-label:eq(1) .Imgcross").attr("src","/public/home/images/topsan.png");
+   }else{
+   		$(".menu-side .nav-label:eq(1) .Imgcross").attr("src","/public/home/images/bottomsan.png");
+  }
+  console.log("第二");
+});
+$(".menu-side .nav-label:eq(2)").click(function(){
+   if ($(".menu-side .nav-label:eq(2) .Imgcross").attr("src") == "/public/home/images/bottomsan.png") {
+        $(".menu-side .nav-label:eq(2) .Imgcross").attr("src","/public/home/images/topsan.png");
+   }else{
+   		$(".menu-side .nav-label:eq(2) .Imgcross").attr("src","/public/home/images/bottomsan.png");
+  }
+  console.log("第三");
+});
+$(".menu-side .nav-label:eq(3)").click(function(){
+   if ($(".menu-side .nav-label:eq(3) .Imgcross").attr("src") == "/public/home/images/bottomsan.png") {
+        $(".menu-side .nav-label:eq(3) .Imgcross").attr("src","/public/home/images/topsan.png");
+   }else{
+   		$(".menu-side .nav-label:eq(3) .Imgcross").attr("src","/public/home/images/bottomsan.png");
+  }
+  console.log("第四");
+});
+$(".menu-side .nav-label:eq(4)").click(function(){
+   if ($(".menu-side .nav-label:eq(4) .Imgcross").attr("src") == "/public/home/images/bottomsan.png") {
+        $(".menu-side .nav-label:eq(4) .Imgcross").attr("src","/public/home/images/topsan.png");
+   }else{
+   		$(".menu-side .nav-label:eq(4) .Imgcross").attr("src","/public/home/images/bottomsan.png");
+  }
+  console.log("第五");
+});
+$(".menu-side .nav-label:eq(5)").click(function(){
+   if ($(".menu-side .nav-label:eq(5) .Imgcross").attr("src") == "/public/home/images/bottomsan.png") {
+        $(".menu-side .nav-label:eq(5) .Imgcross").attr("src","/public/home/images/topsan.png");
+   }else{
+   		$(".menu-side .nav-label:eq(5) .Imgcross").attr("src","/public/home/images/bottomsan.png");
+  }
+  console.log("第六");
+});
+</script>
+</body>
+{include file="public/ji"}
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>518学车网-金牌驾校</title>
+	<link rel="stylesheet" type="text/css" href="/public/home/css/Web_app_common.css"/>
+	<link rel="stylesheet" type="text/css" href="/public/home/css/swiper.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/public/home/css/Gold_school.css"/>
+	<link rel="stylesheet" type="text/css" href="/public/home/css/swiper-3.3.1.min.css"/>
+	<script src="/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/public/home/js/rem.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+	
+	<!-- 金牌驾校 -->
+	<!--<div class="Drive_school">
+		<img src="/public/home/images/return_1.png" alt="">
+		<span>金牌驾校</span>
+	</div>-->
+  
+    <!--<div class="head">
+        <div class="left">
+            <img src="/public/home/images/close.png"/>
+            <img src="/public/home/images/learn_car.png"/>
+        </div>
+        <div class="right">
+            <img src="/public/home/images/share.png"/>
+        </div>
+    </div>-->
+	<!--标题-->
+	<div class="title">
+		<div class="titleInner">
+			<a href="javascript:history.back(-1)">
+			<img class="back" src="/public/home/images/back.png"/>
+			</a>
+			<span>学员</span>
+		</div>
+	</div>
+  
+  	<div class="jump_tab">
+		<ul>
+			<a href="/index.php/Index/index/gold_school"><li class="jump_act">驾校</li></a>
+			<a href="/index.php/Index/index/coach"><li>教练</li></a>
+			<a href="Student_service.html"><li>服务</li></a>
+		</ul>
+	</div>
+	<!-- 综合销量价格筛选 -->
+	<!--<div class="Sort">
+		<div class="items">
+			
+		</div>
+		<div class="items">
+			<span>销量</span>
+		</div>
+		<div class="items"></div>
+		<div class="items"></div>
+	</div>-->
+	<!--导航-->
+	<div class="nav">
+		<div class="navs zonghe_choose">
+			<span>综合</span>
+			<img class="zonghe_img" src="/public/home/images/zonghe.png"/>
+			<img class="zonghe_img2" style="display: none;" src="/public/home/images/zonghe2.png"/>
+		</div>
+		<div class="navs">
+			<span>销量</span>
+		</div>
+		<div class="navs">
+			<span>价格</span>
+			<img src="/public/home/images/jiage.png"/>
+		</div>
+		<div class="navs shaixuan_btn">
+			<span>筛选</span>
+			<img src="/public/home/images/shaixuanlogo.png"/>
+		</div>
+	</div>
+		
+		<!--综合排序-->
+	<ul class="order" style="display: none;" >
+		<li>
+			<div class="left">
+				<span>综合排序</span>
+			</div>
+			<div class="right">
+				<img src="/public/home/images/duihao.png"/ style="wdith:.27rem;height:.19rem;">
+			</div>
+		</li>
+		<li>
+			<div class="left">
+				<span>合格率优先</span>
+			</div>
+			<div class="right">
+				<img src="/public/home/images/duihao.png"/ style="wdith:.27rem;height:.19rem;">
+			</div>
+		</li>
+	</ul>
+		
+		<!--筛选选择-->
+		<div class="choose" style="display: none;" >
+			<div class="license">
+				<h1>驾照类型</h1>
+				<div class="items">
+					<img src="/public/home/images/qiche.png"/>
+					<div class="spans">
+						<span class="type" dataid="4">C1</span>
+						<span class="type" dataid="5">C2</span>
+					</div>
+				</div>
+				<div class="items">
+					<img src="/public/home/images/daba.png"/>
+					<div class="spans">
+						<span class="type" dataid="6">B1</span>
+						<span class="type" dataid="7">B2</span>
+					</div>
+				</div>
+				<div class="items">
+					<img src="/public/home/images/huoche.png"/>
+					<div class="spans">
+						<span class="type" dataid="1">A1</span>
+						<span class="type" dataid="2">A2</span>
+						<span class="type" dataid="3">A3</span>
+					</div>
+				</div>
+				<div class="items">
+					<img src="/public/home/images/motuoche.png"/>
+					<div class="spans">
+						<span class="type" dataid="8">D</span>
+						<span class="type" dataid="9">E</span>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<div class="sectionTop">
+					<span>服务类型</span>
+				</div>
+				<div class="content">
+					{foreach name="shoolservice" item="vo" key="key"}
+					<div class="item schoolservice" name="{$vo.name}" dataid="{$vo.id}">
+						<span>{$vo.name}</span>
+					</div>
+					{/foreach}
+				</div>
+			</div>
+			<!--主攻考场-->
+			<div class="section">
+				<div class="sectionTop">
+					<span>价格</span>
+				</div>
+				<div class="content">
+					<div class="item price" style="width:1.8rem;height:.5rem" dataid="<2000">
+						<span>2000以下</span>
+					</div>
+					<div class="item price" style="width:1.8rem;height:.5rem" dataid="2000-3000">
+						<span>2000-3000</span>
+					</div>
+					<div class="item price" style="width:1.8rem;height:.5rem" dataid="3000-4000">
+						<span>3000-4000</span>
+					</div>
+                  	<div class="item price" style="width:1.8rem;height:.5rem" dataid=">400">
+                      	<span>4000以上</span>
+                    </div>
+				</div>
+			</div>
+			
+			<!--车型信息-->
+			<div class="section">
+				<div class="sectionTop">
+					<span>班型</span>
+				</div>
+				<div class="content">
+					{foreach name="schoolclass" item="vo" key="key"}
+					<div class="item schoolclass" name="{$vo.class}" dataid="{$vo.id}">
+						<span>{$vo.class}</span>
+					</div>
+					{/foreach}
+				</div>
+			</div>
+			
+			<div class="section">
+				<div class="sectionTop">
+					<span>时间</span>
+				</div>
+				<div class="content">
+					<div class="item time" dataid="light">
+						<span>白天</span>
+					</div>
+                  <div class="item time" dataid="dark">
+						<span>晚上</span>
+					</div>
+				</div>
+			</div>
+			
+			<!--取消筛选---确认按钮-->
+			<div class="buttons">
+				<button class="cancle">取消筛选</button>
+				<button class="yes">确认</button>
+			</div>
+			
+		</div>
+		
+		<!--蒙版-->
+		<div class="mask" style="display: none;" >
+			<img src="/public/home/images/masking.png"/>
+		</div>
+
+	<div class="swiper-container" style="margin-top: 2.4rem;background:#fff;">
+				<div class="refreshtip">下拉可以刷新</div>
+				<div class="swiper-wrapper w" style="width: 90%;padding: .2rem 5% 0rem;height: auto;">
+						<div class="swiper-slide d">
+							<div class="init-loading  text-center" style="display: none;">下拉可以刷新</div>
+								<div class="swiper-container2">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide list-group" style="background: #fff;padding-bottom: .2rem;width:100%;display: flex;justify-content: space-between;flex-wrap: wrap;">
+											{foreach name="school_list" item="vo" key="key"}
+											<a href="/index.php/index/index/school_detail/id/{$vo.id}">
+												<div class="list-group-item">
+													<img src="{$vo.spic}" style="width: 2.8rem;height: 2.8rem;">
+													<p>
+														{$vo.name}
+													</p>
+													<p>
+														{$vo.address}
+													</p>
+												</div>
+											</a>
+											{/foreach}
+
+										</div>
+									</div>
+								</div>
+                          <div style="width:100%;height:.6rem;"></div>
+						</div>
+                  	
+				</div>
+      		
+				<div class="loadtip">上拉加载更多</div>
+				<div class="swiper-scrollbar"></div>
+			</div>
+  	
+	<!--</div>-->
+</body>
+<script src="/public/home/js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/public/home/js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var loadFlag = true;
+	var oi = 0;
+	var page=4;
+	var mySwiper = new Swiper('.swiper-container',{
+		direction: 'vertical',
+		scrollbar: '.swiper-scrollbar',
+		slidesPerView: 'auto',
+		mousewheelControl: true,
+		freeMode: true,
+		onTouchMove: function(swiper){		//手动滑动中触发
+			var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+            var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight
+            if(mySwiper.translate < 50 && mySwiper.translate > 0) {
+				$(".init-loading").html('下拉刷新...').show();
+			}else if(mySwiper.translate > 50 ){
+				$(".init-loading").html('释放刷新...').show();
+			}
+            mySwiper.update(100)
+		},
+		onTouchEnd: function(swiper) {
+			var _viewHeight = document.getElementsByClassName('swiper-wrapper')[0].offsetHeight;
+            var _contentHeight = document.getElementsByClassName('swiper-slide')[0].offsetHeight;
+             // 上拉加载
+            if(mySwiper.translate <= _viewHeight - _contentHeight - 50 && mySwiper.translate < 0) {
+                // console.log("已经到达底部！");
+                if(loadFlag){
+                	$(".loadtip").html('正在加载...');
+                }else{
+                	$(".loadtip").html('没有更多啦！');
+                }
+                
+                setTimeout(function() {
+                    var data1=0;
+                    for(var i = 0; i <2; i++) {
+                    	oi++;
+                        $.ajax({
+                            type: "POST",
+                            url: "/index.php/index/index/ajax_gold_school",
+                            data: {page:page},
+                            success: function (data) { //返回json结果
+                                console.log(data);//
+                                data=$.parseJSON( data );
+                                if(data.code==1){
+                                    $(".list-group").eq(mySwiper2.activeIndex).append('<a href="/index.php/index/index/school_detail/id/'+data.id+'"><div class="list-group-item">\
+										<img src="'+data.pic+'"/ style="width: 2.8rem;height: 2.8rem;">\
+										<p>\
+											'+data.name+'\
+										</p>\
+										<p>\
+											'+data.address+'\
+										</p>\
+									</div></a>');
+								}else{
+                                    if(data1<1){
+
+                                    }
+                                    data1++;
+
+								}
+
+                            }
+                        });
+                        page++;
+                    }
+
+                   //  $(".loadtip").html('上拉加载更多...');
+                    mySwiper.update(100)
+                  
+                }, 800);
+            }
+            
+            // 下拉刷新
+            if(mySwiper.translate >= 50) {
+                $(".init-loading").html('正在刷新...').show();
+                $(".loadtip").html('上拉加载更多');
+                loadFlag = true;
+                
+                setTimeout(function() {
+                    $(".refreshtip").show(0);
+                    $(".init-loading").html('刷新成功！');
+                    setTimeout(function(){
+                    	$(".init-loading").html('').hide();
+                    },800);
+                    $(".loadtip").show(0);
+                    
+                    //刷新操作
+                    mySwiper.update(); // 重新计算高度;
+                }, 1000);
+            }else if(mySwiper.translate >= 0 && mySwiper.translate < 50){
+            	$(".init-loading").html('').hide();
+                mySwiper.update();
+            }
+            return false;
+		}
+	});
+	var mySwiper2 = new Swiper('.swiper-container2',{
+		onTransitionEnd: function(swiper){
+			
+			$('.w').css('transform', 'translate3d(0px, 0px, 0px)')
+			$('.swiper-container2 .swiper-slide-active').css('height','auto').siblings('.swiper-slide').css('height','0px');
+			mySwiper.update();
+			
+			$('.tab a').eq(mySwiper2.activeIndex).addClass('active').siblings('a').removeClass('active');
+		}
+		
+	});
+</script>
+<script type="text/javascript">
+		$(window).ready(function(){
+			
+			// 点击综合按钮时
+			$(".zonghe_choose").click(function(){
+				// 换图片        /public/home/images/zonghe2.png
+				console.log($(".zonghe_img").attr("src"));
+				$(".zonghe_img").css({
+					"display": "none"
+				});
+				$(".zonghe_img2").css({
+					"display": "inline-block"
+				});
+//				$(".zonghe_img").attr("src","/public/home/images/zonghe2.png");
+				
+				$(".order").css({
+					"display": "block"
+				});
+			});
+			
+			// 点击综合筛选列表时
+			$(".order li").click(function(){
+				//  color: #ff3333;
+				$(".order li .right img").css({
+					"display": "none"
+				});
+				$(".order li div span").css({
+					"color": "#222222"
+				});
+//				console.log($(this).children("span"));
+				$(this).children(".left").children("span").css({
+					"color": "#ff3333"
+				});
+				$(this).children(".right").children("img").css({
+					"display": "inline-block"
+				});
+				
+				$(".order").css({
+					"display": "none"
+				});
+				$(".zonghe_img").css({
+					"display": "inline-block"
+				});
+				$(".zonghe_img2").css({
+					"display": "none"
+				});
+			});
+			
+			// 点击筛选按钮
+			$(".shaixuan_btn").click(function(){
+				$(".mask").css({
+					"display": "block"
+				});
+				$(".choose").css({
+					"display": "block"
+				});
+			});
+			
+			// 点击取消筛选和确认按钮时
+			$(".cancle").click(function(){
+				$(".mask").css({
+					"display": "none"
+				});
+				$(".choose").css({
+					"display": "none"
+				});
+			});
+			$(".yes").click(function(){
+				$(".mask").css({
+					"display": "none"
+				});
+				$(".choose").css({
+					"display": "none"
+				});
+                $.StandardPost("/index.php/index/index/gold_school", {search:"Y" });
+			});
+			
+			// 点击筛选条件
+            // 驾照类型
+            $(".license .items .spans span").click(function(){
+            	$(".license .items .spans span").css({
+            		"color": "#666666",
+            		"backgroundColor": "#ffffff",
+            		"border": "0.01rem solid #CCCCCC"
+            	});
+            	$(this).css({
+            		"color": "#FF0000",
+					"backgroundColor": "#FFE7E7",
+					"border": "0.01rem solid #FF0000"
+            	});
+            });
+            // 合格率、主攻考场、车型信息、服务
+            $(".section .content .item").click(function(){
+            	$(this).parent().children(".item").css({
+            		"color": "#222222",
+            		"backgroundColor": "#ffffff",
+            		"border": "0.01rem solid #CCCCCC"
+            	});
+            	$(this).css({
+            		"color": "#FF0000",
+					"backgroundColor": "#FFE7E7",
+					"border": "0.01rem solid #FF0000"
+            	});
+            });
+			
+		});
+		
+		
+	</script>
+
+<!--筛选点击事件-->
+<script>
+
+    function setCookie(name,value)
+    {
+        document.cookie=name+"="+value;
+    }
+
+    $(".type").click(function(){
+
+        setCookie('type', '_type'+$(this).attr("dataid")+'_');
+
+    });
+
+    $(".schoolclass").click(function(){
+
+        setCookie('class', '_class'+$(this).attr("dataid")+'_');
+
+    });
+
+    $(".schoolservice").click(function(){
+
+        setCookie('service', '_service'+$(this).attr("dataid")+'_');
+
+    });
+
+    $(".time").click(function(){
+
+        setCookie('time', $(this).attr("dataid"));
+
+    });
+
+    $(".price").click(function(){
+
+        setCookie('price', $(this).attr("dataid"));
+
+    });
+
+
+
+</script>
+
+<script>
+    $.extend({
+        StandardPost:function(url,args){
+            var form = $("<form method='post'></form>"),
+                input;
+            form.attr({"action":url});
+            $.each(args,function(key,value){
+                input = $("<input type='hidden'>");
+                input.attr({"name":key});
+                input.val(value);
+                form.append(input);
+            });
+            $(document.body).append(form);
+            form.submit();
+        }
+    });
+</script>
+</html>

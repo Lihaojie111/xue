@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>518学车网-保障服务</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="/public/home/css/Web_app_common.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/home/css/Security_service.css">
+    <script src="/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/public/home/js/rem.js" type="text/javascript" charset="utf-8"></script>
+</head>
+  <style>
+    #jiege{position:fixed;bottom: 0;right: 0;width: 1rem;text-align: right;}
+  </style>
+<body>
+<!--     <div class="head">
+        <div class="left">
+            <img src="/public/home/images/close.png"/>
+            <img src="/public/home/images/learn_car.png"/>
+        </div>
+        <div class="right">
+            <img src="/public/home/images/share.png"/>
+        </div>
+    </div> -->
+    
+    <!--标题-->
+    <div class="title" style="top:0">
+        <a href="javascript:history.back(-1)">  
+            <img class="back" src="/public/home/images/back.png"/>
+            <span>保障服务</span>
+        </a>
+    </div>
+
+    <div class="wrapper" style="margin-top: 0.75rem;">
+        <!-- 一次性收费 -->
+        <div class="item_one mt20 bgw">
+            <h1>一次性收费：</h1>
+            <p>518学车网为您甄选有担当、能负责、口碑好的优质金牌驾校。保障您的学车权益，我们的合作驾校均保证公示收费项目，由校长亲自签发承诺书，严格执行一次性收费，杜绝价格陷阱，让您明明白白学车,确保您的学车之路一路畅通！</p>
+            <img src="/public/home/images/service.png" alt="">
+        </div>
+        <!-- 先学无忧 -->
+        <div class="item_two mt20 bgw">
+            <h1>先学无忧：</h1>
+            <p>518学车网与合作驾校单位为保障学员的切身利益，建设诚信驾培市场，推出了先学车再付款的服务模式，彻底解决了学员学车过程中的后顾之忧，并为学员缓解学费压力。学员学车过程中，如对驾校有任何疑问，均可向518学车网反馈，我们将竭诚为您服务。</p>
+            <div class="five_safe">
+                <div class="left">
+                    <img src="/public/home/images/serveice1.png" alt="">
+                </div>
+                <div class="right">
+                    <div>
+                        <p>提交学员材料信息</p>
+                    </div>
+                    <div>
+                        <p>我方审核，通过面对面或上门服务的方式办理</p>
+                    </div>
+                    <div>
+                        <p>审核通过后，学员可在任一驾校报名学车，由我方支付费用</p>
+                    </div>
+                    <div>
+                        <p>报名之日起45日或参加科目二/科目三任一科目的考试后，选择一次性付款或分期付款</p>
+                    </div>
+                    <div>
+                        <p>学员中途退学，扣除报名时各种费用和已经产生的科目训练费用，并将剩余金额一次性付清或分期结算</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 考试无忧 -->
+        <div class="item_one mt20 bgw" style="padding-bottom: .2rem;">
+            <h1>学车无忧：</h1>
+            <p>518学车网联合量子保及众多合作驾校，为即将报名和正在准备进行考试的学员提供了考试不过，包补考费和重考学费的服务。办理此项业务，学员因正常参加考试没有通过而产生的补考费和超出考试次数产生的重考报名费，均由518学车网报销，让您安心学车，轻松应考。</p>
+            <img src="/public/home/images/service2.png" alt="">
+            <!--<img src="/public/home/images/protect_img1.png" alt="">-->
+        </div>
+        <!-- 全新车辆，全新空调 -->
+        <div class="item_one mt20 bgw" style="padding-bottom: .3rem;">
+            <h1>全新车辆，全程空调：</h1>
+            <p>518学车网中的金牌驾校，均为您实地认证，学员选择驾校时，可选择驾校提供的全新车辆，全程空调训练，全新车辆保证了学员学习驾驶技能中的舒适性，并且驾校在安排学院考试时，也为学员提供全新车辆进行考试，有效减少学员在考试过程中由于车辆车况引发的种种问题，大幅提高学员通过率。</p>
+            <img src="/public/home/images/service4.jpg" alt="">
+        </div>
+        <!-- 全程模拟 -->
+        <div class="item_one mt20 bgw" style="padding-bottom: .3rem;">
+            <h1>全程模拟：</h1>
+            <p>518学车网为金牌驾校提供全真模拟考试设备支持。该设备以国家标准和考场真实评判定制，通过GNSS和RTK技术多卫星多差分定位。确保评判精度不超过±5毫米，并配备车辆实时位置显示，考场语音智能纠错/回放。减小了理解驾考规则的难度，增加了学习效率和考场适应性，为顺利通过考试提供了极大保证！</p>
+            <!--<img src="/public/home/images/protect_img2.png" alt="">-->
+            <img src="/public/home/images/quanchengmoni.jpg" alt="">
+        </div>
+        <!-- 不过包赔 -->
+        <div class="item_one mt20 bgw" style="padding-bottom: .3rem;">
+            <h1>不过包赔：</h1>
+            <p>518学车网甄选的超一流金牌驾校/王牌教练，为您提供了强力保障，学员跟随提供了该项保障的驾校/教练学习，除免去补考和重学费用外，同时为您保证未能通过考试将给予额外现金赔付，让您真切的体验到金牌驾校的实力和王牌教练的魅力！</p>
+            <img src="/public/home/images/protect_img3.png" alt="">
+        </div>
+    </div>
+</body>
+{include file="public/ji"}
+</html>

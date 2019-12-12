@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <title>518学车网首页</title>
+        <link rel="stylesheet" type="text/css" href="/public/home/css/Web_app_common.css"/>
+        <link rel="stylesheet" type="text/css" href="/public/home/css/swiper.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/public/home/css/home.css"/>
+        <script src="/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/public/home/js/jquery.lazyload.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/public/home/js/rem.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/public/home/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+      <style>
+        swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+            bottom: 10px;
+            right: .6rem;
+            width: 1rem;
+            height: .25rem;
+            background: rgba(255,255,255,0.6);
+            font-size: .16rem;
+            line-height: .25rem;
+            border-radius: .2rem;
+            transform: translate(50%,0);
+        }
+        #jiege{position:fixed;bottom: 0;right: 0;width: 1rem;text-align: right;}
+        #scrollDiv{width:5.8rem;padding:0 0.3rem;height:.56rem;line-height:.56rem;overflow:hidden;position:relative;margin:0.2rem 0rem;background:#e7e7e7;}
+        #scrollDiv ul{margin-left:.45rem;}
+        #scrollDiv li{height:.56rem;line-height: .56rem;font-size:.2rem;}
+        #scrollDiv div.more{width:.52rem;height:.29rem;line-height:.29rem;text-align:center;color:#fff;background:#b8b8b8;position:absolute;right:.3rem;top:50%;margin-top:-.145rem;border-radius:.05rem;}
+        #scrollDiv div.more a{width:100%;height:100%;color:#fff;display:block;font-size:.16rem;}
+        .gototop{
+			width: 1rem;
+			height: 1rem;
+			border-radius: 100%;
+			background: #fffff8;
+			position: fixed;
+			right: .1rem;
+			bottom: .5rem;
+			box-shadow: 0 0 0.1rem #aaa;
+		}
+		.gototop img{
+			width: 0.77rem;
+			height: 0.77rem;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			/*margin-left: -.22rem;
+			margin-top: -.22rem;*/
+		}
+      </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!--品牌-->
+            <div class="brand">
+                <div class="left" style="width: 1.5rem;height:.36rem;">
+                    <!--<img class="tongcheng" src="/public/home/images/58tongcheng.png"/>
+                    <img class="shuxian" src="/public/home/images/shuxian.png"/>
+                    <img class="xueche" src="/public/home/images/518xueche.png"/>-->
+                   <!--  <img class="tongcheng lazy" data-original="/public/home/images/58tongcheng.png"/>
+                    <img class="shuxian lazy" data-original="/public/home/images/shuxian.png"/> -->
+                    <img class="xueche lazy" data-original="/public/home/images/518xueche.png" style="width: 1.5rem;height:.32rem;" />
+                </div>
+                <div class="right" style="float:left;margin-left: 0.1rem;">
+                    <!--<img class="lazy" src="/public/home/images/font.png"/>-->
+                    <img class="lazy"  data-original="/public/home/images/font.png"/>
+                </div>
+                {if condition="$denglu == 1"}
+                	<a href="{:url('loginout')}">
+                		<button style="float:right;background-color: transparent;">退出</button>
+                	</a>
+                {else/}
+                	<a href="{:url('ulogin')}">
+                		<button style="float:right;background-color: transparent;">登录</button>
+                	</a>
+                {/if}
+                
+            </div>
+            
+            <!--轮播图-->
+            <div class="swipers">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        {foreach name="map_list" item="vo" key="key"}
+	                        <div class="swiper-slide">
+	                            <!--<img class="lazy" src="{$vo.pic}"/>-->
+	                            <a href="{$vo.url}"><img class="lazy" src="{$vo.pic}"/></a>
+	                        </div>
+                        {/foreach}
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- 如果需要导航按钮 -->
+                    <!--<div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>-->
+    
+                    <!-- 如果需要滚动条 -->
+                    <!--<div class="swiper-scrollbar"></div>-->
+                </div>
+            </div>
+            
+            <div id="scrollDiv">
+                <div>
+                    <img class="lazy" src="/public/home/images/laba.png" alt="" / style="width:.34rem;height:.34rem;position:absolute;top:50%;margin-top:-.17rem;left:.3rem;">
+                </div>
+                <div class="more">
+                    <a href="/index.php/index/index/newslist/">更多</a>
+                </div>
+                <ul>
+                    {foreach name="news" item="v" key="key"}
+	                    <li>
+	                    	<a href="/index.php/index/index/newsdetail/id/{$v.id}">{$v.title}</a>
+	                    </li>
+                    {/foreach}
+                </ul>
+            </div>
+            <!--平台合作-->
+            <div class="identity">
+                <div class="item" style="border-top:none;border-left:none;">
+                    <a href="Gold_school">
+              
+                    <div class="left">
+                        <!--<img class="lazy" src="/public/home/images/identy1.png"/>-->
+                        <img class="lazy" data-original="/public/home/images/identy1.png"/>
+                        <p style="color: #e83530;">
+                            学员
+                        </p>
+                    </div>
+                    <div class="right">
+                        <p>
+                            先学后付
+                        </p>
+                        <p>
+                            全包保障
+                        </p>
+                        <p>
+                            不过包赔
+                        </p>
+                    </div>
+                    </a>
+                </div>
+                <div class="item" style="border-top:none;border-right:none;">
+                <a href="is_coach">
+                    <div class="left">
+                        <img class="lazy" data-original="/public/home/images/identy2.png"/>
+                        <p style="color: #1688c6;">
+                            教练
+                        </p>
+                    </div>
+                    <div class="right">
+                        <p>
+                            职业level认证
+                        </p>
+                        <p>
+                            提升职业价值
+                        </p>
+                        <p>
+                            行业专项补贴
+                        </p>
+                    </div>
+                    </a>
+                </div>
+                <div class="item"  style="border-left:none;border-bottom:none;">
+                    <a href="is_school">
+                    <div class="left">
+                        <img class="lazy" data-original="/public/home/images/identy3.png"/>
+                        <p style="color: #63b93c;">
+                            驾校
+                        </p>
+                    </div>
+                    <div class="right">
+                        <p>
+                            扩大招生规模
+                        </p>
+                        <p>
+                            提供金融支持
+                        </p>
+                        <p>
+                           行业资源赋能
+                        </p>
+                        <p>
+                            转型升级运营支持
+                        </p>
+                    </div>
+                    </a>
+                </div>
+                <div class="item"  style="border-right:none;border-bottom:none;">
+                   <a href="cooperate">
+                     <div class="left">
+                        <img class="lazy" data-original="/public/home/images/identy4.png"/>
+                        <p style="color: #ff9000;">
+                            合作商
+                        </p>
+                    </div>
+                    <div class="right">
+                        <p>
+                            资源共享
+                        </p>
+                        <p>
+                            业务结合
+                        </p>
+                        <p>
+                            尽享跨界红利
+                        </p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+          <!--特色班型-->
+            <div class="one">
+                <div class="one-title">
+                    <div class="left">
+                       <img class="lazy" data-original="/public/home/images/dingzhibanxing.png"/>
+                        <span>定制班型</span>
+                    </div>
+                    <a href="banxing">
+                    <div class="right">
+                        <span>更多</span>
+                        <img src="/public/home/images/more3.png"/>
+                    </div>
+                    </a>
+                </div>
+                <div class="img">
+                   <a href="banxing">
+                    <img class="lazy" data-original="/public/home/images/banxingbannner.png"/>
+                   </a>
+                </div>
+            </div>
+            <!-- 518保障服-->
+            <div class="safe_service">
+                <div class="top">
+                     <div class="left">
+                         <img class="car lazy" data-original="/public/home/images/baozhangfuwu.png"/ class="car">
+                         <span>518保障服务</span>
+                      </div>
+                      <a href="security_service">
+                          <div class="right" >
+                            <span>更多</span>
+                            <img class="lazy" data-original="/public/home/images/more3.png"/>
+                          </div>
+                      </a>
+                </div>
+               <a href="security_service">  
+              <div class="bottom">
+                    <img class="lazy" data-original="/public/home/images/niubi.png"/>
+                </div>
+            </a>
+             </div>
+            
+            <!--金牌驾校-->
+          <!--   <div class="one">
+                <div class="one-title">
+                    <div class="left">
+                      
+                        <img class="lazy" data-original="/public/home/images/gold1.png"/>
+                        <span>金牌驾校</span>
+                    </div>
+                    <a href="indexgold_school">
+                        <div class="right">
+                            <span>更多</span>
+                            <img class="lazy" data-original="/public/home/images/more3.png"/>
+                        </div>
+                    </a>
+                </div>
+                <div class="one-content">
+                    {foreach name="school_list" item="vo" key="key"}
+                        <div class="item">
+                            <a href="school_detail/id/{$vo.id}"><img class="lazy" data-original="{$vo.spic}"/></a> 
+                                <p>
+                                    {$vo.name}
+                                </p>
+                                <p class="school_img">
+                                    {foreach name="vo.child2" item="vo2" key="key2"}
+                                        {if condition="$vo2['pic'] != null"}  <img class="lazy" data-original="{$vo2.pic}"/>{/if}
+                                     {/foreach}
+                                </p><br>
+                                <p>
+                                    {$vo.address}
+                                </p>
+                        </div>
+                    {/foreach}
+                </div>
+            </div> -->
+            
+            <!--王牌教练-->
+           <!--  <div class="one">
+                <div class="one-title">
+                    <div class="left">
+                        <img class="lazy" data-original="/public/home/images/gold2.png"/>
+                        <span>王牌教练</span>
+                    </div>
+                    
+                    <a href="indexcoach">
+                        <div class="right">
+                            <span>更多</span>
+                            <img class="lazy" data-original="/public/home/images/more3.png"/>
+                        </div>
+                    </a>
+                </div>
+                <div class="one-content">
+                    {foreach name="coach_list" item="vo" key="key"}
+                    <div class="item">
+                    <a href="coach_detail/id/{$vo.cid}">
+                        <img class="lazy" data-original="{$vo.img}"/> 
+
+                    </a>    
+                        <p>
+                            教练：{$vo.name}
+                        </p>
+                        <p class="school_img">
+                        {foreach name="vo.child" item="vo1" key="key1"}
+                            {if condition="$vo1['pic'] != null"}  <img class="lazy" data-original="{$vo1.pic}"/>{/if}
+                         {/foreach}
+                        </p><br>
+                        <p>
+                            所在驾校：{$vo.school_name}
+                        </p>
+                    </div>
+                    {/foreach}
+                </div>
+            </div> -->
+            
+            <!--团体服务-->
+            <div class="one">
+                <div class="one-title">
+                    <div class="left">
+                       <img class="lazy" data-original="/public/home/images/gold3.png"/>
+                        <span>团体服务</span>
+                    </div>
+                    <div class="right">
+                        <!--<span>更多</span>
+                        <img src="/public/home/images/more3.png"/>-->
+                    </div>
+                </div>
+                <div class="img">
+                   <a href="group_service"> <img class="lazy" data-original="/public/home/images/img3.png"/></a>
+                </div>
+            </div>
+            
+            <!--无忧服务-->
+            <div class="one">
+                <div class="one-title">
+                    <div class="left">
+                       <img class="lazy" data-original="/public/home/images/gold4.png"/>
+                        <span>商务合作</span>
+                    </div>
+                    <div class="right">
+                        <!--<span>更多</span>
+                        <img src="/public/home/images/more3.png"/>-->
+                    </div>
+                </div>
+                <div class="img">
+                     <a href="cooperate"><img class="lazy" data-original="/public/home/images/img4.png"/></a>
+                </div>
+            </div>
+           	<div style="width:100%;line-height:.4rem;font-size:0.22rem;text-align:center;background:#e9e9e9;color:#666">
+            <a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action"><p>豫ICP备14028101号-4</p></a>
+              <p>@版权所有：南阳市永正信息技术有限公司</p>
+          </div>
+        </div>
+      <div class="Fixed">
+      <div>
+        <img class="liuyan lazy" src="/public/home/images/message.png" alt="">
+      </div>
+      <div>
+        <!--<img class="dizhi" src="/public/home/images/door.png" alt="">-->
+        <img class="dizhi lazy" src="/public/home/images/replace.png" alt="">
+      </div>
+      <div onclick="document.getElementById('mask_phone').style.display='block'">
+        <img class="lazy" src="/public/home/images/phone.png" alt="">
+      </div>
+      <!--退出按钮-->
+    </div>
+      
+            <div id="mask_message">
+              <div class="kuang">
+                <h1>留言</h1>
+                <img class="close" src="/public/home/images/wrong.png" onclick="document.getElementById('mask_message').style.display='none'" />
+                <!--<textarea   class="liu"  placeholder="请输入您的留言！"></textarea>-->
+                <form class="submit-message" action="/index.php/index/index/liuyan" method="post">
+                    <div class="labels">
+                        <label for="jiaxiaozixun">
+                            <input type="radio" name="content" id="jiaxiaozixun" value="驾校咨询" />
+                            <span>驾校咨询</span>
+                        </label>
+                        <label for="jiaolianzixun">
+                            <input type="radio" name="content" id="jiaolianzixun" value="教练咨询" />
+                            <span>教练咨询</span>
+                        </label>
+                        <label for="xianxuehoufu">
+                            <input type="radio" name="content" id="xianxuehoufu" value="先学后付" />
+                            <span>先学后付</span>
+                        </label>
+                        <label for="jiakaowuyou">
+                            <input type="radio" name="content" id="jiakaowuyou" value="驾考无忧" />
+                            <span>驾考无忧</span>
+                        </label>
+                        <label for="shangwuhezuo">
+                            <input type="radio" name="content" id="shangwuhezuo" value="商务合作" />
+                            <span>商务合作</span>
+                        </label>
+                        <label for="tuantiyewu">
+                            <input type="radio" name="content" id="tuantiyewu" value="团体业务" />
+                            <span>团体业务</span>
+                        </label>
+                    </div>
+                    <!--<input type="submit" value=""/>-->
+                </form>
+                <!--<input type="radio" name="" id="" value="教练咨询" />
+                <input type="radio" name="" id="" value="先学后付" />
+                <input type="radio" name="" id="" value="驾考无忧" />
+                <input type="radio" name="" id="" value="商务合作" />
+                <input type="radio" name="" id="" value="团体业务" />-->
+                <div class="btn">
+                    <!--<button onclick="document.getElementById('mask_message').style.display='none'">取消</button>-->
+                    <!--<button onclick="document.getElementById('mask_message').style.display='none'">确认</button> -->
+                    <button  class="que_liu" >确认</button>
+                </div>
+              </div>
+            </div>
+
+          <div id="mask_adress">
+            <div class="kuang">
+              <h1>请输入您的详细信息</h1>
+              <img class="close" src="/public/home/images/wrong.png" onclick="document.getElementById('mask_adress').style.display='none'" />
+              <form class="submit-address" action="/index.php/index/index/userinfo" method="post">
+                <div class="adress_detail">
+                    <div class="details">
+                        <label for="">姓名：</label><input name="name"  type="text" placeholder="请输入您的姓名">
+                    </div>
+                    <div class="details">
+                        <label for="">电话：</label><input  name="tel"  type="text" placeholder="请输入您的电话">
+                    </div>
+                    <div class="details">
+                        <label for="">地址：</label><input  name="address"  type="text" placeholder="请输入您的地址">
+                    </div>
+                    <div class="label">
+                        <label for="jiaxiaozixun1">
+                            <input type="radio" name="content" id="jiaxiaozixun1" value="" />
+                            <span>驾校咨询</span>
+                        </label>
+                        <label for="jiaolianzixun2">
+                            <input type="radio" name="content" id="jiaolianzixun2" value="" />
+                            <span>教练咨询</span>
+                        </label>
+                        <label for="xianxuehoufu1">
+                            <input type="radio" name="content" id="xianxuehoufu1" value="" />
+                            <span>先学后付</span>
+                        </label>
+                        <label for="jiakaowuyou2">
+                            <input type="radio" name="content" id="jiakaowuyou2" value="" />
+                            <span>驾考无忧</span>
+                        </label>
+                        <label for="shangwuhezuo1">
+                            <input type="radio" name="content" id="shangwuhezuo1" value="" />
+                            <span>商务合作</span>
+                        </label>
+                        <label for="tuantiyewu1">
+                            <input type="radio" name="content" id="tuantiyewu1" value="" />
+                            <span>团体业务</span>
+                        </label>
+                    </div>
+                  </div>
+                <!--<input type="submit" value=""/>-->
+              </form>
+              <div class="btn">
+                <!--<button onclick="document.getElementById('mask_adress').style.display='none'">取消</button>-->
+                <!-- <button onclick="document.getElementById('mask_adress').style.display='none'">确认</button> -->
+                <button class="que_info">提交</button>
+              </div>
+            </div>
+          </div>
+          <div id="mask_phone">
+            <div class="container">
+              <div class="number" id="phone_number">
+             518学车网：{$hotline.mobile} 
+              </div>
+              <div class="boda">
+                <div class="cancel" onclick="document.getElementById('mask_phone').style.display='none'">
+                    取消
+                </div>
+                <a href="tel:{$hotline.mobile}" style="color: #1296db;">
+                    <div class="confirm" onclick="document.getElementById('mask_phone').style.display='none'">
+                        呼叫
+                    </div>
+                </a>
+              </div>
+            </div>
+          </div>
+         
+      		<div class="gototop">
+				<img src="/public/home/images/gotop.png" alt=""  class="gotop">
+			</div>
+    </body>
+
+	<script>
+		var dt1 = new Date();
+		window.onbeforeunload = function(){
+	          var dt2 = new Date();
+	          var ms = dt2.getTime() - dt1.getTime();
+	          var img = new Image();
+	          img.src = 'log.php?stay_ms=' + ms;
+		}
+	</script>
+    <script type="text/javascript">
+    function AutoScroll(obj){
+        $("#scrollDiv").find("ul:first").animate({
+            marginTop:"-.56rem"
+        },1500,function(){
+            $(this).css({marginTop:"0px"}).find("li:first").appendTo(this);
+        });
+    }
+	$(document).ready(function(){
+		setInterval('AutoScroll("#scrollDiv")',500);
+	});
+    </script>
+    <script type="text/javascript">
+        $("img.lazy").lazyload({effect: "fadeIn"});
+        
+        var logined = {$denglu};
+        $(".liuyan").click(function(){
+            console.log(logined);
+            if (logined) {
+                document.getElementById('mask_message').style.display='block';
+            }else{
+                window.location.href = "/index.php/Index/index/ulogin";
+            }
+        });
+        
+            //留言
+            var liu = $(".liu").val();
+              $(".que_liu").click(function(){
+                liu = $(".liu").val();
+                console.log(liu);
+                
+                $(".submit-message").submit();
+                
+//              $.ajax({
+//                  type:"post",
+//                  url:"/index.php/Index/userinfo/liuyan",
+//                  async:true,
+//                  dataType:"json",
+//                  data:{liu:liu,},
+//                  success:function(data){
+//                      if(data  ==1){
+//                         document.getElementById('mask_message').style.display='none'
+//                              alert('留言成功！');
+//                      }else{
+//                           alert('留言失败！');
+//                      }
+//                  },
+//                
+//              });
+            });
+
+        $(".dizhi").click(function(){
+            console.log(logined);
+            if (logined) {
+                document.getElementById('mask_adress').style.display='block';
+            }else{
+                window.location.href = "/index.php/Index/index/ulogin";
+            }
+        });
+
+         $(".que_info").click(function(){
+              var  name= $("input[name='name']").val();
+              var  tel= $("input[name='tel']").val();
+              var  address= $("input[name='address']").val();
+              
+              //names.match(/^[a-zA-Z0-9_-]{4,16}$/)
+              //tel.match(/^[1][3,4,5,7,8,9][0-9]{9}$/)
+              if (name.match(/^[a-zA-Z0-9_-]{4,16}$/) && tel.match(/^[1][3,4,5,7,8,9][0-9]{9}$/) && address) {
+                
+                $(".submit-address").submit();
+                
+//                  $.ajax({
+//                  type:"post",
+//                  url:"/index.php/Index/userinfo/info",
+//                  async:true,
+//                  dataType:"json",
+//                  data:{name:name,tel:tel,address:address},
+//                  success:function(data){
+//                      if(data == 1){
+//                        //onclick="document.getElementById('mask_adress').style.display='none';
+//                          alert('添加成功！');
+//                          document.getElementById('mask_adress').style.display='none';
+//                      }else{
+//                           alert('添加失败！');
+//                           document.getElementById('mask_adress').style.display='none';
+//                      }
+//                  },
+//              });
+              } else{
+                	 //if (!name.match(/^[a-zA-Z0-9_-]{2,8}$/))
+                    if (!name.match(/^[a-zA-Z\u4e00-\u9fa5]+$/)) {
+                        alert("请输入用户名");
+                    }else if (!tel.match(/^[1][3,4,5,7,8,9][0-9]{9}$/)) {
+                        alert("手机号格式不正确");
+                    }else if (!address) {
+                        alert("输入您的地址");
+                    }
+              }
+            });
+
+        var mySwiper = new Swiper ('.swiper-container', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: true,
+            speed: 500,
+            delay: 3000,
+        
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        
+            // 如果需要前进后退按钮
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        
+            // 如果需要滚动条
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+    });
+        
+    </script>
+  	<!-- 按钮返回顶部JS -->
+	<script type="text/javascript">
+	  $(document).ready(function(){
+	   //首先将#back-to-top隐藏
+	   $(".gototop").hide();
+	   //当滚动条的位置处于距顶部600像素以下时，跳转链接出现，否则消失
+	   $(function () {
+	    $(window).scroll(function(){
+	     if ($(window).scrollTop()>600){
+	      $(".gototop").fadeIn(500);
+	     }else{
+	      $(".gototop").fadeOut(500);
+	     }
+	   });
+	   //当点击跳转链接后，回到页面顶部位置
+	   $(".gototop").click(function(){
+	    $('body,html').animate({scrollTop:0},500);
+	     return false;
+	    });
+	   });
+	  });
+	</script>
+    {include file="public/ji"}
+</html>

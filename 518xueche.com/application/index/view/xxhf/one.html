@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>518学车网先学后付---上传分期信息</title>
+		<link rel="stylesheet" type="text/css" href="/public/xxhf/css/Web_app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="/public/xxhf/css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/public/xxhf/css/Fenqi_message.css"/>
+		<script src="/public/xxhf/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/xxhf/js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/xxhf/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.form ul li select{
+				width: 3.5rem;
+				text-align: center;
+				font-size: 0.3rem;
+				height: 0.5rem;
+				line-height: 0.5rem;
+				border: 0 none;
+				background-color: transparent;
+				color:#666;
+			}
+			.form ul li select option{
+				text-align: center;
+				font-size: 0.3rem;
+				height: 0.5rem;
+				line-height: 0.5rem;
+				border: 0 none;
+				background-color: transparent;
+				color:#666;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<!--顶部的标题-->
+			<div class="title">
+				<!--<div class="fl">-->
+					<img class="back" src="/public/xxhf/images/back.png"/>
+				<!--</div>-->
+				<span>报名信息</span>
+			</div>
+			<div class="form">
+				<form action="" method="post">
+					<!--仅限列表支持驾校，其他驾校陆续开放中，敬请期待！-->
+					<div class="top">
+						<span>感谢您使用先学后付服务，请输入您要申请的驾校和支付相关信息！</span>
+					</div>
+					<ul>
+						<li>
+							<div class="fl">
+								<span>驾校名称</span>
+							</div>
+							<div class="fr">
+							<input type="text" name="jxmc" class="jxmc" id="" value="" placeholder="输入驾校名称"  style="text-align:left;width: 3.5rem;" />
+							<!-- 	<span>请选择</span>
+								<img class="right" src="/public/xxhf/images/back.png"/> -->
+							</div>
+						</li>
+						<!-- <li>
+							<div class="fl">
+								<span>支付方式</span>
+							</div>
+							<div class="fr"> -->
+							<!--<input type="text" name="zffs" class="zffs" id="" value="" placeholder="现金、支付宝、微信"/>-->
+						<!-- 	<select name="zffs" class="zffs" >
+                              	<option value="微信">微信支付</option>
+								<option value="现金">现金支付</option>
+								<option value="支付宝">支付宝支付</option>
+							</select> -->
+							<!-- 	<span>请选择</span>
+								<img class="right" src="/public/xxhf/images/back.png"/> -->
+						<!-- 	</div>
+						</li> -->
+						<li>
+							<div class="fl">
+								<span>选择班型</span>
+							</div>
+							<div class="fr">
+								<select name="banxing" class="zfje">
+									<option value="十天班">十天班</option>
+									<option value="保过班">保过班</option>
+									<option value="五天班">五天班</option>
+									<option value="七天班">七天班</option>
+									<option value="其他班型">其他班型</option>
+								</select>
+								<!-- <input type="number" name="fqje" class="fqje" id="" value="" placeholder="1000～20000"/> -->
+							
+								<!--<img class="right" src="/public/xxhf/images/back.png"/>-->
+							</div>
+						</li>
+					</ul>
+					
+					<!--工作信息（此工作信息，请任选一项填写）-->
+					<!--<div class="top">
+						<span>工作信息（此工作信息，请任选一项填写）</span>
+					</div>
+					<ul>
+						<li>
+							<div class="fl">
+								<span>公司信息</span>
+							</div>
+							<div class="fr">
+								<span>请填写</span>
+								<img class="right" src="/public/xxhf/images/back.png"/>
+							</div>
+						</li>
+						<li>
+							<div class="fl">
+								<span>名牌</span>
+							</div>
+							<div class="fr">
+								<span class="bold">未认证</span>
+								<img class="right" src="/public/xxhf/images/back.png"/>
+							</div>
+						</li>
+						<li>
+							<div class="fl">
+								<span>工牌</span>
+							</div>
+							<div class="fr">
+								<span class="bold">未认证</span>
+								<img class="right" src="/public/xxhf/images/back.png"/>
+							</div>
+						</li>
+					</ul>-->
+					
+					<input type="submit" class="submit" value="下一步"/>
+				</form>
+			</div>
+			
+		</div>
+	</body>
+  	<script type="text/javascript">
+		$(document).ready(function(){
+			// 点击返回按钮
+			$(".back").click(function(){
+				console.log("点击返回按钮");
+//				window.history.back = -1;
+//				window.location.href = history.back(-1);
+				console.log(window.history);
+				console.log(window.history.back(-1));
+//				history.back(-1);
+			});
+			//.jxmc		.zffs		.fqje
+			// 点击下一步提交
+			$(".submit").click(function(){
+				var name = $(".jxmc").val();
+				var method = $(".zffs").val();
+				var money = $(".fqje").val();
+				// 验证驾校名称
+				if (/^[\w\u4e00-\u9fa5]+$/.test(name)) {
+					console.log(name);
+					// return true;
+				}else{
+					if (name) {
+						alert('请输入正确的驾校名称');
+						// name = "";
+						$(".jxmc").val("");
+						return false;
+					} else{
+						alert('驾校名称不能为空');
+						// name = "";
+						$(".jxmc").val("");
+						return false;
+					}
+				}
+
+			});
+	
+		});
+		
+	</script>
+</html>

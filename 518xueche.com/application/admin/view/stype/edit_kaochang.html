@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>编辑科目类型</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="/public/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/assets/vendor/linearicons/style.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="/public/assets/css/main.css">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="76x76" href="/public/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/public/assets/img/favicon.png">
+</head>
+<style>
+    .input-error{
+        border-color:red;
+    }
+    .inline-tip {
+
+        color:red;
+
+    }
+     .col-center-block {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+
+<body>
+<!-- WRAPPER -->
+<div id="wrapper">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        {include file="public/header"}
+    </nav>
+    <!-- END NAVBAR -->
+    <!-- LEFT SIDEBAR -->
+    <div id="sidebar-nav" class="sidebar">
+        <div class="sidebar-scroll">
+            <nav>
+                {include file="public/left"}
+            </nav>
+        </div>
+    </div>
+    <!-- END LEFT SIDEBAR -->
+    <!-- MAIN -->
+    <div class="main" >
+        <!-- MAIN CONTENT -->
+        <div class="main-content" align="center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-center-block" style="width: 1000px" >
+                        <!-- FORM START -->
+                        <div class="panel" align="center"  style="width: 400px">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">修改考场类型</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form id="form1" action="" method="post">
+                                    <input type="text" class="form-control" name="name" placeholder="" value="{$type.name}">
+                                    <br>
+                                  
+                                  	<input type="hidden" name="id" value="{$type['id']}">
+                                    <button class="btn btn-primary" >提交</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->
+    </div>
+    <!-- END MAIN -->
+    <div class="clearfix"></div>
+    <footer>
+        {include file="public/footer"}
+    </footer>
+</div>
+<!-- END WRAPPER -->
+<!-- Javascript -->
+<script src="/public/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/public/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/public/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/public/assets/scripts/klorofil-common.js"></script>
+
+<script >
+
+NAME=false;
+AREA=false;
+PASSWORD=false;
+  function my_submit() {
+ 
+    if($("input[name='name']").val()==""){
+        $("input[name='name']").addClass('input-error');
+        return;
+    }
+    if($("input[name='type']").val()==""){
+        $("input[name='type']").addClass('input-error');
+        return;
+    }
+    if($("input[name='area']").val()==""){
+        $("input[name='area']").addClass('input-error');
+        return;
+    }
+    // if($("input[name='username']").val()==""){
+    //     $("input[name='username']").addClass('input-error');
+    //     return;
+    
+
+    // }
+   
+
+ 
+
+
+
+
+
+
+    if($("input[name='password']").val()==""){
+        $("input[name='password']").addClass('input-error');
+        return;
+    }
+
+  
+
+}
+
+
+
+    //获取名称
+   $("input[name='type']").blur(function(){
+          var  name=$(this).val();
+            if(name==''){
+
+          
+            $("input[name='type']").addClass('input-error');
+            //alert('商品名称不能为空');
+            NAME=false;
+            }else{
+            $("input[name='type']").removeClass('input-error'); 
+            NAME=true;
+            }
+
+
+   
+       
+    })
+
+
+
+  
+
+
+
+  
+ 
+   //表单提交事件
+    $("form").submit(function(){
+        //让input 触发失去焦点事件
+        $("input").trigger("blur");
+        
+        if(KEMU){
+
+            return true;
+
+
+        }else{
+            
+            return false;
+
+        }
+
+    })
+
+
+
+
+  
+  
+  
+  
+  
+  
+</script>
+
+</body>
+
+</html>

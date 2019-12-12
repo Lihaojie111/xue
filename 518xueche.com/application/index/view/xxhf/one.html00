@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>518学车网先学后付---上传分期信息</title>
+		<link rel="stylesheet" type="text/css" href="/public/xxhf/css/Web_app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="/public/xxhf/css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/public/xxhf/css/Fenqi_message.css"/>
+		<script src="/public/xxhf/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/xxhf/js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/xxhf/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<style>
+		/** {
+		  margin: 0;
+		  padding: 0;
+		}
+		
+		body {
+		  display: -webkit-box;
+		  display: -ms-flexbox;
+		  display: flex;
+		  -webkit-box-orient: vertical;
+		  -webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+		  width: 100%;
+		  height: 100vh;
+		  -webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+		  -webkit-box-pack: start;
+			-ms-flex-pack: start;
+			justify-content: flex-start;
+		  font-family: 'Ek Mukta';
+		  text-transform: uppercase;
+		  font-weight: 600;
+		  letter-spacing: 4px;
+		  background: #1D1F20;
+		}*/
+		
+		/*h1 {
+		  margin-top: 10vh;
+		  font-size: 2.5rem;
+		  max-width: 500px;
+		  letter-spacing: 3px;
+		  text-align: center;
+		  line-height: 1.5;
+		  font-family: 'Open Sans';
+		  text-transform: capitalize;
+		  font-weight: 800;
+		  color: white;
+		}
+		h1 span {
+		  color: #FF908B;
+		}*/
+		
+		/*form {
+		  position: relative;
+		  width: 18rem;
+		  margin-top: 8vh;
+		}
+		
+		.chosen-value,
+		.value-list {
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		
+		.chosen-value {
+		  font-family: 'Ek Mukta';
+		  letter-spacing: 4px;
+		  font-size: 0.3rem;
+		  background-color: #FAFCFD;
+		  border: 3px solid transparent;
+		  -webkit-transition: .3s ease-in-out;
+		  transition: .3s ease-in-out;
+		}
+		.chosen-value::-webkit-input-placeholder {
+		  color: #333;
+		}
+		.chosen-value:hover {
+		  background-color: #FF908B;
+		  cursor: pointer;
+		}
+		.chosen-value:hover::-webkit-input-placeholder {
+		  color: #333;
+		}
+		.chosen-value:focus, .chosen-value.open {
+		  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
+		  outline: 0;
+		  background-color: #FF908B;
+		  color: #000;
+		}
+		.chosen-value:focus::-webkit-input-placeholder, .chosen-value.open::-webkit-input-placeholder {
+		  color: #000;
+		}
+		
+		.value-list {
+		  list-style: none;
+		  margin-top: 4rem;
+		  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
+		  overflow: hidden;
+		  max-height: 0;
+		  -webkit-transition: .3s ease-in-out;
+		  transition: .3s ease-in-out;
+		}
+		.value-list.open {
+		  max-height: 320px;
+		  overflow: auto;
+		}
+		.value-list li {
+		  position: relative;
+		  background-color: #FAFCFD;
+		  font-size: 0.3rem;
+		  display: -webkit-box;
+		  display: -ms-flexbox;
+		  display: flex;
+		  -webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+		  cursor: pointer;
+		  -webkit-transition: background-color .3s;
+		  transition: background-color .3s;
+		  opacity: 1;
+		}
+		.value-list li:hover {
+		  background-color: #FF908B;
+		}
+		.value-list li.closed {
+		  max-height: 0;
+		  overflow: hidden;
+		  padding: 0;
+		  opacity: 0;
+		}*/
+		
+		.tijiao{
+			/*width: 18rem;*/
+			position: relative;
+			/*margin-top: 8vh;*/
+		}
+		
+		.chosen-value,
+		.value-list {
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		
+		.chosen-value {
+		  font-family: 'Ek Mukta';
+		  text-transform: uppercase;
+		  /*font-weight: 600;*/
+		  letter-spacing: 4px;
+		  /*height: 4rem;*/
+		  font-size: 0.3rem;
+		  /*padding: 1rem;*/
+		  background-color: #FAFCFD;
+		  /*border: 3px solid transparent;*/
+		  -webkit-transition: .3s ease-in-out;
+		  transition: .3s ease-in-out;
+		}
+		.chosen-value::-webkit-input-placeholder {
+		  color: #333;
+		}
+		.chosen-value:hover {
+		  background-color: #FF908B;
+		  cursor: pointer;
+		}
+		.chosen-value:hover::-webkit-input-placeholder {
+		  color: #333;
+		}
+		.chosen-value:focus, .chosen-value.open {
+		  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
+		  outline: 0;
+		  background-color: #FF908B;
+		  color: #000;
+		}
+		.chosen-value:focus::-webkit-input-placeholder, .chosen-value.open::-webkit-input-placeholder {
+		  color: #000;
+		}
+		
+		.value-list {
+		  list-style: none;
+		  /*margin-top: 4rem;*/
+		  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
+		  overflow: hidden;
+		  max-height: 0;
+		  -webkit-transition: .3s ease-in-out;
+		  transition: .3s ease-in-out;
+		}
+		.value-list.open {
+		  /*max-height: 320px;*/
+		  overflow: auto;
+		}
+		.value-list .lis {
+		  position: relative;
+		  /*height: 4rem;*/
+		  background-color: #FAFCFD;
+		  /*padding: 1rem;*/
+		  font-size: 0.3rem;
+		  display: -webkit-box;
+		  display: -ms-flexbox;
+		  display: flex;
+		  -webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		  cursor: pointer;
+		  -webkit-transition: background-color .3s;
+		  transition: background-color .3s;
+		  opacity: 1;
+		}
+		.value-list .lis:hover {
+		  background-color: #FF908B;
+		}
+		.value-list .lis.closed {
+		  max-height: 0;
+		  overflow: hidden;
+		  padding: 0;
+		  opacity: 0;
+		}
+		
+	</style>
+	<body>
+		<div class="wrapper">
+			<!--顶部的标题-->
+			<div class="title">
+				<!--<div class="fl">-->
+					<img class="back" src="/public/xxhf/images/back.png"/>
+				<!--</div>-->
+				<span>付费信息</span>
+			</div>
+			<div class="form">
+				<form action="" method="post">
+					<!--仅限列表支持驾校，其他驾校陆续开放中，敬请期待！-->
+					<div class="top">
+						<span>感谢您使用先学后付服务，请输入您要申请的驾校和支付相关信息！</span>
+					</div>
+					<ul>
+						<li>
+							<div class="fl">
+								<span>驾校名称</span>
+							</div>
+							<div class="fr">
+							<input type="text" name="jxmc" class="jxmc" id="" value="" placeholder="输入驾校名称"/>
+							<!-- 	<span>请选择</span>
+								<img class="right" src="/public/xxhf/images/back.png"/> -->
+							</div>
+						</li>
+						<li>
+							<div class="fl">
+								<span>支付方式</span>
+							</div>
+							<div class="fr">
+							<!--<input type="text" name="zffs" class="zffs" id="" value="" placeholder="现金、支付宝、微信"/>-->
+							<select name="zffs" class="zffs">
+                              	<option value="等下还没有选呢">请选择支付方式</option>
+								<option value="现金">现金</option>
+								<option value="支付宝">支付宝</option>
+								<option value="微信">微信</option>
+							</select>
+							<!-- 	<span>请选择</span>
+								<img class="right" src="/public/xxhf/images/back.png"/> -->
+							</div>
+						</li>
+						<li>
+							<div class="fl">
+								<span>支付金额</span>
+							</div>
+							<div class="fr" style="position: relative;">
+								<!--<input type="number" name="fqje" class="fqje" id="" value="" placeholder="1000～20000"/>-->
+								<form class="tijiao" style="position: relative;">
+								  <input class="chosen-value" type="text" value="" placeholder="请选择支付金额">
+								  <ul class="value-list">
+								    <li class="lis">1000～2000</li>
+								    <li class="lis">2000～3000</li>
+								    <li class="lis">3000～4000</li>
+								    <li class="lis">4000～5000</li>
+								    <li class="lis">5000～6000</li>
+								    <li class="lis">6000～7000</li>
+								  </ul>
+								</form>
+								<span>元</span>
+								<!--<img class="right" src="/public/xxhf/images/back.png"/>-->
+							</div>
+						</li>
+					</ul>
+					<input type="submit" class="submit" value="下一步"/>
+				</form>
+			</div>
+			
+		</div>
+	</body>
+  	<script type="text/javascript">
+		$(document).ready(function(){
+			// 点击返回按钮
+			$(".back").click(function(){
+				console.log("点击返回按钮");
+//				window.history.back = -1;
+//				window.location.href = history.back(-1);
+				console.log(window.history);
+				console.log(window.history.back(-1));
+//				history.back(-1);
+			});
+		});
+		//.jxmc		.zffs		.fqje
+		// 点击下一步提交
+		$(".submit").click(function(){
+			var name = $(".jxmc").val();
+			var method = $(".zffs").val();
+			var money = $(".fqje").val();
+			// 验证驾校名称
+			if (/^[\w\u4e00-\u9fa5]+$/.test(name)) {
+				console.log(name);
+				// return true;
+			}else{
+				if (name) {
+					alert('请输入正确的驾校名称');
+					// name = "";
+					$(".jxmc").val("");
+					return false;
+				} else{
+					alert('驾校名称不能为空');
+					// name = "";
+					$(".jxmc").val("");
+					return false;
+				}
+			}
+			
+			// 验证支付方式
+			if (/['现金' || '支付宝' || '微信']/.test(method)) {
+				console.log(method);
+				// return true;
+			} else{
+				if (method) {
+					alert('请输入正确的支付方式');
+					// method = "";
+					$(".zffs").val("");
+					return false;
+				} else{
+					alert('支付方式不能为空');
+					// method = "";
+					$(".zffs").val("");
+					return false;
+				}
+			}
+			
+			// 验证支付金额
+			if (/^[1-9]\d{1,}$/.test(money)) {
+				console.log(money);
+				// return true;
+			} else{
+				if (money) {
+					alert('请输入有效的支付金额');
+					// money = "";
+					$(".fqje").val("");
+					return false;
+				} else{
+					alert('支付金额不能为空');
+					// money = "";
+					$(".fqje").val("");
+					return false;
+				}
+			}
+		});
+	</script>
+	<script>
+		'use strict';
+		var inputField = document.querySelector('.chosen-value');
+		var dropdown = document.querySelector('.value-list');
+		var dropdownArray = [].concat(document.querySelectorAll('lis'));
+		var dropdownItems = dropdownArray[0];
+		dropdown.classList.add('open');
+		inputField.focus(); // Demo purposes only
+		
+		var valueArray = [];
+		dropdownItems.forEach(function (item) {
+		  valueArray.push(item.textContent);
+		});
+		
+		var closeDropdown = function closeDropdown() {
+		  dropdown.classList.remove('open');
+		};
+		
+		inputField.addEventListener('input', function () {
+		  dropdown.classList.add('open');
+		  var inputValue = inputField.value.toLowerCase();
+		  var valueSubstring = undefined;
+		  if (inputValue.length > 0) {
+		    for (var j = 0; j < valueArray.length; j++) {
+		      if (!(inputValue.substring(0, inputValue.length) === valueArray[j].substring(0, inputValue.length).toLowerCase())) {
+		        dropdownItems[j].classList.add('closed');
+		      } else {
+		        dropdownItems[j].classList.remove('closed');
+		      }
+		    }
+		  } else {
+		    for (var i = 0; i < dropdownItems.length; i++) {
+		      dropdownItems[i].classList.remove('closed');
+		    }
+		  }
+		});
+		
+		dropdownItems.forEach(function (item) {
+		  item.addEventListener('click', function (evt) {
+		    inputField.value = item.textContent;
+		    dropdownItems.forEach(function (dropdown) {
+		      dropdown.classList.add('closed');
+		    });
+		  });
+		});
+		
+		inputField.addEventListener('focus', function () {
+		  inputField.placeholder = 'Type to filter';
+		  dropdown.classList.add('open');
+		  dropdownItems.forEach(function (dropdown) {
+		    dropdown.classList.remove('closed');
+		  });
+		});
+		
+		inputField.addEventListener('blur', function () {
+		  inputField.placeholder = 'Select state';
+		  dropdown.classList.remove('open');
+		});
+		
+		document.addEventListener('click', function (evt) {
+		  var isDropdown = dropdown.contains(evt.target);
+		  var isInput = inputField.contains(evt.target);
+		  if (!isDropdown && !isInput) {
+		    dropdown.classList.remove('open');
+		  }
+		});
+	</script>
+</html>

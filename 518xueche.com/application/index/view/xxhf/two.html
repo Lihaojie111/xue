@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+      <meta content="black" name="apple-mobile-web-app-status-bar-style">
+      <meta content="telephone=no" name="format-detection">
+      <meta content="email=no" name="format-detection">
+    <title>518学车网先学后付---上传基本信息</title>
+    <link rel="stylesheet" type="text/css" href="/public/xxhf/css/Web_app_common.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/xxhf/css/Learn_Afford.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/xxhf/css/coach_entry.css"/>
+    <link rel="stylesheet" href="/public/xxhf/css/LArea.css">
+    <script src="/public/xxhf/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/public/xxhf/js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/public/xxhf/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-appearance: none; //去掉浏览器默认样式
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-touch-callout: none;
+            /*box-sizing: border-box;*/
+        }
+        
+        html,
+        body {
+            margin: 0 auto;
+            /*width: 100%;*/
+            min-height: 100%;
+            overflow-x: hidden;
+            -webkit-user-select: none;
+        }
+        
+        body {
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            -webkit-text-size-adjust: 100%; //关闭自动调整字体
+            -webkit-overflow-scrolling: touch;
+            overflow-scrolling: touch;
+        }
+        
+      input::-webkit-input-placeholder { /* WebKit browsers*/ 
+        color:#999;
+        /*font-size:14px;*/
+        background-color: transparent;
+      }
+      
+      input:-moz-placeholder {  /* Mozilla Firefox 4 to 18*/ 
+    　　  color:#999;
+        /*font-size:14px;*/
+    　　}
+    
+      input::-moz-placeholder {  /* Mozilla Firefox 19+*/ 
+    　　  color:#999;
+        /*font-size:14px;*/
+    　　}
+    
+      input:-ms-input-placeholder { /* Internet Explorer 10+*/ 
+      　　color:#999;
+        /*font-size:14px;*/
+      }
+      
+      textarea::-webkit-input-placeholder {
+        font-size: 0.3rem;
+      }
+      textarea:-moz-placeholder {
+        font-size: 0.3rem;
+      }
+      textarea::-moz-placeholder {
+        font-size: 0.3rem;
+      }
+      textarea:-ms-input-placeholder{
+        font-size: 0.3rem;
+      }
+        
+        input#demo1 {
+            width: 3.7rem;
+            /*height: 40px;*/
+            font-size: 0.25rem;
+            /*border: 0.01rem solid #b72f20;*/
+            border-radius: 0.05rem;
+            text-align: right;
+            /*margin: 20px 5% 0 5%;*/
+            /*padding: 5px;*/
+        }
+      /* h1 {
+            background-color: #b72f20;
+            color: #fff;
+            font-size: 25px;
+            text-align: center;
+            padding: 10px;
+        }*/
+        .input .fr select{
+          background-color: transparent;
+          text-indent: 0.4rem;
+        }
+        .form form ul .connect .input .fr select{
+          background:url('/public/xxhf/images/arrow_down.png') no-repeat left center;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!--顶部的标题-->
+      <div class="title">
+        <!--<div class="fl">-->
+          <img class="back" src="/public/xxhf/images/back.png"/>
+        <!--</div>-->
+        <span>基本信息</span>
+      </div>
+      <div class="form">
+        <p style="color:#666;font-size: 0.22rem;line-height: 0.4rem;padding:0.1rem 0.2rem;">温馨提示：为了能够<span style="color:#bc1f2a;">及时准确联系并为您提供服务</span>，请务必<span style="color:#bc1f2a;">如实填写</span>以下信息！</p>
+        <form action="" method="post">
+          <!--个人信息-->
+          <div class="top">
+            <span>个人信息</span>
+          </div>
+          <ul>
+            <li>
+              <div class="fl">
+                <span>姓名</span>
+              </div>
+              <div class="fr">
+                <!--<span>请选择</span>-->
+                <input type="text" name="xm" class="xm" id="" value="" placeholder="请输入姓名"/>
+                <!--<img class="right" src="/public/xxhf/images/back.png"/>-->
+              </div>
+            </li>
+            <li>
+              <div class="fl">
+                <span>手机号</span>
+              </div>
+              <div class="fr">
+                <!--<span>请选择</span>-->
+                <input type="text" name="mobile" class="mobile" id="" value="" placeholder="请输入手机号"/>
+                <!--<img class="right" src="/public/xxhf/images/back.png"/>-->
+              </div>
+            </li>
+            
+            <li>
+              <div class="fl">
+                <span>银行卡号</span>
+              </div>
+              <div class="fr">
+                <!--<span>请选择</span>-->
+                <input type="text" name="bank_name" class="" id="" value="" placeholder="请输入银行卡号"/ class="banknum">
+                <!--<img class="right" src="/public/xxhf/images/back.png"/>-->
+              </div>
+            </li>
+             <li>
+              <div class="fl">
+                <span>银行预留手机号码</span>
+              </div>
+              <div class="fr">
+                <!--<span>请选择</span>-->
+                <input type="text" name="bank_phone" class="bank_phone" id="" value="" placeholder="银行预留手机号码"/>
+                <!--<img class="right" src="/public/xxhf/images/back.png"/>-->
+              </div>
+            </li>
+            
+            
+          </ul>
+          
+          <!--工作信息（此工作信息，请任选一项填写）-->
+          <!--dzdq   xxdz   gsxx   gzxz   mysr txt1 txt2 txt3  txta1 txta2 txta3-->
+          <div class="top">
+            <span>工作信息（此工作信息，请任选一项填写）</span>
+          </div>
+          <ul>
+            <li>
+              <div class="fl">
+                <span>公司信息</span>
+              </div>
+              <div class="fr">
+                <input type="text" name="gsxx" class="gsxx" id="" value="" placeholder="输入公司信息"/>
+                <!--<span>请填写</span>-->
+                <!--<img class="right" src="/public/xxhf/images/back.png"/>-->
+              </div>
+            </li>
+            <li>
+              <div class="fl">
+                <span>公司联系方式</span>
+              </div>
+              <div class="fr">
+                <input type="text" name="gzxz" class="gzxz" id="" value="" placeholder="公司联系方式"/>
+                <!--<span>请填写</span>-->
+                <!--<img class="right" src="/public/xxhf/images/back.png"/>-->
+              </div>
+            </li>
+          
+          </ul>
+          
+          <!--常用联系人-->
+          <!--dzdq   xxdz   gsxx   gzxz   mysr txt1 txt2 txt3  txta1 txta2 txta3-->
+          <div class="top">
+            <span>常用联系人</span>
+          </div>
+          <ul>
+            <li class="connect">
+              <div class="fl">
+                <span>联系人1：</span>
+              </div>
+            </li>
+            <li class="connect">
+              <!--输入关系和姓名-->
+               <div class="input">
+                <div class="fl">
+                  <p>
+                    与您的关系
+                  </p>
+                </div>
+                <div class="fr">
+                  <select name="txt2" class="txt2" style="width: 1.2rem;">
+                    <option value="配偶">配偶</option>
+                    <option value="父母">父母</option>
+                    <option value="子女">子女</option>
+                    <option value="兄妹">兄妹</option>
+                    <option value="朋友">朋友</option>
+                    <option value="同事">同事</option>
+                  </select>
+                </div>
+              </div>  
+              <div class="input">
+                <div class="fl">
+                  <p>
+                    姓名
+                  </p>
+                </div>
+                <div class="fr">
+                  <input type="text" name="txt1" class="txt1" id="" value="" placeholder="输入姓名"/>
+                </div>
+              </div>
+             
+              <!--输入手机号-->
+              <div class="input">
+                <div class="fl">
+                  <p>
+                    手机号
+                  </p>
+                </div>
+                <div class="fr">
+                  <input type="text" name="txt3" class="txt3" id="" value="" placeholder="输入手机号"/>
+                </div>
+              </div>
+            </li>
+            <li class="connect">
+              <div class="fl">
+                <span>联系人2：</span>
+              </div>
+            </li>
+            <!--dzdq   xxdz   gsxx   gzxz   mysr txt1 txt2 txt3  txta1 txta2 txta3-->
+            <li class="connect">
+              <!--输入关系和姓名-->
+              <div class="input">
+                <div class="fl">
+                  <p>
+                    与您的关系
+                  </p>
+                </div>
+                <div class="fr">
+                  <select name="txta2" class="txta2" style="width: 1.2rem;">
+                    <option value="配偶">配偶</option>
+                    <option value="父母">父母</option>
+                    <option value="子女">子女</option>
+                    <option value="兄妹">兄妹</option>
+                    <option value="朋友">朋友</option>
+                    <option value="同事">同事</option>
+                  </select>
+
+                </div>
+              </div>
+              <div class="input">
+                <div class="fl">
+                  <p>
+                    姓名
+                  </p>
+                </div>
+                <div class="fr">
+                  <input type="text" name="txta1" class="txta1" id="" value="" placeholder="输入姓名"/>
+                </div>
+              </div>
+             <!--  <div class="input">
+                <div class="fl">
+                  <p>
+                    与您的关系
+                  </p>
+                </div>
+                <div class="fr">
+                  <select name="txta2" class="txta2" style="width: 1.2rem;">
+                    <option value="配偶">配偶</option>
+                    <option value="父母">父母</option>
+                    <option value="子女">子女</option>
+                    <option value="兄妹">兄妹</option>
+                    <option value="朋友">朋友</option>
+                  </select>
+
+                </div>
+              </div>
+               -->
+              <!--输入手机号-->
+              <div class="input">
+                <div class="fl">
+                  <p>
+                    手机号
+                  </p>
+                </div>
+                <div class="fr">
+                  <input type="text" name="txta3" class="txta3" id="" value="" placeholder="输入手机号"/>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="top">
+            <span>手持身份证照片</span>
+          </div>
+          <div class="divdate" style="padding: .3rem">
+            <!-- <label for="">手执身份证照片:</label> -->
+            <div class="img-box full">
+             
+              <section class=" img-section ">
+                <div class="z_photo upimg-div clear">
+                  <input type="hidden" name="held_card">
+                  <section class="z_file fl">
+                    <img src="/public/xxhf/images/a11.png" class="add-img">
+                    <input type="file" id="sfz1" class="file" onchange="upFile('/index.php/index/xxhf/xieup',$(this))" accept="image/jpg,image/jpeg,image/png,image/bmp" >
+                  </section>
+                </div>
+              </section>
+            </div>
+              <aside class="mask works-mask">
+                <div class="mask-content">
+                  <p class="del-p">您确定要删除图片吗？</p>
+                  <p class="check-p">
+                    <span class="del-com wsdel-ok" onclick="deleteImg($(this))">确定</span><span class="wsdel-no">取消</span>
+                  </p>
+                </div>
+              </aside>
+          </div>
+          <div class="top">
+            <span>身份证正反面照片</span>
+          </div>
+          
+          <div class="divdate" style="padding: .3rem;overflow: hidden;">
+            <!-- <label for="">身份证照片:</label> -->
+            <div class="con_div">
+              <div class="img-box full">
+                <section class="img-section">
+                  <div class="z_photo upimg-div clear" >
+                 		<input type="hidden" name="img1">
+                             <section class="z_file fl">
+                              <img src="/public/xxhf/images/a11.png" class="add-img">
+          					   <input type="file" id="sfz1" class="file" name="" onchange="upFile('/index.php/index/xxhf/xieup',$(this))" accept="image/jpg,image/jpeg,image/png,image/bmp" >
+                             </section>
+                       </div>
+                 </section>
+              </div>
+                    
+              <div class="img-box full">
+             
+                <section class="img-section ">
+                  <div class="z_photo upimg-div clear" >
+                   <input type="hidden" name="img2">
+                             <section class="z_file fl">
+                              <img src="/public/xxhf/images/a11.png" class="add-img">
+                               <input type="file" id="sfz1" class="file" name="" onchange="upFile('/index.php/index/xxhf/xieup',$(this))" accept="image/jpg,image/jpeg,image/png,image/bmp" >
+                            	
+                    </section>
+                       </div>
+                 </section>
+              </div>
+                 
+            
+            </div>
+          </div>
+<!--          <div class="top">
+            <span>银行卡卡号</span>
+          </div>
+          <ul>
+            <li>
+              <div class="input">
+                <div class="fl">
+                  <p>
+                    银行卡卡号
+                  </p>
+                </div>
+                <div class="fr">
+                  <input type="text" name="txt3" class="txt3" id="" value="" placeholder="请输入银行卡卡号"/ class="banknum">
+                </div>
+              </div>
+            </li>
+          </ul> -->
+                    
+          
+        
+          <input type="hidden" name="yid" value="{$yid}">
+          <input class="submit" type="submit" value="提交信息"/>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="/public/xxhf/js/imagess.js"></script>
+  <script src="/public/xxhf/js/LAreaData1.js"></script>
+    <script src="/public/xxhf/js/LAreaData2.js"></script>
+    <!--<script src="/public/xxhf/js/LArea.js"></script>-->
+    <script type="text/javascript">
+    $(document).ready(function(){
+      // 点击返回按钮
+      $(".back").click(function(){
+        console.log("点击返回按钮");
+//        window.history.back = -1;
+//        window.location.href = history.back(-1);
+        console.log(window.history);
+        console.log(window.history.back(-1));
+//        history.back(-1);
+      });
+    });
+  </script>
+  
+    <script type="text/javascript">
+    $(document).ready(function(){
+      // 点击返回按钮
+      $(".back").click(function(){
+        console.log("点击返回按钮");
+//        window.history.back = -1;
+//        window.location.href = history.back(-1);
+        console.log(window.history);
+        console.log(window.history.back(-1));
+//        history.back(-1);
+      });
+    });
+    // 点击下一步提交
+    $(".submit").click(function(){
+ 
+      	$('section.up-section').each(function(){
+			var ye = $(this).attr('path');
+           	$(this).prev().val(ye);
+        
+		});
+
+
+      //jzdq   xxdz   gsxx   gzxz   mysr txt1 txt2 txt3  txta1 txta2 txta3
+      var xm = $(".xm").val();
+      var mobile = $(".mobile").val();
+      var jzdq = $(".jzdq").val();
+      var xxdz = $(".xxdz").val();
+      var gsxx = $(".gsxx").val();
+      var gzxz = $(".gzxz").val();
+      var mysr = $(".mysr").val();
+      var txt1 = $(".txt1").val();
+      var txt2 = $(".txt2").val();
+      console.log(txt2);
+      var txt3 = $(".txt3").val();
+      var txta1 = $(".txta1").val();
+      var txta2 = $(".txta2").val();
+      console.log(txta2);
+      var txta3 = $(".txta3").val();
+      var banknum = $(".banknum").val();
+      // 验证姓名
+      if (/^[(\u4E00-\u9FA5)]{1,}$/.test(xm)) {
+        console.log(xm);
+      }else{
+        if (xm) {
+          alert('请输入正确的姓名');
+          $(".xm").val("");
+          $(".xm").focus();
+          return false;
+        } else{
+          alert('姓名不能为空');
+          $(".xm").val("");
+          $(".xm").focus();
+          return false;
+        }
+      }
+
+  
+      
+      // 验证手机号
+      if (/0?(13|14|15|16|17|18|19)[0-9]{9}$/.test(mobile)) {
+        console.log(mobile);
+      }else{
+        if (mobile) {
+          alert('请输入正确的手机号格式');
+          $(".mobile").val("");
+          $(".mobile").focus();
+          return false;
+        } else{
+          alert('手机号不能为空');
+          $(".mobile").val("");
+          $(".mobile").focus();
+          return false;
+        }
+      }
+      
+      // 验证居住地区
+//      if (/^(\u4E00-\u9FA5)[(\u4E00-\u9FA5)|'，']{1,}$/.test(dzdq)) {
+//        console.log(dzdq);
+//      }else{
+//        if (dzdq) {
+//          alert('请输入正确的居住地区');
+//          $(".dzdq").val("");
+//          return false;
+//        } else{
+//          alert('居住地区不能为空');
+//          $(".dzdq").val("");
+//          return false;
+//        }
+//      }
+
+      // var result1 = !jzdq,
+      //   result2 = jzdq;
+      // if (!jzdq) {
+      //   alert('请选择省市区');
+      //   return false;
+      // }
+      // if (jzdq == "请选择省、市、区") {
+      //   alert('请选择省市区');
+      //   return false;
+      // }
+      
+      // // 验证居住详细地址
+      // if (/^[\w\u4e00-\u9fa5]+$/.test(xxdz)) {
+      //   console.log(xxdz);
+      // }else{
+      //   if (xxdz) {
+      //     alert('请输入正确的详细地址');
+      //     $(".xxdz").val("");
+      //     $(".xxdz").focus();
+      //     return false;
+      //   } else{
+      //     alert('详细地址不能为空');
+      //     $(".xxdz").val("");
+      //     $(".xxdz").focus();
+      //     return false;
+      //   }
+      // }
+      
+      // 验证公司信息
+      if (/^[\w\u4e00-\u9fa5]+$/.test(gsxx)) {
+        console.log(gsxx);
+      }else{
+        if (gsxx) {
+          alert('请输入正确的公司信息');
+          $(".gsxx").val("");
+          $(".gsxx").focus();
+          return false;
+        } else{
+          alert('公司信息不能为空');
+          $(".gsxx").val("");
+          $(".gsxx").focus();
+          return false;
+        }
+      }
+      
+      // 验证工作性质
+      if (/^[\w\u4e00-\u9fa5]+$/.test(gzxz)) {
+        console.log(gzxz);
+      }else{
+        if (gzxz) {
+          alert('请输入正确的工作性质');
+          $(".gzxz").val("");
+          $(".gzxz").focus();
+          return false;
+        } else{
+          alert('工作性质不能为空');
+          $(".gzxz").val("");
+          $(".gzxz").focus();
+          return false;
+        }
+      }
+      
+      // 验证每月收入
+    
+      
+      //txt1 txt2 txt3  txta1 txta2 txta3
+      // 验证联系人姓名
+      if (/^[(\u4E00-\u9FA5)]{1,}$/.test(txt1)) {
+        console.log(txt1);
+      }else{
+        if (txt1) {
+          alert('请输入正确的联系人姓名');
+          $(".txt1").val("");
+          $(".txt1").focus();
+          return false;
+        } else{
+          alert('联系人姓名不能为空');
+          $(".txt1").val("");
+          $(".txt1").focus();
+          return false;
+        }
+      }
+      
+      // 验证联系人关系
+      if (/^[(\u4E00-\u9FA5)]{1,}$/.test(txt2)) {
+        console.log(txt2);
+      }else{
+        if (txt2) {
+          alert('请输入正确的联系人关系');
+          $(".txt2").val("");
+          $(".txt2").focus();
+          return false;
+        } else{
+          alert('联系人关系不能为空');
+          $(".txt2").val("");
+          $(".txt2").focus();
+          return false;
+        }
+      }
+      
+      // 验证联系人手机号
+      if (/0?(13|14|15|16|17|18|19)[0-9]{9}$/.test(txt3)) {
+        console.log(txt3);
+      }else{
+        if (txt3) {
+          alert('请输入正确的联系人手机号格式');
+          $(".txt3").val("");
+          $(".txt3").focus();
+          return false;
+        } else{
+          alert('联系人手机号不能为空');
+          $(".txt3").val("");
+          $(".txt3").focus();
+          return false;
+        }
+      }
+      
+      //txta1 txta2 txta3
+      // 验证联系人姓名
+      if (/^[(\u4E00-\u9FA5)]{1,}$/.test(txta1)) {
+        console.log(txta1);
+      }else{
+        if (txta1) {
+          alert('请输入正确的联系人姓名');
+          $(".txta1").val("");
+          $(".txta1").focus();
+          return false;
+        } else{
+          alert('联系人姓名不能为空');
+          $(".txta1").val("");
+          $(".txta1").focus();
+          return false;
+        }
+      }
+      
+      // 验证联系人关系
+      if (/^[(\u4E00-\u9FA5)]{1,}$/.test(txta2)) {
+        console.log(txta2);
+      }else{
+        if (txta2) {
+          alert('请输入正确的联系人关系');
+          $(".txta2").val("");
+          $(".txta2").focus();
+          return false;
+        } else{
+          alert('联系人关系不能为空');
+          $(".txta2").val("");
+          $(".txta2").focus();
+          return false;
+        }
+      }
+      
+      // 验证联系人手机号
+      if (/0?(13|14|15|16|17|18|19)[0-9]{9}$/.test(txta3)) {
+        console.log(txta3);
+      }else{
+        if (txta3) {
+          alert('请输入正确的联系人手机号格式');
+          $(".txta3").val("");
+          $(".txta3").focus();
+          return false;
+        } else{
+          alert('联系人手机号不能为空');
+          $(".txta3").val("");
+          $(".txta3").focus();
+          return false;
+        }
+      }
+      
+      //return false;
+    });
+      
+      
+      
+      
+  </script>
+</html>

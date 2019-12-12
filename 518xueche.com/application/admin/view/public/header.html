@@ -1,0 +1,75 @@
+<div class="brand">
+    <a href="/"><img src="/public/home/images/518xueche.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+</div>
+<div class="container-fluid">
+    <div class="navbar-btn">
+        <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+    </div>
+ 
+
+    <div id="navbar-menu">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+                    <i class="lnr lnr-alarm"></i>
+                    {if condition="$notice_count neq 0"}
+                    <span class="badge bg-danger">{$notice_count}</span>
+                    {/if}
+                </a>
+                {if condition="$notice_count > 0"}
+                <ul class="dropdown-menu notifications">
+                    {foreach name="$notice" item="v" key="key"}
+                    <li><a href="javascript:void(0)" class="notification-item" onclick="notice_click({$v.id},'{$v.content}')"><span class="dot bg-success"></span>{$v.content}</a></li>
+                    {/foreach}
+                   
+                    {if condition="$notice_count > 5"}
+                    <li><a href="#" class="more">查看所有通知</a></li>
+                    {/if}
+                </ul>
+                {/if}
+            </li>
+       
+         
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><img src="{$user_info.head_img}" class="img-circle" alt="Avatar"> <span>{$user_info.name}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/index.php/Admin/Index/selfcenter"><i class="lnr lnr-user"></i> <span>个人中心</span></a></li>
+                    <li><a href="/index.php/Admin/User/logout"><i class="lnr lnr-exit"></i> <span>退出登录</span></a></li>
+                </ul>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+<script src="/public/assets/vendor/jquery/jquery.min.js"></script>
+<script >
+     function notice_click(id,msg) {
+
+        if(msg.search("修正了") == -1){
+            var url="/index.php/admin/collection/collection";
+        }else{
+            var url="/index.php/admin/collection/collection";
+        }
+        $.ajax({
+            type: "POST",
+            url: "/index.php/Admin/index/notice_click",
+            data: {id:id},
+            success: function (data) { //返回json结果
+                console.log(data);
+                location.href=url;
+            }
+        });
+    } 
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

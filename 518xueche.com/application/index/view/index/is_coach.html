@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>518学车网教练入口页面</title>
+		<link rel="stylesheet" type="text/css" href="/public/home/css/Web_app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="/public/home/css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/public/home/css/Is_coach.css"/>
+		<script src="/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/home/js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/home/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+      <style>
+        #jiege{position:fixed;bottom: 0;right: 0;width: 1rem;text-align: right;}
+      </style>
+	<body style="background:#f5f5f5;">
+	
+		<!--标题-->
+		<div class="title">
+			<div class="titleInner">
+				  <a href="javascript:history.back(-1)"><img class="back" src="/public/home/images/back.png"/></a>
+				<span>教练</span>
+			</div>
+		</div>
+		
+		<div class="wrapper">
+			<!--教练信息-->
+			<div class="message">
+				<div class="left">
+					<img src="/public/home/images/first-level-coach.png"/>
+					<p>
+						一级教练
+					</p>
+				</div>
+				<div class="right">
+					<p>
+						教练：{$result3.name}
+					</p>
+					<p>
+						声援数：{$result3.resources}人
+					</p>
+					<p style="color:#999">
+						所在驾校：{$result4.name}
+					</p>
+					<p class="ewm"  style="color:#999;display: table-cell;
+	vertical-align: middle;
+	text-align: center;">
+						推广二维码：
+						<img src="/public/home/images/ewm.png"/ onclick="document.getElementById('mask_code').style.display='block'">
+					</p>
+				</div>
+			</div>
+          <div id="mask_code" onclick="document.getElementById('mask_code').style.display='none'">
+            	<div style="background:#fff;">
+            		<img src="http://api.huajingjie.xin/code.php?url=http://518xueche.com/index.php/index/index/register/state/0/id/{$id}&size=19"/>
+            	</div>
+          </div>
+			<!--我的收益-->
+			<div class="income">
+				<h1>我的收益</h1>
+				<div class="th">
+					<div class="td">
+						序号
+					</div>
+					<div class="td">
+						日期
+					</div>
+					<div class="td">
+						来源
+					</div>
+					<div class="td">
+						金额
+					</div>
+					<div class="td">
+						状态
+					</div>
+				</div>
+				<div class="tr">
+					<div class="td">
+						1
+					</div>
+					<div class="td"  style="margin-left:.1rem;">
+						2018-8-20
+					</div>
+					<div class="td">
+						等级收益
+					</div>
+					<div class="td" style="margin-right:.2rem;">
+						300
+					</div>
+					<div class="td">
+						已到账
+					</div>
+				</div>
+				<div class="tr">
+					<div class="td">
+						1
+					</div>
+					<div class="td" style="margin-left:.1rem;">
+						2018-8-20
+					</div>
+					<div class="td">
+						等级收益
+					</div>
+					<div class="td" style="margin-right:.2rem;">
+						300
+					</div>
+					<div class="td">
+						已到账
+					</div>
+				</div>
+				<div class="tr">
+					<div class="td">
+						1
+					</div>
+					<div class="td" style="margin-left:.1rem;">
+						2018-8-20
+					</div>
+					<div class="td">
+						等级收益
+					</div>
+					<div class="td" style="margin-right:.2rem;">
+						300
+					</div>
+					<div class="td">
+						已到账
+					</div>
+				</div>
+			</div>
+			
+			<!--能力展示-->
+			<div class="ability">
+				<h1>能力展示</h1>
+				<div class="left">
+					<p>
+						整体合格率
+					</p>
+					<img src="/public/home/images/passed.png"/>
+				</div>
+				<div class="right">
+					<p>
+						单科合格率
+					</p>
+					<p>
+						科目二
+					</p>
+					<div class="percent">
+						<img src="/public/home/images/percent85.png"/>
+						<span>85%</span>
+					</div>
+					<p>
+						科目三
+					</p>
+					<div class="percent">
+						<img src="/public/home/images/percent85.png"/>
+						<span>85%</span>
+					</div>
+				</div>
+			</div>
+			
+			<!--学员评价-->
+			<div class="comments">
+				<h1>学员评价</h1>
+				<div class="items">
+					
+					{foreach name="pingjia" item="v"}
+					<div class="item">
+						<div class="name_date">
+							<div class="name">
+								<span>学员：{$v.uname}</span>
+							</div>
+							<div class="date">
+								<span>{$v.time}</span>
+							</div>
+						</div>
+						<div class="content">
+							<p>
+								{$v.content}
+							</p>
+						</div>
+					</div>
+					{/foreach}
+					
+					
+					
+					
+				</div>
+			</div>
+			
+			<!--排行榜-->
+			<div class="rank">
+				
+				<h1>排行榜</h1>
+				<div class="twoItems">
+					<div class="item">
+						<span>能力排行榜</span>
+						<img class="rank1" src="/public/home/images/rank1.png"/ style="width:.14rem;height:.22rem;">
+						<img class="rank2" style="display: none;width:.14rem;height:.22rem;" src="/public/home/images/rank2.png"/>
+					</div>
+					<div class="item">
+						<span>声源排行榜</span>
+						<img class="rank1" style="display: none;width:.14rem;height:.22rem;" src="/public/home/images/rank1.png"/>
+						<img class="rank2" src="/public/home/images/rank2.png"/ style="width:.14rem;height:.22rem;">
+					</div>
+				</div>
+				
+				<!--教练-->
+
+				{volist name="paihang" key="key" id="vv"}
+				<div class="coaches">
+					<div class="left">
+						<span>{$key}</span>
+						<img src="/public/home/images/yijijiaolian.png"/ style="width:.64rem;height:.64rem;">
+					</div>
+					<div class="right">
+						<p>
+							<span>{$vv.resources|jl_level=###}：{$vv.name}</span>
+							<span style="color: #CCCCCC;">（声援数：{$vv.resources}人）</span>
+						</p>
+						<p>
+							<span style="color: #666666;">所在驾校：{$vv.jx_name}</span>
+						</p>
+					</div>
+				</div>
+				{/volist}
+
+
+			</div>
+			
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(window).ready(function(){
+			$(".twoItems .item").click(function(){
+				console.log($(this));
+				$(".twoItems .item").children("span").css({
+					"color": "#222222"
+				});
+				$(".twoItems .item").children(".rank1").css({
+					"display": "none"
+				});
+				$(".twoItems .item").children(".rank2").css({
+					"display": "inline-block"
+				});
+				$(".twoItems .item").css({
+					"border": "none"
+				});
+				$(this).children("span").css({
+					"color": "#ff0000"
+				});
+				$(this).children(".rank1").css({
+					"display": "inline-block"
+				});
+				$(this).children(".rank2").css({
+					"display": "none"
+				});
+				$(this).css({
+					"borderBottom": "0.04rem solid #ff0000"
+				});
+			});
+		});
+		
+	</script>
+	{include file="public/ji"}
+</html>

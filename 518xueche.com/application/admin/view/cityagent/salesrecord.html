@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>仓库管理系统</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="/public/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/assets/vendor/linearicons/style.css">
+    <link rel="stylesheet" href="/public/assets/vendor/chartist/css/chartist-custom.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="/public/assets/css/main.css">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="76x76" href="/public/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/public/assets/img/favicon.png">
+</head>
+
+<body>
+<!-- WRAPPER -->
+<div id="wrapper">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        {include file="public/header"}
+    </nav>
+    <!-- END NAVBAR -->
+    <!-- LEFT SIDEBAR -->
+    <div id="sidebar-nav" class="sidebar">
+        <div class="sidebar-scroll">
+            <nav>
+                {include file="public/left"}
+            </nav>
+        </div>
+    </div>
+    <!-- END LEFT SIDEBAR -->
+    <!-- MAIN -->
+    <div class="main">
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="container-fluid">
+
+
+
+
+                <div class="panel panel-headline" style="min-height: 500px;">
+
+                    <div class="panel-heading">
+                        <span class="panel-title" style="margin-right: 40px;">出售商品列表</span>
+                        <!--<a type="button" style="float: right" class="btn btn-default" href="/index.php/Index/index/add_users?type=3"></a>-->
+
+
+
+                        <span class="input-group"  style="float: right;margin-right: 40px;">
+                                    <input class="form-control" name="apply_name" type="text" style="width: 200px;" placeholder="门店负责人、商品名称等">
+                                    <a type="button" style="float: right" class="btn btn-primary search" href="javascript:void(0)" style="float: right;">查询</a>
+                                </span>
+
+                    </div>
+                    <div class="panel-body">
+
+
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>门店负责人</th>
+                                <th>门店地址</th>
+                                <th>商品名称</th>
+                                <th>商品规格</th>
+                                <th>品牌</th>
+                                <th>商品类型</th>
+                                <th>销售数量</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {foreach name="$sell" item="v" key="key"}
+                            <tr>
+                                <td>{$key+1}</td>
+                                <td>{$v.name}</td>
+                                <td>{$v.area}</td>
+                                <td>{$v.goods_name}</td>
+                                <td>{$v.spec_name}</td>
+                                <td>{$v.brand}</td>
+                                <td>{switch $v['type']}
+                                    {case 1}
+                                    真机
+                                    {/case}
+                                    {case 2}
+                                    体检机
+                                    {/case}
+                                    {/switch}
+                                </td>
+                                <td>{$v.sales_num}</td>
+                            </tr>
+                            {/foreach}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div align="center">
+                        {$sell->render()}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->
+    </div>
+    <!-- END MAIN -->
+    <div class="clearfix"></div>
+    <footer>
+        {include file="public/footer"}
+    </footer>
+</div>
+<!-- END WRAPPER -->
+<!-- Javascript -->
+<script src="/public/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/public/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/public/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/public/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+<script src="/public/assets/vendor/chartist/js/chartist.min.js"></script>
+<script src="/public/assets/scripts/klorofil-common.js"></script>
+
+<script type="text/javascript">
+
+
+    $('.search').click(function () {
+        var apply_name=$("input[name='apply_name']").val();
+        if(apply_name==""){
+            showdirlog("请输入申请者姓名");
+        }else{
+            location.href="/index.php/Index/cityagent/salesrecord?name="+apply_name;
+        }
+    });
+
+
+    function showdirlog(str) {
+        $('#in_text').html(str);
+        $('#myModal').modal('show');
+        setTimeout(function(){
+            $("#myModal").modal("hide")
+        },1200);
+    }
+
+    function buy_goods(goods_id) {
+        $('#goods_id').val(goods_id);
+    }
+
+
+
+</script>
+
+</body>
+
+</html>

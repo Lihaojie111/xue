@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>518学车网先学后付---上传身份证件</title>
+		<link rel="stylesheet" type="text/css" href="/public/xxhf/css/Web_app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="/public/xxhf/css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/public/xxhf/css/Identity_verify.css"/>
+		<link rel="stylesheet" type="text/css" href="/public/xxhf/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="/public/xxhf/css/index.css"/>
+		<!-- <link href="/public/xxhf/css/common.css" type="text/css" rel="stylesheet"/>
+		<link href="/public/xxhf/css/index.css" type="text/css" rel="stylesheet"/> -->
+		<script src="/public/xxhf/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/xxhf/js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/xxhf/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="/public/xxhf/js/imgUp.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<style type="text/css">
+		.confirm{
+			width: 5.8rem;
+			height: 0.75rem;
+			background-color: #118eeb;
+			border: 0.02rem solid #118eeb;
+			border-radius: 0.1rem;
+			color: #FFFFFF;
+			/*padding: 0rem 0.3rem;*/
+			margin: 0rem 0.3rem;
+			position: fixed;
+			bottom: 0.1rem;
+			
+		}
+	</style>
+	<body>
+		<div class="wrapper">
+			<!--顶部的标题-->
+			<div class="title">
+				<!--<div class="fl">-->
+					<img class="back" src="/public/xxhf/images/back.png"/>
+				<!--</div>-->
+				<span>身份验证</span>
+			</div>
+			<!--拍摄上传身份证正反面-->
+			<form action="/index.php/index/xxhf/do_three" method="post" enctype="multipart/form-data">
+			<div class="upload">
+				<div class="content">
+					<span>拍摄/上传您的二代身份证</span>
+					<img src="/public/xxhf/images/problem.png"/>
+				</div>
+
+				<div class="img">
+					<div class="img-box full">
+						<section class=" img-section">
+							<!--<p class="up-p">作品图片：<span class="up-span">最多可以上传5张图片，马上上传</span></p>-->
+							<p class="up-p"><span class="up-span">上传正面</span></p>
+							<div class="z_photo upimg-div clear" >
+								<section class="z_file fl">
+									<img src="/public/xxhf/images/front.png" class="add-img">
+									<input type="file" name="file1" id="file1" class="file1" value="" accept="/public/xxhf/images/jpg,image/jpeg,image/png,image/bmp" multiple />
+								</section>
+							</div>
+						 </section>
+					</div>
+			        <aside class="mask works-mask">
+						<div class="mask-content">
+							<p class="del-p">您确定要删除作品图片吗？</p>
+							<p class="check-p"><span id="1" class="del-com wsdel-ok yes">确定</span><span class="wsdel-no cancle">取消</span></p>
+						</div>
+					</aside>
+					
+				</div>
+				<div class="img">
+					<div class="img-box full">
+						<section class=" img-section">
+							<!--<p class="up-p">作品图片：<span class="up-span">最多可以上传5张图片，马上上传</span></p>-->
+							<p class="up-p"><span class="up-span">上传反面</span></p>
+							<div class="z_photo upimg-div clear" >
+								<section class="z_file fl">
+									<img src="/public/xxhf/images/background.png" class="add-img">
+									<input type="file" name="file2" id="file2" class="file2" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
+								</section>
+							</div>
+						 </section>
+					</div>
+			        <aside class="mask works-mask">
+						<div class="mask-content">
+							<p class="del-p">您确定要删除作品图片吗？</p>
+							<p class="check-p"><span id="2" class="del-com wsdel-ok yes">确定</span><span class="wsdel-no cancle">取消</span></p>
+						</div>
+					</aside>
+					
+				</div>
+			</div>
+
+			<input type="hidden" name="yid" value="{$yid}">
+			</form>
+			<button class="confirm">
+				确定
+			</button>
+			
+		</div>
+	</body>
+  	<script type="text/javascript">
+		$(document).ready(function(){
+			// 点击返回按钮
+			$(".back").click(function(){
+				console.log("点击返回按钮");
+//				window.history.back = -1;
+//				window.location.href = history.back(-1);
+				console.log(window.history);
+				console.log(window.history.back(-1));
+//				history.back(-1);
+			});
+		});
+	</script>
+	<script>
+		var first,second;
+		var indexs = 0;
+		var upImg;
+		$("#file1").on("change", function() {
+	        var img = event.target.files[0];
+	        var reader = new FileReader();
+	        reader.readAsDataURL(img);
+	        reader.onload = function(e){ // reader onload start
+	            // ajax 上传图片
+	            $.post("{:url('xxhf/xieup')}", { img: e.target.result,yid:{$yid},lx:1},function(ret){
+					console.log(ret);
+					console.log(typeof(ret));
+					first = JSON.parse(ret);
+	            },'json');
+	        }
+	    });
+	
+	    $("#file2").on("change", function() {
+	        var img = event.target.files[0];
+	        var reader = new FileReader();
+	        reader.readAsDataURL(img);
+	        reader.onload = function(e){ // reader onload start
+	            // ajax 上传图片
+	            $.post("{:url('xxhf/xieup')}", { img: e.target.result,yid:{$yid},lx:2},function(ret){
+					console.log(ret);
+					console.log(typeof(ret));
+					second = JSON.parse(ret);
+	                if(ret == '1'){
+	                 alert("申请成功，请耐心等待工作人员审核！");    
+	                }
+					// window.location.href='/';
+	            },'json');
+	        }
+	    });
+	    
+	    // 点击身份证正反面
+	    $(".up-img").click(function(){
+	    	console.log("点击了");
+	    	console.log($(this).index());
+	    });
+	    // 点击身份证正反面
+	    $(".up-section").click(function(){
+	    	console.log("点击了");
+	    	console.log($(this).index());
+	    });
+	    // 点击身份证正反面
+//	    $(".z_photo").click(function(){
+//	    	console.log("点击了");
+//	    	console.log($(this).index());
+//	    });
+	    $(".img").click(function(){
+	    	//console.log("点击了");
+	    	console.log("点击的img的index是："+$(this).index());
+	    	indexs = $(this).index();
+//	    	upImg = document.getElementsByClassName("up-img");
+//			console.log(upImg);
+//			for (var i = 0;i < upImg.length;i++) {
+//				upImg[i].onclick = function(){
+//					console.log(this);
+//				}
+//			}
+	    });
+//	    $(".close-upimg").click(function(){
+//	    	console.log("点击了");
+//	    	console.log($(this).index());
+//	    });
+//		upImg = document.getElementsByClassName("up-img");
+//		console.log(upImg);
+		$(".yes").click(function(){
+			console.log($(this).index());
+			console.log($(this).attr("id"));
+			if (indexs == 1) {
+				$.ajax({
+					type:"post",
+					url:"{:url('del_img')}",
+					async:true,
+					data:{imgurl:first},
+					success:function(data){
+						console.log(data);
+						first = "";
+					},
+					error:function(err){
+						console.log(err);
+					}
+				});
+			} else{
+				$.ajax({
+					type:"post",
+					url:"{:url('del_img')}",
+					async:true,
+					data:{imgurl:second},
+					success:function(data){
+						console.log(data);
+						second = "";
+					},
+					error:function(err){
+						console.log(err);
+					}
+				});
+			}
+		});
+		
+		// 点击确定按钮
+		$(".confirm").click(function(){
+			if (first && second) {
+				alert("您已经成功提交审核，请保持电话畅通，我们将会在两个工作日内联系您！");
+				window.location.href = "/";
+			}else{
+				alert("请上传身份证照片");
+			}
+		});
+    </script>
+</html>

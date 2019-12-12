@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>518学车网先学后付---扣款流程</title>
+		<link rel="stylesheet" type="text/css" href="/public/xxhf/css/debit_process.css"/>
+		<script src="/public/xxhf/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/xxhf/js/rem.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="title">
+					<img class="back" src="/public/xxhf/images/back.png"/>
+				<span>扣款流程</span>
+			</div>
+			<div class="overtime">
+				<h1>1.您已确认：</h1>
+				<p>您选择的驾校为：<span>{$tijiao.jxmc}</span></p>
+				<!--<p>您选择的的培训班型为：<span></span>套餐</p>-->
+				<p>您所选择的班型的收费金额为：<span>{$tijiao.price}</span>元</p>
+				<h1>2.您已确认：</h1>
+				<p>您同意授权518学车网在<span>{$tijiao.jxmc}</span>办理驾驶员培训考试业务过程中，所需缴纳的培训费、考务费、面签、体检、照相、资料管理费、训练费均由518学车网代缴。</p>
+				<h1>3.您同意授权518学车网在以下时间对您所提交的银行卡进行代扣：</h1>
+				<p>(1)您的驾驶员培训先学后付申请通过后当日或次日，扣除综合服务费500元。</p>
+				<p>(2)参加科目二考试产生成绩当日或次日,扣除剩余款项的50%，即<span>  {$zong}</span>元。</p>
+				<p>(3)参加科目二考试产生成绩当日或次日,扣除剩余款项的50%，即<span> {$zong}</span>元。</p>
+				<h1>4.您同意以公安部互联网交通安全综合管理平台（http://www.122.gov.cn）所公示的考试成绩作为您考试产生成绩的凭据。</h1>
+				<h1>5.您同意若因您自身原因导致的未能在三个月内完成驾驶技能培训，518学车网将在自业务受理之日起三个月后的同日，一次性扣除剩余款项，即<span>{$tijiao.price-500}</span>元。</h1>
+				<div class="nextbtn">
+					<a href="/index.php/index/xxhf/refund518/yid/{$yid}" class="jump">下一步</a>	
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,457 @@
+.wrapper{
+	width: 100%;
+	height: 100%;
+}
+.wapper{
+	width: 1366px;
+	margin: 0 auto;
+}
+.Oneimg{
+	max-height: 600px;
+	background: #d80d18;
+}
+.Oneimg .wapper{
+	height: 600px;
+	background: #ccc;
+}
+.Oneimg .wapper img{
+	width: 100%;
+	height: 100%;
+}
+/*导航*/
+.nav{
+	width: 100%;
+	min-width: 1366px;
+	height: 50px;
+}
+.nav ul li{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 160px;
+	height: 50px;
+	text-align: center;
+}
+.nav ul li a{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	text-align: center;
+	font-size: 20px;
+	color:#333;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-decoration: none;
+}
+.nav ul .act a{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	text-align: center;
+	font-size: 20px;
+	color:#d42758;
+	text-decoration: none;
+}
+
+
+
+
+
+.about_us{
+	height: 650px;
+	background: #eeecec;
+}
+.about_us .wapper{
+	height: 650px;
+	background: #eeecec;
+	position: relative;
+	color: #6a6a6a;
+}
+.about_us .wapper h1{
+	font-size: 48px;
+	text-align: center;
+	padding-top: 40px;
+  	transition:all 1s;
+}
+.about_us .wapper h2{
+	font-size: 20px;
+	text-align: center;
+  	transition: font-size 1s;
+}
+.about_us .wapper h1:hover{
+	font-size:50px;
+	padding-top: 30px
+}
+
+
+.about_us .wapper h2
+.about_us .wapper img.about_img{
+	position: absolute;
+	left: 118px;
+	top: 80px;
+}
+.about_us .wapper img.about_img:hover{
+	-webkit-animation:rotateImg 5s linear infinite;
+}
+@keyframes rotateImg {
+  0% {transform : rotate(0deg);}
+  100% {transform : rotate(360deg);}
+}
+
+@-webkit-keyframes rotateImg {
+    0%{-webkit-transform : rotate(0deg);}
+  100%{-webkit-transform : rotate(360deg);}
+}
+.about_us .wapper .Txt{
+	float: right;
+	width: 565px;
+	font-size: 18px;
+	font-family: "SimSun"
+	background: red;
+	line-height: 30px;
+  	position:absolute;
+  	right:200px;
+  	top:300px;
+}
+.about_us .wapper .Txt p{
+	text-indent: 40px;
+}
+
+.Our_group{
+	height: 550px;
+	background: #d42758;
+}
+.Our_group .wapper{
+	height: 550px;
+	background: #d42758;
+}
+.Our_group .wapper h1{
+	font-size: 48px;
+	text-align: center;
+	padding-top: 60px;
+	color: #fff;
+  	transition: font-size 1s;
+}
+.Our_group .wapper h2{
+	font-size: 20px;
+	text-align: center;
+	color: #fff;
+  	transition: font-size 1s;
+}
+.Our_group .wapper h1:hover{
+	font-size:60px;
+}
+.Our_group .wapper ul{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: 50px;
+}
+.Our_group .wapper ul li{
+	width: 20%;
+	height: 390px;
+	text-align: center;
+}
+.Our_group .wapper ul li p{
+	font-size: 40px;
+}
+.Our_group .wapper ul li img{
+	margin-top: 40px;
+}
+.Our_group .wapper ul li img:hover{
+	-moz-transform:scaleX(-1);
+    -webkit-transform:scaleX(-1);
+    -o-transform:scaleX(-1);
+    transform:scaleX(-1);
+    /*IE*/
+    filter:FlipH;
+    transition: 1s ease; 
+}
+
+
+.Five_one{
+	height: 740px;
+	background: #eeecec;
+}
+.Five_one .wapper{
+	height: 740px;
+	background: #eeecec;
+	color: #6a6a6a;
+}
+.Five_one .wapper h1{
+	font-size: 48px;
+	text-align: center;
+	padding-top: 40px;
+   transition: font-size 1s 
+}
+.Five_one .wapper h2{
+	font-size: 20px;
+	text-align: center;
+  	transition: font-size 1s 
+}
+.Five_one .wapper h1:hover{
+	font-size:60px;
+}
+
+.Ziyuan_fu{
+	height: 612px;
+	background: #d9d9d9;
+}
+.Ziyuan_fu .wapper{
+	height: 612px;
+	background: #d9d9d9;
+	color: #6a6a6a;
+}
+.Ziyuan_fu .wapper h1{
+	font-size: 48px;
+	text-align: center;
+	padding-top: 40px;
+    transition: font-size 1s 
+}
+.Ziyuan_fu .wapper h2{
+	font-size: 20px;
+	text-align: center;
+  	transition: font-size 1s 
+}
+.Ziyuan_fu .wapper h1:hover{
+	font-size:60px;
+}
+
+
+.Linghuo_ban{
+	height: 646px;
+	background: #039fd8;
+}
+.Linghuo_ban .wapper{
+	height: 646px;
+	background: #039fd8;
+	color: #fff;
+}
+.Linghuo_ban .wapper h1{
+	font-size: 48px;
+	padding-top: 60px;
+    text-align: center;
+    transition: font-size 1s 
+}
+.Linghuo_ban .wapper h2{
+	font-size: 20px;
+	margin-top: 20px;
+  	text-align: center;
+  	transition: font-size 1s 
+}
+.Linghuo_ban .wapper h3{
+	font-size: 18px;
+	margin-top: 40px;
+  	text-align: center;
+  	transition: font-size 1s 
+}
+.Linghuo_ban .wapper h1:hover{
+	font-size:60px;
+}
+.Linghuo_ban .wapper ul{
+	margin-top: 30px;
+}
+.Linghuo_ban .wapper ul li{
+	width: 50%;
+	float: left;
+	height: 190px;
+	position: relative;
+}
+.Linghuo_ban .wapper ul li img{
+  	position:absolute;
+  	left:120px;
+  	top:40px;
+}
+.Linghuo_ban .wapper ul li img:hover{
+	-webkit-animation:rotateImg 5s linear infinite;
+}
+.Linghuo_ban .wapper ul li span{
+	width: 46px;
+	height: 46px;
+	line-height: 46px;	
+	text-align: center;
+	font-size: 24px;
+	border-radius: 100%;
+	background: #fff;
+	display: block;
+	box-shadow:0px 0px 20px #ccc inset;
+	position: absolute;
+	left: 204px;
+	top: 0;
+}
+.Linghuo_ban .wapper ul li p{
+	position: absolute;
+	left: 260px;
+	top: 70px;
+}
+
+
+.Team{
+	height: 576px;
+	background: #ccc;
+}
+.Team .wapper{
+	height: 576px;
+	background: #ccc;
+}
+.Team .wapper h1{
+	font-size: 48px;
+	padding-top: 60px;
+	color: #6a6a6a;
+	text-align: center;
+  	transition: font-size 1s 
+}
+.Team .wapper h2{
+	font-size: 20px;
+	margin-top: 10px;
+	color: #6a6a6a;
+	text-align: center;
+    transition: font-size 1s 
+}
+.Team .wapper h1:hover{
+	font-size:60px;
+}
+.Team .wapper ul{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.Team .wapper ul li{
+	width: 25%;
+	height: 390px;
+	position: relative;
+	text-align: center;
+}
+.Team .wapper ul li p{
+	color: #6a6a6a;
+	font-size: 16px;
+	margin-top: 305px;
+}
+
+.Team .wapper ul li .Getbig{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: 50%;
+	margin-left: -100px;
+	top: 80px;
+	border-radius: 100%;
+}
+.Team .wapper ul li .Getbig:hover span.Big_y{
+	width: 220px;
+	height: 220px;
+	position: absolute;
+	left: 50%;
+	margin-left: -110px;
+	top: -10px;
+	transition: .5s;
+}
+.Team .wapper ul li .Getbig:hover span.Small_y{
+	width: 180px;
+	height: 180px;
+	position: absolute;
+	left: 50%;
+	margin-left: -90px;
+	top:10px;
+	transition: .5s;
+}
+.Team .wapper ul li span.Big_y{
+	width: 180px;
+	height: 180px;
+	background: #fff;
+	display: block;
+	border-radius:100%;
+	left: 50%;
+	margin-left: -90px;
+	position: absolute;
+	top: 10px;
+}
+.Team .wapper ul li span.Small_y{
+	width: 160px;
+	height: 160px;
+	display: block;
+	border-radius:100%;
+	left: 50%;
+	margin-left: -80px;
+	position: absolute; 
+	top: 20px;
+	font-size: 36px;
+	color: #fff;
+	text-align: center;
+	line-height: 80px;
+}
+
+
+.Service{
+	height: 708px;
+	background: #eeecec;
+}
+.Service .wapper{
+	height: 708px;
+	background: #eeecec;
+}
+.Service .wapper h1{
+	font-size: 48px;
+	padding-top: 80px;
+	color: #6a6a6a;
+	text-align: center;
+  	transition: font-size 1s 
+}
+.Service .wapper h2{
+	font-size: 20px;
+	margin-top: 10px;
+	color: #6a6a6a;
+	text-align: center;
+  	transition: font-size 1s 
+}
+.Service .wapper h1:hover{
+	font-size:60px;
+}
+.Footer{
+	height: 314px;
+	background: #3f4045;
+	overflow: hidden;
+}
+.Footer .wapper{
+	height: 314px;
+	background: #3f4045;
+}
+.Footer .wapper h1{
+	font-size: 15px;
+	color: #fff;
+	text-align: center;
+	margin-top: 20px;
+}
+.Footer .wapper ul{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 60px 200px 0px;
+	height: 200px;
+}
+.Footer .wapper ul li{
+	width: 15%;
+	height: 200px;
+}
+.Footer .wapper ul li p{
+	font-size: 16px;
+	color: #fff;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.Footer .wapper ul li span{
+	font-size: 12px;
+	color: #d6d6d6;
+	line-height: 30px;
+	text-align: left;
+	margin-left: 60px;
+}
+.Footer .wapper ul li.Save_img{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+.Footer .wapper ul li.Save_img img{
+	margin-top: 20px;
+}

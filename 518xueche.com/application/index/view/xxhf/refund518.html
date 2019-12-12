@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>518学车网先学后付---退费事项</title>
+		<link rel="stylesheet" type="text/css" href="/public/xxhf/css/refund518.css"/>
+		<script src="/public/xxhf/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/public/xxhf/js/rem.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="title">
+					<img class="back" src="/public/xxhf/images/back.png"/>
+				<span>退费事项</span>
+			</div>
+			<div class="overtime">
+				<h1>一、注意事项</h1>
+				<p>您在<span>{$tijiao.jxmc}</span>办理<span>驾驶员培训先学后付业务</span>后，如您因自身原因需要办理退费，您需要承担违约责任，包括但不限于：</p>
+				<p>1.扣除不可退回的费用:综合服务费（500元）、考务费（410元）、档案服务费（200元），共计1110元。</p>
+				<p>2.扣除您各个科目已经产生的训练费：详情见确认班型之规定。</p>
+				<h2>二、退费方式</h2>
+				<p>您同意以下方式进行退费：
+				<p>1.您当前已缴费额度超过已经产生的费用，则将剩余费用支付至您绑定的银行卡。</p>
+				<p>2.您当前已缴费额度未超过已经产生的费用，则从您所绑定的银行卡中扣除不足部分。</p>
+				<h3>三、责任免除</h3>
+				<p>您在办理<span>驾驶员培训先学后付</span>后，如<span>因{$tijiao.jxmc}</span>在培训过程中出现<b>暴力教学、吃拿卡要</b>或<b>重复收取班型服务规定范围内的费用</b>，您可向518学车网提出申诉，确认为<span>{$tijiao.jxmc}</span>的，您无需承担任何退费责任。 投诉电话：037760370518</p>
+				<div class="nextbtn">
+					<a  class="jump"  onclick="tijiao()">下一步</a>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+  <script>
+		function tijiao(){
+
+			alert("您的申请已经提交,审核结果将在连个工作日内由工作人员与你联系,联系电话:037760380518 60370518");
+			window.location.href="/index.php/index/index/home";
+
+		}
+
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>518学车网 - 订单支付</title></head>
+<body style="text-align: center;">
+
+<jquery/>
+<script>
+    function onBridgeReady(){
+        var data={$data};
+        WeixinJSBridge.invoke(
+                'getBrandWCPayRequest', data,
+                function(res){
+                    if(res.err_msg == "get_brand_wcpay_request:ok" ) {
+                        alert('支付成功！感谢您对518学车网的支持！');
+                        window.location.href="/";
+                    }else{
+                        window.history.back();
+                    }
+                }
+        );
+    }
+    if (typeof WeixinJSBridge == "undefined"){
+        if( document.addEventListener ){
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        }else if (document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    }else{
+        onBridgeReady();
+    }
+</script></body></html>

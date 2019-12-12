@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <title>518学车网教练详情</title>
+        <link rel="stylesheet" type="text/css" href="/public/home/css/Web_app_common.css"/>
+        <link rel="stylesheet" type="text/css" href="/public/home/css/swiper.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/public/home/css/details.css"/>
+        <script src="/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/public/home/js/rem.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/public/home/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+      <style>
+        swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+            bottom: 10px;
+            right: .6rem;
+            width: 1rem;
+            height: .25rem;
+            background: rgba(255,255,255,0.6);
+            font-size: .16rem;
+            line-height: .25rem;
+            border-radius: .2rem;
+            transform: translate(50%,0);
+        }
+        #jiege{position:fixed;bottom: 0;right: 0;width: 1rem;text-align: right;}
+        /*'color': "#FF0101",
+		'border': "0.01rem solid #FF0101",
+		'background': "#ffe7e7"*/
+        .click span:nth-child(1){
+        	color: #FF0101;
+        	border: 0.01rem solid #FF0101;
+        	background-color: #ffe7e7;
+        }
+        .kemu span:nth-child(1){
+        	color: #FF0101;
+        	border: 0.01rem solid #FF0101;
+        	background-color: #ffe7e7;
+        }
+        .zhugongkaochang span:nth-child(1){
+        	color: #FF0101;
+        	border: 0.01rem solid #FF0101;
+        	background-color: #ffe7e7;
+        }
+        .chexing span:nth-child(1){
+        	color: #FF0101;
+        	border: 0.01rem solid #FF0101;
+        	background-color: #ffe7e7;
+        }
+        .fuwu span:nth-child(1){
+        	color: #FF0101;
+        	border: 0.01rem solid #FF0101;
+        	background-color: #ffe7e7;
+        }
+      </style>
+        
+    </head>
+    <body>
+        <!--标题-->
+        <div class="title">
+            <div class="titleInner">
+                <a href="javascript:history.back(-1)">
+                    <img class="back" src="/public/home/images/back.png"/>
+                </a>
+                <span>教练详情</span>
+            </div>
+        </div>
+        <!--蒙版-->
+        <div class="mask" style="display: none;">
+            <img src="/public/home/images/masking.png"/>
+        </div>
+        <!--<form method="post" action="/index.php/index/index/docoach">-->
+            <!--立即预约板块儿-->
+            <div class="order" style="display: none;">
+                <div class="top">
+                    <div class="left">
+                        <img src="/public/home/images/img2.png"/>
+                    </div>
+                    <div class="right">
+                        <p>
+                            <img class="cha" src="/public/home/images/cha.png"/>
+                        </p>
+                        <p>
+							教练：{$coach.name}（{$coach.school_name}）
+                        </p>
+                        <p>
+							￥
+							<span class="qian">
+								{$coach.price}
+							</span>
+                        </p>
+                    </div>
+                </div>
+                
+					<!--驾照类型-->
+					<div class="items">
+                        <div class="item itemone">
+                            <p>
+								驾照类型
+                            </p>
+                            <div class="click leixing">
+                                {if condition="!$type"}
+                                <span class="type1">暂无</span>{else/}
+                            	{foreach name='type' id='v'}
+                            	<span id="_type{$v.id}" class="type1">{$v.name}</span>
+	                            	<!--<span class="type1">{$v.name}</span>-->
+	                            {/foreach}
+                                {/if}
+                            </div>
+                        </div>
+                    </div>
+                  
+					<div class="items">
+                        <div class="item itemfifve">
+                            <p>
+								教学科目
+                            </p>
+                            <div class="click kemu">
+                                {if condition="!$kemu"}
+                                <span class="type1">暂无</span>{else/}
+                            	{foreach name='kemu' id='v9'}
+                            		<span id="_kemu{$v9.id}" class="kemu1">{$v9.name}</span>
+	                            	<!--<span class="type1">{$v.name}</span>-->
+	                            {/foreach}
+                                  {/if}
+                            </div>
+                        </div>
+                    </div>
+                  
+                     <div class="items">
+                        <div class="item itemthree">
+                            <p>
+								主攻考场
+                            </p>
+                            <div class="click zhugongkaochang">
+                               {if condition="!$kaochang"}
+                                <span class="type1">暂无</span>{else/}
+                            	{foreach name="kaochang" item="v5"}
+	                            	<span id="_kaochang{$v5.id}" class="banxing1">{$v5.name}</span>
+								{/foreach}
+                                {/if}
+                            </div>
+                        </div>
+                     </div>
+                     <div class="items">
+                        <div class="item itemfour">
+                            <p>
+								车型信息
+                            </p>
+                            <div class="click chexing">
+                               {if condition="!$chexing"}
+                                <span class="type1">暂无</span>{else/}
+                            	{foreach name="chexing" item="v4"}
+									<span id="_chexing{$v4.id}" class="learnTime">{$v4.name}</span>
+								{/foreach}
+                                {/if}
+                            </div>
+                        </div>
+                       
+                    </div>  
+                 <div class="items">
+                        <div class="item itemtwo">
+                            <p>
+								服务类型
+                            </p>
+                            <div class="fuwu click">
+                               {if condition="!$service"}
+                                <span class="type1">暂无</span>{else/}
+                            	{foreach name="service" item="v"}
+									<span id="_service{$v.id}" class="fuwuleixing">{$v.name}</span>
+								{/foreach}
+                                {/if}
+                            </div>
+                        </div>
+                     </div>
+                
+                <!--支付方式-->
+                <div class="method">
+                    <h1>支付方式</h1>
+                    <div class="types">
+                        <div class="type">
+                            <span class="first" name="">面对面</span>
+                        </div>
+                        <div class="type">
+                            <span class="first" name="1">先学后付</span>
+                        </div>
+                        <div class="type">
+                            <span class="first" name=>在线支付</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--确认按钮-->
+                <div class="yes">
+                    <input type="hidden"  value="{$coach.cid}"  name="cid">
+                    <input type="hidden" name="state" >
+                    <button class="confirm">
+						确认
+                    </button>
+                </div>
+            </div>
+            
+        <!--</form>-->
+
+        <!--提示模板-->
+        <div class="tips" style="display: none;">
+            <p>
+				对应人员会在两个工作日内，联系您请保持手机畅通
+            </p>
+        </div>
+        <div class="wrapper">
+            <!--轮播图-->
+            <div class="swipers">
+                <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  
+                {foreach name="img" item="v"}     
+					<div class="swiper-slide">
+						<img src="{$v.pic}" alt="">
+					</div>
+                {/foreach}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            </div>
+            
+            <!--教练信息-->
+            <div class="coach">
+                <div class="left">
+                    <p>
+                    {$coach.name}（{$coach.school_name}）
+                    </p>
+                     <input  type="hidden" name="school_id" value="{$coach.cid}">
+                     <input  type="hidden" name="school_name" value="{$coach.name}">
+                    <div class="bao">
+                    {foreach name="service" item="v"}
+                        <img src="{$v.pic}"/>
+                    {/foreach}
+                    </div>
+                </div>
+                <div class="right">
+                    <p>
+						声援数：{$coach.resources}人
+                    </p>
+                </div>
+            </div>
+
+         <!--    <div class="room">
+                <div class="left">
+                    <span>类型：</span>
+                </div>
+                <div class="right"> -->
+                 <!--   {foreach name="type" item="v2"}
+                    <div class="item click leixing">
+                        <span id="_type{$v2.id}">{$v2.name}</span> -->
+                        <!--<input type="button" name="" id="_type{$v2.id}" value="{$v2.name}" />-->
+                 <!--    </div>
+                    {/foreach}
+                </div>
+            </div> -->
+            
+            <div class="room">
+                <div class="left">
+                    <span>科目：</span>
+                </div>
+                <div class="right">
+                   
+
+                       {if condition="!$kemu"}
+                                <div class="item"> <span class="type1">暂无</span>  </div> {else/}
+                   {foreach name="kemu" item="v2"}
+                    <!--click kemu-->
+                    <div class="item">
+                  
+                        <span id="_kemu{$v2.id}">{$v2.name}</span>
+                      
+                        <!--<input type="button" name="" id="_kemu{$v2.id}" value="{$v2.name}" />-->
+                    </div>
+                    {/foreach}
+                    {/if}
+                </div>
+            </div>
+
+            <!--主攻考场-->
+         <!--    <div class="room">
+                <div class="left">
+                    <span>主攻考场：</span>
+                </div>
+                <div class="right">
+                {foreach name="kaochang" item="v3"}
+                    <div class="item click zhugongkaochang">
+                        <span id="_kaochang{$v3.id}">{$v3.name}</span>
+                    </div>
+                {/foreach}
+                </div>
+            </div> -->
+            
+            <!--预约类型：-->
+            <div class="room">
+                <div class="left">
+                    <span>车型：</span>
+                </div>
+                <div class="right">
+                                       {if condition="!$chexing"}
+                                <div class="item"> <span class="type1">暂无</span>  </div> {else/}
+         
+
+                {foreach name="chexing" item="v4"}
+                    <div class="item">
+                        <span id="_chexing{$v4.id}">{$v4.name}</span>
+                    </div>
+                {/foreach}
+                {/if}
+                </div>
+            </div>
+
+            <!--服务包过-->
+            <div class="server">
+                <div class="left">
+                    <span>服务：</span>
+                </div>
+                <div class="right">
+                                       {if condition="!$service"}
+                                <div class="item"> <span class="type1">暂无</span>  </div> {else/}
+                 
+                 {foreach name="service" item="v"}
+                    <div class="item">
+                        <img src="{$v.pic}"/>
+                        <span id="_service{$v.id}">{$v.name}</span>
+                    </div>
+                  {/foreach}
+                  {/if}
+                </div>
+            </div>
+            
+            <!--总金额-->
+              <!--   <div class="total">
+                    <p>
+						总金额:
+                    </p>
+                    <p>
+                        <span>¥</span>
+                        <span class="qian">{$coach.price}</span>
+                    </p>
+                </div> -->
+            
+            <!--科目价格-->
+            
+            <!--教练简介：-->
+            <div class="introduce">
+                <h1>教练简介：</h1>
+                <!-- <img src="/public/home/images/img2.png" style="width:5.8rem;height:3.8rem;"/> -->
+                <div class="content">
+                   <!--  <h1>{$coach.name}教练简介</h1> -->
+                    <p>
+						{$coach.content}
+                    </p>
+                </div>
+            </div>
+            
+            <!--用户评价-->
+            <div class="comments">
+                <h1>用户评价：</h1>
+                <div class="comment">
+                    {if condition="$count ==0"}
+                		<div  align="center"> 
+                        	<p style="font-size:.24rem;">暂无评价</p>
+                		</div>
+					{/if} 
+                    {foreach name="pingjia" item="v" key="k"}
+	                    <div class="item">
+	                        <div class="name_date">
+	                            <div class="name">
+	                                <img src="{$v.upic}"/>
+	                                <span>{$v.uname}</span>
+	                            </div>
+	                            <div class="date">
+	                                <span>{$v.time}</span>
+	                            </div>
+	                        </div>
+	                        <div class="content">
+	                            <p>
+	                                {$v.content}
+	                            </p>
+	                        </div>
+	                    </div>
+                	{/foreach}
+           
+                </div>
+            </div>
+            
+            <!--立即预约-->
+            <div class="button">
+				<a>
+					我要评价
+				</a>
+              <!--   <a href="/index.php/Index/pingjia/assess/">我要评价</a> -->
+                
+                <button class="appointment">
+                    立即预约
+                </button>
+            </div>
+            
+            <div id="mask_eva">
+              <div class="mask_con">
+                <h1>请填写您对教练的评价 !</h1>
+                <textarea class="comment_content"></textarea>
+                <div class="evalution">
+                  <button onclick="document.getElementById('mask_eva').style.display=('none')">
+                      取消
+                  </button>
+                  <button class="confirm_comments">
+                      确定评价
+                  </button>
+                </div>
+              </div>
+            </div>
+          
+        </div>
+    </body>
+    <script type="text/javascript">
+        $(".itemone span").click(function() {
+            $(".itemone span").css({
+                    'color': "#666",
+                    'border': "0.01rem solid #CCCCCC",
+                    'background': "#fff"
+                });
+                $(this).css({
+                    'color': "#FF0101",
+                    'border': "0.01rem solid #FF0101",
+                    'background': "#ffe7e7"
+                });
+        });
+        $(".itemtwo span").click(function() {
+          $(".itemtwo span").css({
+            'color': "#666",
+            'border': "0.01rem solid #CCCCCC",
+            'background': "#fff"
+          });
+          $(this).css({
+            'color': "#FF0101",
+            'border': "0.01rem solid #FF0101",
+            'background': "#ffe7e7"
+          });
+        });
+        $(".kemu span").click(function() {
+          $(".kemu span").css({
+            'color': "#666",
+            'border': "0.01rem solid #CCCCCC",
+            'background': "#fff"
+          });
+          $(this).css({
+            'color': "#FF0101",
+            'border': "0.01rem solid #FF0101",
+            'background': "#ffe7e7"
+          });
+        });
+		$(".itemthree span").click(function() {
+            $(".itemthree span").css({
+                    'color': "#666",
+                    'border': "0.01rem solid #CCCCCC",
+                    'background': "#fff"
+                });
+                $(this).css({
+                    'color': "#FF0101",
+                    'border': "0.01rem solid #FF0101",
+                    'background': "#ffe7e7"
+                });
+        });
+        $(".itemfour span").click(function() {
+          $(".itemfour span").css({
+            'color': "#666",
+            'border': "0.01rem solid #CCCCCC",
+            'background': "#fff"
+          });
+          $(this).css({
+            'color': "#FF0101",
+            'border': "0.01rem solid #FF0101",
+            'background': "#ffe7e7"
+          });
+        });
+        // itemfifve
+//      $(".itemfifve span").click(function() {
+//        $(".itemfour span").css({
+//          'color': "#666",
+//          'border': "0.01rem solid #CCCCCC",
+//          'background': "#fff"
+//        });
+//        $(this).css({
+//          'color': "#FF0101",
+//          'border': "0.01rem solid #FF0101",
+//          'background': "#ffe7e7"
+//        });
+//      });
+        setTimeout(function(){
+//      	.click span:nth-child(1){
+//	        	color: #FF0101;
+//	        	border: 0.01rem solid #FF0101;
+//	        	background-color: #ffe7e7;
+//	        }
+        	$(".click span:eq(0)").css({
+        		'color': "#FF0101",
+	            'border': "0.01rem solid #FF0101",
+	            'background': "#ffe7e7"
+        	});
+        	$(".kemu span:eq(0)").css({
+        		'color': "#FF0101",
+	            'border': "0.01rem solid #FF0101",
+	            'background': "#ffe7e7"
+        	});
+        	$(".zhugongkaochang span:eq(0)").css({
+        		'color': "#FF0101",
+	            'border': "0.01rem solid #FF0101",
+	            'background': "#ffe7e7"
+        	});
+        	$(".chexing span:eq(0)").css({
+        		'color': "#FF0101",
+	            'border': "0.01rem solid #FF0101",
+	            'background': "#ffe7e7"
+        	});
+        	$(".fuwu span:eq(0)").css({
+        		'color': "#FF0101",
+	            'border': "0.01rem solid #FF0101",
+	            'background': "#ffe7e7"
+        	});
+        },300);
+        $(document).ready(function(){
+            var logined = {$denglu};
+            var methods = 0;
+            var method = "面对面";
+            // 立即预约按钮
+            $(".button button").click(function(){
+                if (logined) {
+                    $(".mask").css({
+                        "display": "block"
+                    });
+                    $(".order").css({
+                        "display": "block"
+                    });
+                    $(".type span").css({
+                        'color': "#666",
+                        'border': "0.01rem solid #cccccc",
+                        'background': "#fff"
+                    });
+                    $(".type span:eq(0)").css({
+                        'color': "#ff0101",
+                        'border': "0.01rem solid #ff0101",
+                        'background': "#fff"
+                    });
+                }else{
+                    window.location.href = "/index.php/Index/index/ulogin";
+                }
+            });
+            
+            // 关闭立即预约模板
+            $(".cha").click(function(){
+                $(".mask").css({
+                    "display": "none"
+                });
+                $(".order").css({
+                    "display": "none"
+                });
+            });
+            
+            // 选择支付方式
+            $(".type span").click(function(){
+                $(".type span").css({
+                    'color': "#666",
+                    'border': "0.01rem solid #cccccc",
+                    'background': "#fff"
+                });
+                $(".type2 span").css({
+                    "color": "#ff0101",
+                    "border": "0.01rem solid #FF0101",
+                    "backgroundColor": "#ffe7e7"
+                });
+                $(this).css({
+                    'color': "#fe0000",
+                    'border': "0.01rem solid #fe0000",
+                    'background': "#ffe7e7"
+                });
+                //console.log($(this));
+                $("input[name='state']").val($(this).parent().index());
+				
+                methods = $(this).parent().index();
+                method = $(this).html();
+                console.log(methods);
+                console.log(method);
+            });
+            
+            $(".tips").css({
+                "display": "none"
+            });
+            
+            // 确认按钮
+            $(".yes button").click(function(){
+//              console.log($(this));
+                if (methods == 0 || methods == 1) {
+                    console.log($(this));
+                    //$(".tips").css({
+                     //   "display": "block"
+                    //});
+                    clearTimeout(timeout);
+                    var timeout = setTimeout(function(){
+                        $(".tips").css({
+                            "display": "none"
+                        });
+                    },3000);
+                }else{
+                    $(".tips").css({
+                        "display": "none"
+                    });
+                }
+            });
+            
+            //alert(logined);
+            //  点击我要评价
+            $(".button").children("a").click(function(){
+                  // onclick="document.getElementById('mask_eva').style.display=('block')"
+                  // 首先判断用户的登录状态
+                  if (logined==1){
+                    // 如果用户已经登录了
+                    document.getElementById('mask_eva').style.display='block';
+                  }else{
+                    // 如果用户没有登录    就跳转到登录界面
+                    window.location.href = "/index.php/Index/index/ulogin";
+                  }
+            });
+
+            // 点击确定评价
+            var comment = $(".comment_content").val();
+            //教练
+            var  cid = {$coach.cid};
+            $(".confirm_comments").click(function(){
+                comment = $(".comment_content").val();
+                console.log(comment);
+                $.ajax({
+                    type:"post",
+                    url:"{:url('pingjia/assess')}",
+                    async:true,
+                    dataType:"json",
+                    data:{content:comment,cid:cid},
+                    success:function(data){
+                        if(data  ==0){
+                            alert('你还没有教练哦！');
+                        }else if(data==1){
+                            document.getElementById('mask_eva').style.display='none';
+                                alert('评价成功！');
+                                location.reload();
+                        }else if(data==2){
+                             alert('您已经评价过了,不能再评价了哦！');
+                        }else if(data == 5){
+                             alert('您不是该教练的学员，不能评价！');
+                        }else{
+                               alert('评价失败啦，请联系管理员!');
+
+                        }
+                    },
+                });
+            });
+            
+            // 选择教练详情
+            var details = [];
+            var leixing = $(".leixing span:eq(0)").attr("id"),
+            	kemu = $(".kemu span:eq(0)").attr("id"),
+            	zhugongkaochang = $(".zhugongkaochang span:eq(0)").attr("id"),
+            	chexing = $(".chexing span:eq(0)").attr("id"),
+            	fuwu = $(".fuwu span:eq(0)").attr("id"),
+            	total = leixing + kemu + zhugongkaochang + chexing + fuwu,
+            	leixing_html = $(".leixing span:eq(0)").html(),
+            	kemu_html = $(".kemu span:eq(0)").html(),
+            	kaochang_html = $(".zhugongkaochang span:eq(0)").html(),
+            	chexing_html = $(".chexing span:eq(0)").html(),
+            	fuwu_html = $(".fuwu span:eq(0)").html();
+            	console.log(leixing_html);
+            	console.log(kemu_html);
+            	console.log(kaochang_html);
+            	console.log(chexing_html);
+            	console.log(fuwu_html);
+            var total = leixing + kemu + zhugongkaochang + chexing + fuwu;
+            $(".leixing span").click(function(){
+                console.log($(this));
+                console.log($(this).attr("id"));
+                leixing = $(this).attr("id");
+                leixing_html = $(this).html();
+                total = leixing + kemu + zhugongkaochang + chexing + fuwu;
+                console.log(total);
+                ajax_data();
+                // $(".type1").html($(this).html() || "暂无");
+            });
+            $(".kemu span").click(function(){
+                console.log($(this));
+                console.log($(this).attr("id"));
+                kemu = $(this).attr("id");
+                kemu_html = $(this).html();
+                total = leixing + kemu + zhugongkaochang + chexing + fuwu;
+                console.log(total);
+                ajax_data();
+                // $(".kemu1").html($(this).html() || "暂无");
+            });
+            $(".zhugongkaochang span").click(function(){
+                console.log($(this));
+                console.log($(this).attr("id"));
+                zhugongkaochang = $(this).attr("id");
+                kaochang_html = $(this).html();
+                total = leixing + kemu + zhugongkaochang + chexing + fuwu;
+                console.log(total);
+                ajax_data();
+                $(".kaochang1").html($(this).html() || "暂无");
+            });
+            $(".chexing span").click(function(){
+                console.log($(this));
+                console.log($(this).attr("id"));
+                chexing = $(this).attr("id");
+                chexing_html = $(this).html();
+                total = leixing + kemu + zhugongkaochang + chexing + fuwu;
+                console.log(total);
+                ajax_data();
+                $(".chexing1").html($(this).html() || "暂无");
+            });
+            $(".fuwu span").click(function(){
+                console.log($(this));
+                console.log($(this).attr("id"));
+                fuwu = $(this).attr("id");
+                fuwu_html = $(this).html();
+                total = leixing + kemu + zhugongkaochang + chexing + fuwu;
+                console.log(total);
+                ajax_data();
+                $(".service1").html($(this).html() || "暂无");
+            });
+            
+            // 点击确认提交按钮
+            $(".confirm").click(function(){
+                // console.log("确认按钮");
+				ajax_choose();
+            });
+            function ajax_data(){
+                // ajax 把教练详情的选项传送到后台
+                console.log("教练详情的选项传送到后台");
+                total = leixing + kemu + zhugongkaochang + chexing + fuwu;
+//              leixing_html = $(".leixing span:eq(0)").html(),
+//          	kemu_html = $(".kemu span:eq(0)").html(),
+//          	kaochang_html = $(".zhugongkaochang span:eq(0)").html(),
+//          	chexing_html = $(".chexing span:eq(0)").html(),
+//          	fuwu_html = $(".fuwu span:eq(0)").html();
+                console.log(leixing);
+                console.log(kemu);
+                console.log(zhugongkaochang);
+                console.log(chexing);
+                console.log(fuwu);
+                console.log(total);
+                console.log(leixing_html);
+                console.log(kemu_html);
+                console.log(kaochang_html);
+                console.log(chexing_html);
+                console.log(fuwu_html);
+                if (!leixing && !kemu && !zhugongkaochang && !chexing && !fuwu) {
+                  	//alert("该教练暂无可预约的内容，请联系我们工作人员处理~");
+                	$(".qian").html(0.00);
+                } else{
+	                $.ajax({
+	                    type:"post",
+	                    url:"{:url('coach_total_price')}",
+	                    async:true,
+	                    data:{total:total},
+	                    success:function(data){
+	                        console.log(data);
+	                        if (data) {
+	                            $(".qian").html(data);
+	                        }
+	                    },
+	                    error:function(err){
+	                        // console.log(err);
+	                    }
+	                });
+                }
+            }
+            ajax_data();
+            
+            function ajax_choose(){
+            	// methods = $(this).parent().index();
+                // method = $(this).html();
+            	if (!leixing && !kemu && !zhugongkaochang && !chexing && !fuwu) {
+            		alert("该教练暂无可预约的内容，请联系我们工作人员处理~");
+            	} else{
+            		
+            		if (methods == 2) {
+	            		console.log(methods);
+	            		$.ajax({
+		                    type:"post",
+		                    url:"/index.php/index/Pay/add_order",
+		                    async:true,
+		                    data:{content:leixing_html+"_"+kemu_html+"_"+kaochang_html+"_"+chexing_html+"_"+fuwu_html,type:0,price:$(".qian").html()},
+		                    success:function(data){
+								console.log(data);
+								console.log(typeof(data));
+								console.log(data.code);
+								var datas = JSON.parse(data);
+								if(datas.code==1){
+									alert(datas.msg);
+								}else if(datas.code==2){
+									window.location.href = datas.msg;
+								}
+		                    },
+		                    error:function(err){
+		                    	console.log(err);
+		                    }
+		                });
+		                
+	            	} else{
+	            		console.log(methods);
+	            		$.ajax({
+		                    type:"post",
+		                    url:"/index.php/Index/index/make_coach",
+		                    async:true,
+		                    data:{type:leixing_html,kemu:kemu_html,class:kaochang_html,car:chexing_html,service:fuwu_html,pay:method,cid:$("input[name='school_id']").val(),sname:$("input[name='school_name']").val()},
+		                    success:function(data){
+		                    	console.log(data);
+								console.log(typeof(data));
+								var datas = JSON.parse(data);
+								if(datas.code==1){
+									alert(datas.msg);
+								}else if(datas.code==2){
+									window.location.href = datas.msg;
+								}
+		                    },
+		                    error:function(err){
+		                    	console.log(err);
+		                    }
+		                });
+	            	}
+            		
+            	}
+            }
+        });
+    </script>
+    <script type="text/javascript">
+//      var mySwiper = new Swiper ('.swiper-container', {
+//          direction: 'horizontal',
+//          loop: true,
+//          autoplay: true,
+//          speed: 500,
+//          delay: 3000,
+//      
+//          // 如果需要分页器
+//          pagination: {
+//              el: '.swiper-pagination',
+//          },
+//          uniqueNavElements: false,
+//      
+//          // 如果需要前进后退按钮
+//          navigation: {
+//              nextEl: '.swiper-button-next',
+//              prevEl: '.swiper-button-prev',
+//          },
+//      
+//          // 如果需要滚动条
+//          scrollbar: {
+//              el: '.swiper-scrollbar',
+//          },
+//  });
+    var swiper = new Swiper('.swiper-container', {
+            speed: 500,
+            delay: 3000,
+            loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+          },
+          autoplay: true
+    });
+    </script>
+	{include file="public/ji"}
+</html>

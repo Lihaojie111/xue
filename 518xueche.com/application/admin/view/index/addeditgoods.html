@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>仓库管理系统-添加商品</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="/public/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/assets/vendor/linearicons/style.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="/public/assets/css/main.css">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="76x76" href="/public/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/public/assets/img/favicon.png">
+</head>
+<style>
+    .input-error{
+        border-color:red;
+    }
+
+ .col-center-block {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+</style>
+
+<body>
+<!-- WRAPPER -->
+<div id="wrapper">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        {include file="public/header"}
+    </nav>
+    <!-- END NAVBAR -->
+    <!-- LEFT SIDEBAR -->
+    <div id="sidebar-nav" class="sidebar">
+        <div class="sidebar-scroll">
+            <nav>
+                {include file="public/left"}
+            </nav>
+        </div>
+    </div>
+    <!-- END LEFT SIDEBAR -->
+    <!-- MAIN -->
+    <div class="main" >
+        <!-- MAIN CONTENT -->
+        <div class="main-content" align="center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6  col-center-block" >
+                        <!-- FORM START -->
+                        <div class="panel" align="center"  style="width: 400px">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">添加商品</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form id="form1" action="" method="post">
+                                    <div align="left">
+                                    <input type="text" class="form-control" name="goods_id" value="{$goods_info.goods_id}" style="display: none;">
+                                    <label for="">商品名称</label>
+                                    <input type="text" class="form-control" name="goods_name" placeholder="商品名称" value="{$goods_info.goods_name}">
+                                    <label for="" style="margin-top: 6px;">单价</label>
+                                    <input type="text" class="form-control" name="price" placeholder="单价" value="{$goods_info.price}" onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')">
+                                    <label for="" style="margin-top: 6px;">商品规格</label>
+                                    <input type="text" class="form-control" name="spec_name" placeholder="商品规格" value="{$goods_info.spec_name}">
+                                    <label for="" style="margin-top: 6px;">型号</label>
+                                    <input type="text" class="form-control" name="pattern" placeholder="型号" value="{$goods_info.pattern}">
+                                    <label for="" style="margin-top: 6px;">品牌</label>
+                                    <input type="text" class="form-control" name="brand" placeholder="品牌" value="{$goods_info.brand}">
+                                    <label for="" style="margin-top: 6px;">库存量</label>
+                                    <input type="text" class="form-control" name="stock" placeholder="库存量" value="{$goods_info.stock}"  onkeyup="value=value.replace(/[^\d]/g,'')">
+                                    <label for="" style="margin-top: 6px;">体验机库存</label>
+                                    <input type="text" class="form-control" name="stock_trial" placeholder="体验机库存" value="{$goods_info.stock_trial}"  onkeyup="value=value.replace(/[^\d]/g,'')">
+                                    <label for="" style="margin-top: 6px;">单位</label>
+                                    <input type="text" class="form-control" name="unit" placeholder="单位" value="{$goods_info.unit}">
+                                    <br>
+                                    </div>
+                                    <button class="btn btn-primary">提交</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->
+    </div>
+    <!-- END MAIN -->
+    <div class="clearfix"></div>
+    <footer>
+        {include file="public/footer"}
+    </footer>
+</div>
+<!-- END WRAPPER -->
+<!-- Javascript -->
+<script src="/public/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/public/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/public/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/public/assets/scripts/klorofil-common.js"></script>
+
+<script >
+    function my_submit() {
+
+        if($("input[name='good_name']").val()==""){
+            $("input[name='good_name']").addClass('input-error');
+            return;
+        }
+        $("$form1").submit;
+
+    }
+
+</script>
+
+<script type="text/javascript">
+    NAME=false;
+    //规格 spec
+    //SPEC=false;
+    //单价price
+    PRICE=false;
+    // 型号 pattern
+    //PATTERN=false;
+    //品牌 brand
+    //BRAND=false;
+    //数量 stock 库存量
+    //STOCK=false;
+    //体验机库存 trial
+    //TRIAL=false;
+    //单位 unit
+    //UNIT=false;
+
+
+    //  if($("input[name='username']").val()==""){
+    //     $("input[name='username']").addClass('input-error');
+    //     return;
+    // }
+    //获取名称
+    $("input[name='goods_name']").blur(function(){
+        var  name=$(this).val();
+        if(name==''){
+
+
+            $("input[name='goods_name']").addClass('input-error');
+            //alert('商品名称不能为空');
+            NAME=false;
+        }else{
+            $("input[name='goods_name']").removeClass('input-error');
+            NAME=true;
+        }
+
+
+
+
+    })
+
+    //单价
+    $("input[name='price']").blur(function(){
+        var  name=$(this).val();
+        if(name==''){
+            $("input[name='price']").addClass('input-error');
+            // alert('单价不能为空');
+            PRICE=false;
+
+        }else{
+
+            $("input[name='price']").removeClass('input-error');
+            PRICE=true;
+        }
+
+    })
+
+    //商品规格
+    // $("input[name='spec_name']").blur(function(){
+    //        var  name=$(this).val();
+    //          if(name==''){
+
+
+    //          $("input[name='spec_name']").addClass('input-error');
+    //         // alert('商品名称不能为空');
+    //        SPEC=false;
+    //          }else{
+    //         $("input[name='spec_name']").removeClass('input-error');
+    //        SPEC=true;
+    //          }
+
+    //  })
+
+
+
+
+
+    //获取型号
+    // $("input[name='pattern']").blur(function(){
+    //     //获取密码
+    //       var name=$(this).val();
+    //     if(name==''){
+
+    //         PATTERN=false;
+    //           $("input[name='pattern']").addClass('input-error');
+    //         }else{
+    //           $("input[name='pattern']").removeClass('input-error');
+    //            PATTERN=true;
+    //         }
+
+    // })
+
+    //    //获取品牌
+    // $("input[name='brand']").blur(function(){
+    //     //获取密码
+    //       var name=$(this).val();
+    //     if(name==''){
+
+    //       BRAND=false;
+    //           $("input[name='brand']").addClass('input-error');
+
+    //         }else{
+    //       $("input[name='brand']").removeClass('input-error');
+    //            BRAND=true;
+    //         }
+
+    // })
+
+
+
+
+
+
+
+
+
+
+    //表单提交事件
+    $("form").submit(function(){
+        //让input 触发失去焦点事件
+        $("input").trigger("blur");
+
+        if(NAME   &&  PRICE ){
+            return ture;
+
+
+        }else{
+
+            return false;
+
+        }
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <title>518学车网-驾校详情</title>
+	    <link rel="stylesheet" type="text/css" href="/public/home/css/Web_app_common.css"/>
+	    <link rel="stylesheet" type="text/css" href="/public/home/css/School_detail.css"/>
+	    <link rel="stylesheet" type="text/css" href="/public/home/css/swiper.min.css"/>
+	    <script src="/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="/public/home/js/rem.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="/public/home/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style>
+		#jiege{position:fixed;bottom: 0;right: 0;width: 1rem;text-align: right;}
+		.qians{
+			color: #FF0000;
+		}
+		.click span:nth-child(1){
+			color: #FF0000;
+		}
+		/*.xuecheshijian .banxing .fuwu .jiazhaoleixing*/
+	</style>
+	<body>
+	    <!-- 头部 -->
+	    <!--<div class="head">-->
+	        <!--<div class="left">-->
+	            <!--<img src="/public/home/images/close.png"/>-->
+	            <!--<img src="/public/home/images/learn_car.png"/>-->
+	        <!--</div>-->
+	        <!--<div class="right">-->
+	            <!--<img src="/public/home/images/share.png"/>-->
+	        <!--</div>-->
+	    <!--</div>-->
+	    
+	    <!--标题-->
+	    <div class="title">
+	        <a href="javascript:history.back()">
+	            <img class="back" src="/public/home/images/back.png"/>
+	        </a>
+	        <span>驾校详情</span>
+	    </div>
+	
+	    <!-- 学校详情 -->
+	    <div class="wrapper">
+	        <!-- 驾校轮播 -->
+	        <div class="school_banner mt20">    
+	            <div class="swiper-container">
+	                <div class="swiper-wrapper">
+
+						{foreach name="img" item="v"}     
+							<div class="swiper-slide">
+								<img src="{$v.pic}" alt="">
+							</div>
+						{/foreach}
+	                </div>
+	                <div class="swiper-pagination"></div>
+	            </div>
+	        </div>
+	        <!-- 驾校名称 -->
+	        <div class="school_name bgw">
+	            <h1>{$school.name}</h1>
+	            <div class="special">
+	                {foreach name="service" item="v3"}
+	                    <span>
+	                    	<img src="{$v3.pic}" alt="">
+	                    </span>
+					{/foreach}
+	            </div>
+	        </div>
+	        <!-- 驾校服务 -->
+	
+	        <!-- 驾照类型 -->
+	        <div class="license_type mt20 bgw">
+	            <div class="left">
+					驾照类型：
+	            </div>
+	            <div class="right">
+	                <ul id="license_all" class="">
+	                	{if condition="!$type"}
+	                	 <li>暂无</li>
+	                	{else/}
+	                   
+	                    {foreach name="type" item="v2"}
+	                        <li id="_type{$v2.id}">{$v2.name}</li>
+	                    {/foreach}
+	                	 {/if}
+	                </ul>
+	            </div>
+	        </div>
+	
+	        <div class="license_class mt20 bgw">
+	            <div class="left">
+					班型：
+	            </div>
+	            <div class="right">
+	                <ul class="click">
+	                {if condition="!$class"}
+	                 	<li>暂无</li>
+	                	{else/}
+	                    {foreach name="class" item="v3"}
+	                        <li id="_class{$v3.id}">{$v3.name}</li>
+	                    {/foreach}
+	                 {/if}
+	                </ul>
+	            </div>
+	        </div>
+	        
+	        <div class="license_class mt20 bgw">
+	            <div class="left">
+					学车时间：
+	            </div>
+	            <div class="right">
+	                <ul class="click">
+	                	{if condition="!$time"}
+	                	 <li>暂无</li>
+	                	{else/}
+	                    {foreach name="time" item="v4"}
+	                        <li id="_time{$v4.id}">{$v4.name}</li>
+	                    {/foreach}
+	                     {/if}
+	                </ul>
+	            </div>
+	        </div>
+	
+	        <div class="school_service mt20 bgw">
+	            <div class="left">
+					服务：
+	            </div>
+	            <div class="right">
+	                <ul class="">
+	                	{if condition="!$service"}
+	                	 <li>暂无</li>
+	                	{else/}
+
+						{foreach name="service" item="v3"}
+	            			<li>
+		                        <img src="{$v3.pic}" alt="">
+		                        <span id="_service{$v3.id}">{$v3.name}</span>
+	            			</li>
+						{/foreach}
+						{/if}
+	                </ul>
+	            </div>
+	        </div>
+	
+	        <!--总金额-->
+			<!--<div class="total">
+	                    <p>
+	                        总金额:
+	                    </p>
+	                    <p>
+	                        <span>¥</span>
+	                        <span class="qian">{$school.price}</span>
+	                    </p>
+	                </div> -->
+	                
+	        <!-- 班型 -->
+	
+	        <!-- 优惠券 -->
+	<!--         <div class="coupon mt20 bgw">
+	            <h1>优惠券：</h1>
+	            <div class="coupon_two">
+	                <div><a href=""><img src="/public/home/images/coupon50.jpg" alt=""></a></div>
+	                <div><a href=""><img src="/public/home/images/coupon120.jpg" alt=""></a></div>
+	            </div>
+	        </div> -->
+	        <!-- 公司简介 -->
+	        <div class="Company_profile mt20 bgw">
+	            <div class="introduce">
+	                <!-- <h1>公司简介：</h1>
+	                    <img src="/public/home/images/bigimg.png" style="width: 5.8rem;height: 3.8rem;"> -->
+	                <div class="content">
+	                    <h1>{$school.name}简介</h1>
+	                    <p>
+		                    <center>
+		                		{foreach name="imgz" item="v"}
+		                			<img src="{$v}">
+		                			<br>
+		                    	{/foreach}
+							</center>
+	                    </p>
+	                </div>
+	<!--                 <div class="content_img">
+	                    <div>
+	                        <img src="/public/home/images/bigimg.png" alt="">
+	                    </div>
+	                    <div>
+	                        <img src="/public/home/images/bigimg.png" alt="">
+	                    </div>
+	                </div> -->
+	            </div>
+	        </div>
+	        <!-- 王牌教练 -->
+	        <div class="King_coach mt20 bgw">
+	            <h1>王牌教练：</h1>
+	            <div class="content">
+	                {foreach name="ss_jiaolian" item="v4"}
+	                <div class="item">
+	                    <img src="{$v4.img}" alt="">
+	                    <div class="coachAndp">
+	                        <div class="fl" style="font-size: .24rem"><span>{$v4.name}</span></div>
+	                        <div class="fr" style="font-size: .2rem;"><span>声援数：{$v4.resources}</span></div>
+	                    </div>
+	                    <p class="safe">
+	                		{foreach name="v4.child" item="v5"}
+	                    		<span>
+	                    			<img src="{$v5.pic}" alt="">
+	                    		</span>
+	                		{/foreach}
+	                    </p>
+	                </div>
+	                {/foreach}
+	              <!--   <div class="Now_reservation" onclick="document.getElementById('mask').style.display='block'">
+	                    立即预约
+	                </div> -->
+					<div class="Now_reservation" >
+						预约受理
+					</div>
+	            </div>
+	        </div>
+	        <!--提示模板-->
+	        <div class="tips" style="display: none;">
+	            <p>
+					对应人员会在两个工作日内，联系您请保持手机畅通
+	            </p >
+	        </div>
+	        <!--立即预约板块儿-->
+	        <!--<form method="post" action="/index.php/index/index/docoach">-->
+	            <div id="mask">
+	                <div class="order">
+	                    <div class="top">
+	                        <div class="left">
+	                            <img src="/public/home/images/img1.png"/ >
+	                        </div>
+	                        <div class="right">
+	                            <p>
+	                                <img class="cha" src="/public/home/images/chacha.png"/ onclick="document.getElementById('mask').style.display='none'">
+	                            </p>
+	                            <p>
+									{$school.name}
+									<input  type="hidden" name="school_id" value="{$school.id}">
+									<input  type="hidden" name="school_name" value="{$school.name}">
+									<span class="qians">
+										<span>¥</span>
+										<span class="qian">
+											100.00
+										</span>
+									</span>
+	                            </p>
+								<!--<p>
+									￥ {$school.price}
+	                            </p > -->
+	                        </div>
+	                    </div>
+	                    <!--驾照类型-->
+	                    <div class="items">
+	                        <div class="item itemone">
+	                            <p>
+									驾照类型
+	                            </p>
+	                        	<div class="click">
+	                        	{if condition="!$type"}
+	                        	<span  class="jiazhaoleixing">暂无</span>
+	                        		{else/}
+	                        		{foreach name="type" item="v2"}
+		                            	<span id="_type{$v2.id}" class="jiazhaoleixing">{$v2.name}</span>
+		                        	{/foreach}
+		                        {/if}
+	                        	</div>
+	                        </div>
+	                    </div>
+	                    <div class="items">
+	                        <div class="item itemtwo">
+	                            <p>
+									服务类型
+	                            </p>
+	                        	<div class="click ones">
+	                        	 {if condition="!$service"}
+	                        	<span class="fuwu fuwuleixing">暂无</span>
+	                        		{else/}	
+	                        		{foreach name="service" item="v3"}
+		                            	<span id="_service{$v3.id}" class="fuwu fuwuleixing">{$v3.name}</span>
+		                        	{/foreach}
+		                        {/if}
+	                        	</div>
+	                        </div>
+	                     </div>
+	                    <div class="items">
+	                        <div class="item itemthree">
+	                            <p>
+									班型
+	                            </p >
+								<div class="click twos">
+									{if condition="!$class"}
+	                        	<span class="banxing banxing1">暂无</span>
+	                        		{else/}	
+									{foreach name="class" item="v3"}
+		                            	<span id="_class{$v3.id}" class="banxing banxing1">{$v3.name}</span>
+									{/foreach}
+								  {/if}	
+								</div>
+	                        </div>
+	                    </div>
+	                    <div class="items">
+	                        <div class="item itemfour">
+	                            <p>
+									学车时间
+	                            </p>
+								<div class="click threes">
+								 {if condition="!$time"}
+	                        	<span  class="xuecheshijian learnTime">暂无</span>
+	                        		{else/}
+										{foreach name="time" item="v4"}
+											<span id="_time{$v4.id}" class="xuecheshijian learnTime">{$v4.name}</span>
+										{/foreach}
+									{/if}
+								</div>
+	                        </div>
+	                    </div>  
+	                    <!--支付方式-->
+	                    <div class="method">
+	                        <h1>支付方式</h1>
+	                        <div class="type payMethod">
+	                            <span>面对面</span>
+	                            <span>先学后付</span>
+	                            <span>在线支付</span>
+	                        </div>
+	                    </div>
+	                    <!--确认按钮-->
+	                    <div class="yes">
+	                        <input type="hidden" name="state" >
+	                            <button class="confirm">
+									确认
+	                            </button>
+	                    </div>
+	                </div>
+	            </div>
+	        <!--</form>-->
+	    </div>
+	</body>
+	<script>
+    // swiperJS
+    var swiper = new Swiper('.swiper-container', {
+        speed: 500,
+            delay: 3000,
+            loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+      },
+      autoplay: true,
+    });
+    // 驾照类型选择JS
+    $(function(){
+        $("#license_all li").click(function() {
+//          $("#license_all li").css({
+//              'color': "#666",
+//              'border': "0.01rem solid #ccc",
+//              'background': "#fff"
+//          });
+//          $(this).css({
+//              'color': "#fe0000",
+//              'border': "0.01rem solid #fe0000",
+//              'background': "#ffe7e7"
+//          });
+        });
+    }); 
+	</script>
+	<script type="text/javascript">
+
+        $(".itemone span").click(function() {
+            $(".itemone span").css({
+                    'color': "#666",
+                    'border': "0.01rem solid #CCCCCC",
+                    'background': "#fff"
+                });
+                $(this).css({
+                    'color': "#FF0101",
+                    'border': "0.01rem solid #FF0101",
+                    'background': "#ffe7e7"
+                });
+        });
+        $(".itemtwo span").click(function() {
+          $(".itemtwo span").css({
+            'color': "#666",
+            'border': "0.01rem solid #CCCCCC",
+            'background': "#fff"
+          });
+          $(this).css({
+            'color': "#FF0101",
+            'border': "0.01rem solid #FF0101",
+            'background': "#ffe7e7"
+          });
+        });
+      $(".itemthree span").click(function() {
+            $(".itemthree span").css({
+                    'color': "#666",
+                    'border': "0.01rem solid #CCCCCC",
+                    'background': "#fff"
+                });
+                $(this).css({
+                    'color': "#FF0101",
+                    'border': "0.01rem solid #FF0101",
+                    'background': "#ffe7e7"
+                });
+        });
+        $(".itemfour span").click(function() {
+          $(".itemfour span").css({
+            'color': "#666",
+            'border': "0.01rem solid #CCCCCC",
+            'background': "#fff"
+          });
+          $(this).css({
+            'color': "#FF0101",
+            'border': "0.01rem solid #FF0101",
+            'background': "#ffe7e7"
+          });
+        });
+        setTimeout(function(){
+        	// .xuecheshijian .banxing .fuwu .jiazhaoleixing
+        	
+        	$(".click span:eq(0)").css({
+        		'color': "#FF0101",
+	            'border': "0.01rem solid #FF0101",
+	            'background': "#ffe7e7"
+        	});
+        	$(".ones span:eq(0)").css({
+        		'color': "#FF0101",
+	            'border': "0.01rem solid #FF0101",
+	            'background': "#ffe7e7"
+        	});
+        	$(".twos span:eq(0)").css({
+        		'color': "#FF0101",
+	            'border': "0.01rem solid #FF0101",
+	            'background': "#ffe7e7"
+        	});
+        	$(".threes span:eq(0)").css({
+        		'color': "#FF0101",
+	            'border': "0.01rem solid #FF0101",
+	            'background': "#ffe7e7"
+        	});
+//      	$(".xuecheshijian").css({
+//      		'color': "#FF0101",
+//	            'border': "0.01rem solid #FF0101",
+//	            'background': "#ffe7e7"
+//      	});
+//      	$(".banxing").css({
+//      		'color': "#FF0101",
+//	            'border': "0.01rem solid #FF0101",
+//	            'background': "#ffe7e7"
+//      	});
+//      	$(".fuwu").css({
+//      		'color': "#FF0101",
+//	            'border': "0.01rem solid #FF0101",
+//	            'background': "#ffe7e7"
+//      	});
+//      	$(".jiazhaoleixing").css({
+//      		'color': "#FF0101",
+//	            'border': "0.01rem solid #FF0101",
+//	            'background': "#ffe7e7"
+//      	});
+        },300);
+        $(document).ready(function(){
+            var methods = 0;
+            var logined = {$denglu};
+            // 立即预约按钮
+            $(".button").click(function(){
+                if(logined){
+					$(".mask").css({
+						"display": "block"
+					});
+	                $(".order").css({
+	                    "display": "block"
+	                });
+	                }else{
+	                    window.location.href = "/index.php/Index/index/ulogin";
+	                }
+            });
+            
+            // 关闭立即预约模板
+//          $(".cha").click(function(){
+//              $(".mask").css({
+//                  "display": "none"
+//              });
+//              $(".order").css({
+//                  "display": "none"
+//              });
+//          });
+            var payMethod = "面对面";
+            // 选择支付方式
+            $(".type span").click(function(){
+                $(".type span").css({
+                    'color': "#666",
+                    'border': "0.01rem solid #CCCCCC",
+                    'background': "#fff"
+                });
+                $(this).css({
+                    'color': "#FF0101",
+                    'border': "0.01rem solid #FF0101",
+                    'background': "#ffe7e7"
+                });
+                console.log($(this));
+                console.log($(this).index());
+                $("input[name='state']").val($(this).parent().index())
+                methods = $(this).index();
+                payMethod = $(this).html();
+            });
+            
+            $(".tips").css({
+                "display": "none"
+            });
+
+			$(".Now_reservation").click(function(){
+                  // onclick="document.getElementById('mask_eva').style.display=('block')"
+                  // 首先判断用户的登录状态
+                  if (logined==1){
+                    // 如果用户已经登录了
+                   document.getElementById('mask').style.display='block'
+                  }else{
+                    // 如果用户没有登录    就跳转到登录界面
+                    window.location.href = "/index.php/Index/index/ulogin";
+                  }
+            });
+
+            // 确认按钮
+            $(".yes button").click(function(){
+                if (methods == 0 || methods == 1) {
+                    console.log($(this));
+//                  $(".tips").css({
+//                      "display": "block"
+//                  });
+                    clearTimeout(timeout);
+                    var timeout = setTimeout(function(){
+                        $(".tips").css({
+                            "display": "none"
+                        });
+                    },3000);
+                }else{
+                    $(".tips").css({
+                        "display": "none"
+                    });
+                }
+            });
+            
+            var detail = [];
+            var jiazhaoleixing = $(".jiazhaoleixing").parent("div").children("span:eq(0)").attr("id"),
+            	banxing = $(".banxing").parent("div").children("span:eq(0)").attr("id"),
+            	xuecheshijian = $(".xuecheshijian").parent("div").children("span:eq(0)").attr("id"),
+            	fuwu = $(".fuwu").parent("div").children("span:eq(0)").attr("id"),
+            	jiazhao_html = $(".jiazhaoleixing").parent("div").children("span:eq(0)").html(),	
+            	banxing_html = $(".banxing").parent("div").children("span:eq(0)").html(),
+            	xueche_html = $(".xuecheshijian").parent("div").children("span:eq(0)").html(),
+            	fuwu_html = $(".fuwu").parent("div").children("span:eq(0)").html(),
+            	totals = jiazhaoleixing + fuwu + banxing + xuecheshijian;
+            	
+            //$(".click li").click(function(){
+                // console.log($(this).parent(".item").parent("div").children(".item").children("span"));
+               // $(this).parent(".click").children("li").css({
+                 //   "color": "#666666",
+                  // "border": "0.01rem solid #999999"
+                //});
+                //$(this).css({
+                   // "color": "#FF0000",
+                    //"border": "0.01rem solid #ff0000"
+                //});
+            //});
+            
+            $(".server li span").click(function(){
+                $(this).parent("li").parent(".server").children("li").children("span").css({
+                    "color": "#666666",
+                    //"border": "0.01rem solid #999999"
+                });
+                $(this).css({
+                    "color": "#FF0000",
+                    //"border": "0.01rem solid #ff0000"
+                });
+                // console.log($(this));
+                // console.log($(this).html());
+                // console.log($(this).attr("id"));
+            });
+            
+            $(".jiazhaoleixing").click(function(){
+                //console.log($(this));
+                //console.log($(this).attr("id"));
+                jiazhaoleixing = $(this).attr("id");
+				jiazhao_html = $(this).html();
+                totals = jiazhaoleixing + fuwu + banxing + xuecheshijian ;
+                //console.log(totals);
+                ajax_data();
+                // $(".type1").html($(this).html() || "暂无");
+            });
+            $(".banxing").click(function(){
+                //console.log($(this));
+                //console.log($(this).attr("id"));
+                banxing = $(this).attr("id");
+            	banxing_html = $(this).html();
+                totals = jiazhaoleixing + fuwu + banxing + xuecheshijian;
+                //console.log(totals);
+                ajax_data();
+                // $(".banxing1").html($(this).html() || "暂无");
+            });
+            $(".xuecheshijian").click(function(){
+                console.log($(this));
+                console.log($(this).attr("id"));
+                xuecheshijian = $(this).attr("id");
+                xueche_html = $(this).html();
+                totals = jiazhaoleixing  + fuwu+ banxing + xuecheshijian;
+                console.log(totals);
+                ajax_data();
+                // $(".learnTime").html($(this).html() || "暂无");
+            });
+            $(".fuwu").click(function(){
+                console.log($(this));
+                console.log($(this).attr("id"));
+                fuwu = $(this).attr("id");
+                fuwu_html = $(this).html();
+                totals = jiazhaoleixing  + fuwu+ banxing + xuecheshijian;
+                console.log(totals);
+                ajax_data();
+                // $(".fuwuleixing").html($(this).html() || "暂无");
+            });
+            
+            $(".payMethod span").click(function(){
+                console.log(payMethod);
+            });
+            
+            function ajax_data(){
+            	console.log(jiazhaoleixing);
+            	console.log(banxing);
+            	console.log(xuecheshijian);
+            	console.log(fuwu);
+            	console.log(totals);
+            	console.log(jiazhao_html);
+            	console.log(banxing_html);
+            	console.log(xueche_html);
+            	console.log(fuwu_html);
+            	if (!jiazhaoleixing && !banxing && !xuecheshijian && !fuwu) {
+                  	//alert("该驾校暂无可预约的内容，请联系我们工作人员处理~");
+            		$(".qian").html(0.00);
+            	} else{
+            		// ajax 把教练详情的选项传送到后台
+	                $.ajax({
+	                    type:"post",
+	                    url:"{:url('school_total_tongji')}",
+	                    async:true,
+	                    data:{total:totals},
+	                    success:function(data){
+	                        console.log(data);
+	                        console.log(typeof(data));
+	                        console.log(typeof(parseInt(data)));
+	                        if (data) {
+	                            $(".qian").html(data);
+	                        }
+	                    },
+	                    error:function(err){
+	                        // console.log(err);
+	                    }
+	                });
+            	}
+            }
+			ajax_data();
+            
+            // 点击确认按钮
+            $(".confirm").click(function(){
+                // console.log($(".type1").html());
+                // console.log($(".fuwuleixing").html());
+                // console.log($(".banxing1").html());
+                // console.log($(".learnTime").html());
+                // console.log(payMethod);
+                ajax_choosed();
+            });
+            
+            function ajax_choosed(){
+            	console.log(methods);
+                console.log(payMethod);
+                if (!jiazhaoleixing && !banxing && !xuecheshijian && !fuwu) {
+                	alert("该驾校暂无可预约的内容，请联系我们工作人员处理~");
+                } else{
+                	if (methods == 2) {
+	            		// 彦飞
+	            		// jiazhao_html+banxing_html+xueche_html+fuwu_html
+	            		$.ajax({
+		                    type:"post",
+		                    url:"/index.php/index/Pay/add_order",
+		                    async:true,
+		                    data:{content:jiazhao_html+"_"+banxing_html+"_"+xueche_html+"_"+fuwu_html,type:1,price:$(".qian").html()},
+		                    success:function(data){
+								console.log(data);
+								console.log(typeof(data));
+								var datas = JSON.parse(data);
+								if(datas.code==1){
+									alert(datas.msg);
+								}else if(datas.code==2){
+									window.location.href = datas.msg;
+								}
+		                    },
+		                    error:function(err){
+		                    	console.log(err);
+		                    }
+		                });
+	            	} else{
+	            		// 刘凯
+	            		// jiazhao_html+banxing_html+xueche_html+fuwu_html
+	            		$.ajax({
+		                    type:"post",
+		                    url:"/index.php/Index/index/make_school",
+		                    async:true,
+		                    data:{type:jiazhao_html,service:fuwu_html,class:banxing_html,time:xueche_html,pay:payMethod,sid:$("input[name='school_id']").val(),sname:$("input[name='school_name']").val()},
+		                    success:function(data){
+		                    	console.log(data);
+								console.log(typeof(data));
+								var datas = JSON.parse(data);
+								if(datas.code==1){
+									alert(datas.msg);
+								}else if(datas.code==2){
+									window.location.href = datas.msg;
+								}
+		                    },
+		                    error:function(err){
+								console.log(err);
+							}
+		                });
+	            	}
+                }
+            	
+            }
+        });
+    </script>
+    {include file="public/ji"}
+</html>

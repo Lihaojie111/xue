@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>518学车网-预约投保</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="/public/home/css/Web_app_common.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/home/css/online_Lipei.css">
+    <script src="/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/public/home/js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="/public/home/css/jquery-labelauty.css">
+  	<link rel="stylesheet" type="text/css" href="/public/home/css/selectFilter.css" />
+    <style>
+      	.item_select {
+			padding: 0 .3rem;
+          	height:.72rem;
+          	line-height:.72rem;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="whole">
+        <!--标题-->
+        <div class="title" style="top:0">
+            <a href="javascript:history.back(-1)">  
+                <img class="back" src="/public/home/images/back.png"/>
+                <span>预约投保</span>
+            </a>
+        </div>
+      
+        <div class="Online_B">
+          <p>在线办理</p>
+        </div>
+
+        <div class="Online_Img">
+            <img src="/public/home/images/lipeisafe.jpg" alt="">
+        </div>
+
+        <div class="Typeof">
+            <p>学车类型与预约投保类型<span>&nbsp;*</span></p>
+        </div>
+        <form method="post" action="">
+        <!-- 驾照类型选择 -->
+        <div class="Lisence" style="background:#fff;border:.03rem solid #999;border-left:none;border-right:none;">
+            <div class="item_select">
+                <div class="filter-box">
+                    <div class="filter-text">
+                        <input class="filter-title" type="text" readonly placeholder="pleace select" />
+                        <i class="icon icon-filter-arrow"></i>
+                    </div>
+                    <select name="type">
+                        <option value="C1投保类型" selected>C1投保类型 ¥{$jia.0}元</option>
+                        <option value="C2投保类型">C2投保类型 ¥{$jia.0}元</option>
+                        <option value="B1投保类型">B1投保类型 ¥{$jia.1}元</option>
+                        <option value="B2投保类型">B2投保类型 ¥{$jia.1}元</option>
+                        <option value="A1投保类型">A1投保类型 ¥{$jia.1}元</option>
+                        <option value="A2投保类型">A2投保类型 ¥{$jia.1}元</option>
+                        <option value="A3投保类型">A3投保类型 ¥{$jia.1}元</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="toast">
+            <p><span class="fl" style="width: 1.6rem;">温馨提示：</span><span class="fl" style="width: 4rem;height: .75rem;">投保业务请于学员初考前两天提交有效。</span></p>
+            <p><span class="fl" style="width: 1.6rem;">例如：</span><span class="fl" style="width: 4rem;height: .75rem;">您已预约的是后天的考试，请务必于今晚六点之前提交。</span></p>
+        </div>
+
+        <div class="Typeof">
+            <p>被保人资料</p>
+        </div>
+        
+        <!-- 被保人资料 -->
+        <div class="Save_text">
+            <ul>
+                <li>
+                    <textarea name="name" id="" cols="30" rows="10" placeholder="请输入被保人真实姓名（一次可输入多人，用“/”隔开）"></textarea>
+                </li>
+                <li>
+                    <textarea name="phone" id="" cols="30" rows="10" placeholder="请输入被保人联系手机（一次可输入多人，用“/”隔开）"></textarea>
+                </li>
+                <li>
+                    <textarea name="number" id="" cols="30" rows="10" placeholder="请输入被保人身份证号码（一次可输入多人，用“/”隔开）"></textarea>
+                </li>
+                <li>
+                    <textarea style="height: .3rem;" name="sname" id="" cols="30" rows="10" placeholder="请输入驾校名称（含分校名称）"></textarea>
+                </li>
+                <li>
+                    <textarea style="height: 1rem;margin-bottom:0;" name="xuefei" id="" cols="30" rows="10" placeholder="请输入实际缴纳的学费（服务生效日期前取消保单，将收取15%的技术服务费；保单生效后不可取消）"></textarea>
+                </li>
+                <div>
+                    <span class="confirm_check" style="clear: both;" >
+                        我已确认过所填内容，提交支付
+                    </span>
+                </div>
+                <div>
+                    <div class="wenzi" style="font-size: .2rem;color: #999">
+                        <p>温馨提示：1、投保必须在初次考试前至少2个工作日内完成投保；2、资料完成提交成功后，在此页面点击进入购买页面线上支付驾考保金，完成投保，未提交资料或未支付保金视无效投保；3、平台在收到您提交的资料后2个工作日内，会与您取得联系核实信息，请保持手机畅通，不便之处，敬请谅解。</p>
+                    </div>
+                </div>
+            </ul>
+        </div>
+        </form>
+    </div>
+</body>
+<script src="/public/home/js/selectFilter.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="/public/home/js/jquery-labelauty.js"></script>
+<script type="text/javascript">
+    //本小插件支持移动端哦
+
+    //这里是初始化
+    $('.filter-box').selectFilter({
+      callBack : function (val){
+        //返回选择的值
+        console.log(val+'-是返回的值')
+      }
+    });
+</script>
+<script type="text/javascript">
+$(function(){
+    $(':input').labelauty();
+});
+$('.confirm_check').click(function(){
+	 var logined = {$denglu};
+  	 if(logined == 1){
+        var  name= $("textarea[name='name']").val();
+        var  phone= $("textarea[name='phone']").val();
+        var  number= $("textarea[name='number']").val();
+        var  sname= $("textarea[name='sname']").val();
+        var  xuefei= $("textarea[name='xuefei']").val();
+
+        // if (name.test(/^[a-zA-Z0-9_-]{4,16}$/)) {}
+
+        if ((/^[(\u4E00-\u9FA5) || /]{1,}$/).test(name) && (/^[(\d)||/]*$/).test(phone) && (/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/).test(number)&& (/^[(\u4E00-\u9FA5) || /]{1,}$/).test(sname) && (/^[(\d)||/]*$/).test(xuefei)) {
+            $('form').submit();
+            console.log("正则匹配成功")
+        }else{
+            if (!xuefei || !phone || !name || !sname || !number) {
+                alert("有空的框");
+                return false;
+            }
+            console.log("正则匹配失败");
+            // alert("正则匹配失败,无法提交。");
+            if(!(/^[(\u4E00-\u9FA5) || /]{1,}$/).test(name)){
+                alert("请输入正确的姓名");
+                return false;
+            }
+            if(!(/^[(\d)||/]*$/).test(phone)){
+                alert("请输入正确的手机号");
+                return false;
+            }
+            if(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/).test(number)){
+                alert("请输入正确的身份证号");
+                return false;
+            }
+            if(!(/^[(\u4E00-\u9FA5) || /]{1,}$/).test(sname)){
+                alert("请输入正确的驾校姓名");
+                return false;
+            }
+            if(!(/^[(\d)||/]*$/).test(xuefei)){
+                alert("请输入正确的价格");
+                return false;
+            }
+            
+        }
+	  }else{
+            window.location.href = "/index.php/Index/index/ulogin";
+    }
+})
+</script>
+</html>

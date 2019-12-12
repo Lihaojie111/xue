@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>518学车网-定制班型</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="/public/home/css/Web_app_common.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/home/css/Security_service.css">
+    <script src="/public/home/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/public/home/js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+    <style>
+        #jiege{position:fixed;bottom: 0;right: 0;width: 1rem;text-align: right;}
+       .tit{
+            width: 6.4rem;
+            margin-top: 0.3rem;
+            margin-bottom: 0.9rem;
+            text-align: center;
+
+       }
+        .tit img{
+            width: 100%;
+            height: 100%;
+        }
+        .wrapper{
+            background:url("/public/home/images/banback.png") repeat 0 0 ;
+            background-size: 100%;
+        }
+        .wrapper>p{
+           color:#666;
+           font-size: 0.22rem;
+           line-height: 0.4rem;
+           padding:0 0.3rem;
+        }
+        .wrapper>h3{
+           color:#333;
+           font-size: 0.26rem;
+           line-height: 0.4rem;
+           padding:0 0.3rem;
+        }
+        .banlist{
+            width: 5.8rem;
+            padding:0  0.3rem;
+            overflow: hidden;
+        }
+        .banlist .banitem{
+           float:left;
+        }
+        .banlist .banitem img{
+           width: 100%;
+        }
+        .banlist .shi,.banlist .wu{
+           width: 3.3rem;
+        }
+        .banlist .bao,.banlist .qi{
+           width: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!--标题-->
+    <div class="title" style="top:0">
+        <a href="javascript:history.back(-1)">  
+            <img class="back" src="/public/home/images/back.png"/>
+            <span>定制班型</span>
+        </a>
+    </div>
+
+    <div class="wrapper" style="margin-top: 0.95rem; border-top: 1px solid transparent;">
+        <div class="tit">
+            <img src="/public/home/images/bantit.png" alt="">
+        </div>
+        <div class="banlist">
+            <div class="banitem shi">
+                <img src="/public/home/images/banchoseshi.png" alt="">
+            </div>
+            <div class="banitem bao">
+                <img src="/public/home/images/banchosebao.png" alt="">
+            </div>
+            <div class="banitem wu">
+                <img src="/public/home/images/banchosewu.png" alt="">
+            </div>
+            <div class="banitem qi">
+                <img src="/public/home/images/banchoseqi.png" alt="">
+            </div>
+        </div>
+        <h3>对于我们所承诺的服务，我们做如下保证，并接受您的监督、反馈：</h3>
+        <p>
+        （1）履行我们所承诺的服务标准，严格执行、担当责任、贴心服务，对于违反服务承诺的行为做到积极响应，快速处理、勇于承担，为驾培行业的健康、诚信发展提供助力。
+        </p>
+        <p>
+        （2）尊重学员、用语文明，不刁难和辱骂学员。拒绝服务态度恶劣、坚决杜绝粗暴教学。
+        </p>
+        <p>
+        （3）恪守职业道德，遵守廉洁规定，坚决杜绝“吃、拿、卡、要”等违规行为。
+        </p>
+        <p>
+        （4）监督教学过程，以“讲的清楚、说的明白、示范到位、矫正及时”为准则，在教学中平等待人，不偏心、不偏教、严谨执教、积极施教。
+        </p>
+        <p>
+        （5）按照《机动车驾驶培训教学与考试大纲》的要求开展教学工作。
+        </p>
+        <p>
+        （6） 公开收费标准，一次性收费，透明公开，不乱收费，不设置低价陷阱。
+        </p>
+        <p>
+        （6） 公开收费标准，一次性收费，透明公开，不乱收费，不设置低价陷阱。
+        </p>
+        <p>
+        （7）  对于车容车貌、车辆技术状况，严格贯彻公安车辆管理部门规定，不因车辆原因影响正常教学。
+        </p>
+        <p>
+        再次感谢您选择我们的服务，欢迎您对我们的服务进行反馈，我们将以最快的速度、最好的态度，竭诚保障您的学车权益！
+        </p>
+    </div>
+</body>
+{include file="public/ji"}
+</html>
